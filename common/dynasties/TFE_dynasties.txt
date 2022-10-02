@@ -1,0 +1,4 @@
+﻿658742 = {
+	name = "dynn_hashmid"
+	culture = "bedouin"
+}

@@ -1,0 +1,10 @@
+﻿### Arab
+
+house_umayyad = {
+	name = "dynn_Umayyad"
+	dynasty = 597
+}
+house_hashmid = {
+	name = "dynn_hashmid"
+	dynasty = 658742
+}

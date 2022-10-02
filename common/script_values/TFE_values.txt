@@ -1,0 +1,62 @@
+﻿### Caliphal Authority
+cal_authority_target = {
+	value = 10
+
+	every_realm_province = {
+		limit = {
+			barony = { is_holy_site_of = faith }
+		}
+		add = 2
+	}
+
+	if = {
+		limit = {
+			NOT = { any_realm_province = { barony = { is_holy_site_of = faith } } } 
+		}
+		subtract = 2
+	}
+
+	if = {
+		limit = {
+			piety_level = max_piety_level
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			piety_level = very_high_piety_level
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			piety_level = high_piety_level
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			piety_level = low_piety_level
+		}
+		subtract = 2
+	}
+
+	if = {
+		limit = {
+			has_character_flag = islam_prophet
+			
+		}
+		add = 200
+	}
+
+	if = {
+		limit = {
+			has_title = title:e_rashidun
+			
+		}
+		add = 100
+	}
+
+	max = 100
+	min = 0
+}

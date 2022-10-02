@@ -1,0 +1,8 @@
+arrasool = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 301
+	titles = { e_rashidun }
+}

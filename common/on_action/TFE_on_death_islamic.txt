@@ -1,0 +1,25 @@
+on_death = {
+	on_actions = { 
+		TFE_on_death_islamic 
+	}
+}
+
+TFE_on_death_islamic = {
+	effect = {
+		if = {
+			limit = {
+				AND = {
+					has_title = title:e_rashidun
+					has_character_flag = first_fitna_ruler
+					
+				}
+			}
+			player_heir = {
+				trigger_event = {
+					id = islam.0007
+					days = {20 40}
+				}
+			}
+		}
+	}
+}

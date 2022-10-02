@@ -1,0 +1,25 @@
+﻿title_succession_laws = {
+	rashidun_elective_succession_law = {
+		can_have = {
+			has_title = title:e_rashidun
+			has_government = clan_government #I:R→CK3 no caliphate_government
+		}
+		can_pass = {
+			always = yes
+		}
+		can_title_have = {
+            this = title:e_rashidun
+        }
+		succession = {
+			order_of_succession = election
+			election_type = rashidun_elective
+		}
+		flag = elective_succession_law
+		revoke_cost = {
+			prestige = 10000
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+}

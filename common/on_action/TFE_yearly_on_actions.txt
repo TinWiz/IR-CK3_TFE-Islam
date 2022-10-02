@@ -1,0 +1,45 @@
+﻿# Called every Jan 1st
+# Root does not exist
+yearly_global_pulse = {
+	on_actions = { TFE_yearly_global_pulse }
+}
+
+TFE_yearly_global_pulse = {
+	effect = {
+		#Spawning islam
+		if = {
+			limit = {
+				current_date >= 622.1.1
+				NOT = { exists = global_var:islam_spawned }
+				OR = {
+					title:c_medina = {
+						NOT = {
+							holder = {
+								#is_independent_ruler = yes
+								highest_held_title_tier > tier_county
+								domain_size = 1
+							}
+						}
+					}
+					title:c_mecca = {
+						NOT = {
+							holder = {
+								#is_independent_ruler = yes
+								highest_held_title_tier > tier_county
+								domain_size = 1
+							}
+						}
+					}
+				}
+			}
+			trigger_event = {
+				id = islam.0001
+				days = {30 50}
+			}
+			set_global_variable = {
+				name = islam_spawned
+				value = yes
+			}
+		}
+	}
+}

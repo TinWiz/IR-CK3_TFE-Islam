@@ -1,0 +1,11 @@
+﻿##################################################
+#General Character Modifiers
+caliph_auth = {
+	icon = piety_positive
+
+	monthly_piety = 0.2
+	same_faith_opinion = 0.5
+	levy_reinforcement_rate_same_faith = 0.01
+	tolerance_advantage_mod = 1
+	stacking = yes
+}

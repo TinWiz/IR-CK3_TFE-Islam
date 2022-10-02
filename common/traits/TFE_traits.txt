@@ -1,0 +1,18 @@
+﻿sahabi_trait = {
+	vassal_opinion = 50
+	monthly_prestige = 1.5
+	same_faith_opinion = 20
+	icon = sahabi.dds
+
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_sahabi_desc
+			}
+			desc = trait_sahabi_desc
+		}
+	}
+}

@@ -1,0 +1,5 @@
+﻿caliph_autho = {
+	alias = {
+		caliphate_authority
+	}
+}
