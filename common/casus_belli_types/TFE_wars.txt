@@ -851,10 +851,14 @@ holy_jihad_cb = {
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
 
 		scope:attacker.faith = {
-			change_fervor = 5
+			change_fervor = {
+				value = 5
+			}
 		}
 		scope:defender.faith = {
-			change_fervor = -5
+			change_fervor = {
+				value = -5
+			}
 		}
 
 		if = {
@@ -934,7 +938,9 @@ holy_jihad_cb = {
 		}
 
 		scope:attacker.faith = {
-			change_fervor = -2
+			change_fervor = {
+				value = -2
+			}
 		}
 	}
 
@@ -992,10 +998,14 @@ holy_jihad_cb = {
 		on_lost_aggression_war_discontent_loss = yes
 
 		scope:attacker.faith = {
-			change_fervor = -5
+			change_fervor = {
+				value = -5
+			}
 		}
 		scope:defender.faith = {
-			change_fervor = 5
+			change_fervor = {
+				value = 5
+			}
 		}
 	}
 
