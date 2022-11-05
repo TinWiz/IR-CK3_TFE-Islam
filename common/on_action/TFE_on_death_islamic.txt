@@ -1,4 +1,4 @@
-on_death = {
+﻿on_death = {
 	on_actions = { 
 		TFE_on_death_islamic 
 	}
