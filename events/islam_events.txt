@@ -11,7 +11,7 @@ islam.0001 = {
 		create_character = {
 			name = "Muhammed"
 			gender = male
-			location = title:b_al-madina
+			location = title:b_al-madina.title_province
 			age = 57
 			faith = faith:united_islam
 			culture = culture:bedouin
@@ -193,7 +193,7 @@ islam.0001 = {
 		create_character = {
 			name = "Ali"
 			gender = male
-			location = title:c_medina.capital_barony
+			location = title:c_medina.title_province
 			employer = scope:islam_prophet
 			age = 23
 			faith = faith:united_islam
@@ -213,7 +213,7 @@ islam.0001 = {
 		create_character = {
 			name = "KhalidIbnAlWalid"
 			gender = male
-			location = title:c_medina.capital_barony
+			location = title:c_medina.title_province
 			employer = scope:islam_prophet
 			age = 30
 			faith = faith:united_islam
@@ -753,7 +753,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = -150
-				years = 30
+				# years = 30  # Modifier 'hate_opinion' with monthly_change cannot have a specified duration
 				modifier = hate_opinion
 			}
 		}
@@ -761,7 +761,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = 200
-				years = 30
+				# years = 30  # Modifier 'grateful_opinion' with monthly_change cannot have a specified duration
 				modifier = grateful_opinion
 			}
 		}
@@ -773,7 +773,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = 100
-				years = 30
+				# years = 30  # Modifier 'grateful_opinion' with monthly_change cannot have a specified duration
 				modifier = grateful_opinion
 			}
 		}
@@ -781,7 +781,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = -200
-				years = 30
+				# years = 30  # Modifier 'hate_opinion' with monthly_change cannot have a specified duration
 				modifier = hate_opinion
 			}
 		}
