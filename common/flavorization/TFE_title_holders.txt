@@ -1,4 +1,4 @@
-arrasool = {
+﻿arrasool = {
 	type = character
 	gender = male
 	special = holder
