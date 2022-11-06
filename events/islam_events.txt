@@ -753,7 +753,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = -150
-				years = 30
+				# years = 30  # Modifier 'hate_opinion' with monthly_change cannot have a specified duration
 				modifier = hate_opinion
 			}
 		}
@@ -761,7 +761,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = 200
-				years = 30
+				# years = 30  # Modifier 'grateful_opinion' with monthly_change cannot have a specified duration
 				modifier = grateful_opinion
 			}
 		}
@@ -773,7 +773,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = 100
-				years = 30
+				# years = 30  # Modifier 'grateful_opinion' with monthly_change cannot have a specified duration
 				modifier = grateful_opinion
 			}
 		}
@@ -781,7 +781,7 @@ islam.0008 = {
 			add_opinion = {
 				target = root
 				opinion = -200
-				years = 30
+				# years = 30  # Modifier 'hate_opinion' with monthly_change cannot have a specified duration
 				modifier = hate_opinion
 			}
 		}
