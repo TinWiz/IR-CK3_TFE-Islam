@@ -325,31 +325,33 @@ islam.0002 = {
 		custom_tooltip = islam.0002.option.a.tooltip
 		remove_short_term_gold = var:tmp_zakah
 
+		#if = {
+		#	limit = {
+		#		has_government = caliphate_government
+		#	}
+		#	change_variable = {
+		#		name = zakah_balance
+		#		add = var:tmp_zakah
+		#	}
+		#}
+		#else_if = {
 		if = {
-			limit = {
-				has_government = caliphate_government
-			}
-			change_variable = {
-				name = zakah_balance
-				add = var:tmp_zakah
-			}
-		}
-		else_if = {
 			limit = {
 				is_independent_ruler = no
 				vassal_contract_has_flag = caliphate_zakah_enforced
 			}
 			liege = {
+				#if = {
+				#	limit = {
+				#		has_government = caliphate_government
+				#	}
+				#	change_variable = {
+				#		name = zakah_balance
+				#		add = PREV.var:tmp_zakah
+				#	}
+				#}
+				#else_if = {
 				if = {
-					limit = {
-						has_government = caliphate_government
-					}
-					change_variable = {
-						name = zakah_balance
-						add = PREV.var:tmp_zakah
-					}
-				}
-				else_if = {
 					limit = {
 						any_relation = {
 							type = preferred_caliph
@@ -492,7 +494,7 @@ islam.0003 = {
 		resolve_title_and_vassal_change = scope:change
 
 		set_character_faith = faith:united_islam
-		change_government = muslim_government
+		change_government = clan_government
 		every_realm_county = {
 			set_county_faith = faith:united_islam
 		}
@@ -536,7 +538,7 @@ islam.0004 = {
 		}
 
 		set_character_faith = scope:attacker.faith
-		change_government = muslim_government
+		change_government = clan_government
 		ai_chance = { base = 0.01 }
 
 		create_title_and_vassal_change = {
