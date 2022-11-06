@@ -343,7 +343,7 @@ islam.0002 = {
 			liege = {
 				#if = {
 				#	limit = {
-				#		has_government = f
+				#		has_government = caliphate_government
 				#	}
 				#	change_variable = {
 				#		name = zakah_balance
