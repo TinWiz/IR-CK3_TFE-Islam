@@ -5,5 +5,5 @@ tags={
 	"Events"
 	"Alternative History"
 }
-name="Rise of Islam"
+name="IR-CK3_TFE-Rise of Islam"
 supported_version="1.7.*"
