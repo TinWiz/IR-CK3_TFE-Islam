@@ -6,4 +6,4 @@ tags={
 	"Alternative History"
 }
 name="Rise of Islam"
-supported_version="1.7"
+supported_version="1.7.*"
