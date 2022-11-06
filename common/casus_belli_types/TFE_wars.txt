@@ -853,11 +853,13 @@ holy_jihad_cb = {
 		scope:attacker.faith = {
 			change_fervor = {
 				value = 5
+				desc = fervor_gain_religious_war
 			}
 		}
 		scope:defender.faith = {
 			change_fervor = {
 				value = -5
+				desc = fervor_loss_religious_war
 			}
 		}
 
@@ -940,6 +942,7 @@ holy_jihad_cb = {
 		scope:attacker.faith = {
 			change_fervor = {
 				value = -2
+				desc = fervor_loss_religious_war
 			}
 		}
 	}
@@ -1000,11 +1003,13 @@ holy_jihad_cb = {
 		scope:attacker.faith = {
 			change_fervor = {
 				value = -5
+				desc = fervor_loss_religious_war
 			}
 		}
 		scope:defender.faith = {
 			change_fervor = {
 				value = 5
+				desc = fervor_gain_religious_war
 			}
 		}
 	}
