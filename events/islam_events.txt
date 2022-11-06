@@ -351,22 +351,22 @@ islam.0002 = {
 				#	}
 				#}
 				#else_if = {
+				#	limit = {
+				#		any_relation = {
+				#			type = preferred_caliph
+				#			count >= 1
+				#		}
+				#	}
+				#	every_relation = {
+				#		type = preferred_caliph
+				#		change_variable = {
+				#			name = zakah_balance
+				#			add = scope:tmp_zakah_giver.var:tmp_zakah
+				#		}
+				#	}
+				#}
+				#else_if = {
 				if = {
-					limit = {
-						any_relation = {
-							type = preferred_caliph
-							count >= 1
-						}
-					}
-					every_relation = {
-						type = preferred_caliph
-						change_variable = {
-							name = zakah_balance
-							add = scope:tmp_zakah_giver.var:tmp_zakah
-						}
-					}
-				}
-				else_if = {
 					limit = {
 						faith = {
 							exists = religious_head
@@ -398,21 +398,21 @@ islam.0002 = {
 				}
 			}
 		}
-		else_if = {
-			limit = {
-				any_relation = {
-					type = preferred_caliph
-					count >= 1
-				}
-			}
-			every_relation = {
-				type = preferred_caliph
-				change_variable = {
-					name = zakah_balance
-					add = scope:tmp_zakah_giver.var:tmp_zakah
-				}
-			}
-		}
+		#else_if = {
+		#	limit = {
+		#		any_relation = {
+		#			type = preferred_caliph
+		#			count >= 1
+		#		}
+		#	}
+		#	every_relation = {
+		#		type = preferred_caliph
+		#		change_variable = {
+		#			name = zakah_balance
+		#			add = scope:tmp_zakah_giver.var:tmp_zakah
+		#		}
+		#	}
+		#}
 		else_if = {
 			limit = {
 				faith = {
