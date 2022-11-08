@@ -85,7 +85,9 @@
 					}
 					set_county_faith = faith:sunni
 				}
-				destroy_title = title:e_rashidun
+				scope:attacker = {
+					destroy_title = title:e_rashidun
+				}
 				scope:defender = {
 					set_character_faith = faith:sunni
 					create_title_and_vassal_change = {
