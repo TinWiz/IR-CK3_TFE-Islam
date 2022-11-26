@@ -9,3 +9,14 @@ caliph_auth = {
 	tolerance_advantage_mod = 1
 	stacking = yes
 }
+
+###I:R→CK3 converter#######
+islamic_expansion = {
+	icon = martial_positive
+
+	ai_boldness = 90
+	ai_war_chance = 10
+	ai_war_cooldown = -10
+	ai_zeal = 30 
+}
+###########################
