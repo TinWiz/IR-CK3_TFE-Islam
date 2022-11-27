@@ -276,7 +276,10 @@
 			doctrine = tenet_tax_nonbelievers
 
 
-			doctrine = muhammad_succession_sunni_doctrine
+			#doctrine = muhammad_succession_sunni_doctrine
+			#######I:R→CK3 converter#########################
+			doctrine = muhammad_succession_muhakkima_doctrine
+			#################################################
 			doctrine = unavailable_doctrine
 
 			doctrine = doctrine_temporal_head
