@@ -6,7 +6,7 @@
 
 	doctrine_background_icon = core_tenet_banner_islam.dds
 	#STANDARD DOCTRINES:
-	doctrine = doctrine_missionary_encouraged
+	#doctrine = doctrine_missionary_encouraged
 	#Abrahamic hostiliy group
 	doctrine = abrahamic_hostility_doctrine
 	#Polygamous marriages
@@ -278,11 +278,13 @@
 
 			#doctrine = muhammad_succession_sunni_doctrine
 			#######I:R→CK3 converter#########################
+			holy_site = siffa
 			doctrine = muhammad_succession_muhakkima_doctrine
+			doctrine = doctrine_no_head
 			#################################################
 			doctrine = unavailable_doctrine
 
-			doctrine = doctrine_temporal_head
+			#doctrine = doctrine_temporal_head
 		}
 
 		sunni = {
