@@ -2564,6 +2564,7 @@ doctrine_core_tenets = {
 						has_doctrine = unavailable_doctrine
 					}
 				}
+		}		
 		can_pick = {
 			custom_description = {
 				text = incompatible_tenet_other_syncretism_trigger
