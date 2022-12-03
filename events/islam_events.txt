@@ -44,6 +44,10 @@ islam.0001 = {
 			add_character_modifier = {
 				modifier = islamic_expansion
 			}
+			set_variable = {
+				name = cal_authority
+				value = 10
+			}
 			##########################
 			add_gold = 5000
 			add_prestige = 1000
