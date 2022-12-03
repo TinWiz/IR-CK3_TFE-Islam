@@ -225,7 +225,7 @@ clothes = {
 
 ## So that the Prophet Muhammad does not have a portrait ## 
 
-	no_portrait_clothes = {
+	no_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add				
@@ -241,7 +241,7 @@ clothes = {
 				exists = this
 				this = character:33922
 			}
-			modifier = {
+						modifier = {
 				add = 2000
 				has_character_flag = islam_prophet
 			}
@@ -1286,340 +1286,6 @@ clothes = {
 		}
 	}
 
-	roman_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = male_clothes_roman_nobility_01
-				range = { 0 1 }
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 40
-				scope:highest_held_title_tier < tier_county
-				trigger_if = {
-					limit = { exists = this }
-					NOR = {
-						AND = {
-							exists = primary_spouse
-							primary_spouse = {
-								highest_held_title_tier > tier_county
-							}
-						}
-						AND = {
-							has_government = republic_government
-							primary_title.tier > 1
-						}
-						AND = { is_ruler = yes has_government = theocracy_government }
-					}
-				}
-				culture = {
-					has_cultural_pillar = heritage_latin
-				}
-			}
-		}
-	}
-
-	roman_low_nobles = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = male_clothes_roman_nobility_02
-				range = { 0 1 }
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 70
-				exists = court_owner
-				court_owner = {
-					has_royal_court = yes
-					amenity_level = { type = court_fashion value >= 4 }
-				}
-				culture = {
-					has_cultural_pillar = heritage_latin
-				}
-			}
-			modifier = {
-				add = 70
-				trigger_if = {
-					limit = { exists = this }
-					OR = {
-						AND = {
-							OR = {
-								highest_held_title_tier = tier_county
-								highest_held_title_tier = tier_duchy
-							}
-							NOR = {
-								# has_dynasty = no
-								AND = {
-									has_government = republic_government
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes has_government = theocracy_government }
-							}
-							culture = {
-								has_cultural_pillar = heritage_latin
-							}
-						}
-						AND = {
-							exists = primary_spouse
-							OR = {
-								is_ruler = no
-								highest_held_title_tier = tier_barony
-							}
-							primary_spouse = {
-								OR = {
-									highest_held_title_tier = tier_county
-									highest_held_title_tier = tier_duchy
-								}
-								NOR = {
-									# has_dynasty = no
-									AND = {
-									has_government = republic_government
-										primary_title.tier > 1
-									}
-									AND = { is_ruler = yes has_government = theocracy_government }
-								}
-								culture = {
-									has_cultural_pillar = heritage_latin
-								}
-							}
-						}
-					}
-				}
-				trigger_else = {
-					OR = {
-						scope:highest_held_title_tier = tier_county
-						scope:highest_held_title_tier = tier_duchy
-					}
-					culture = {
-						has_cultural_pillar = heritage_latin
-					}
-				}
-			}
-		}
-	}
-
-	roman_high_nobles = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = male_clothes_roman_nobility_03
-				range = { 0 1 }
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}
-		
-		weight = {
-			base = 0
-			modifier = {
-				add = 300
-				exists = court_owner
-				court_owner = {
-					has_royal_court = yes
-					amenity_level = { type = court_fashion value = 5 }
-				}
-				culture = {
-					has_cultural_pillar = heritage_latin
-				}
-			}
-			modifier = {
-				add = 300
-				trigger_if = {
-					limit = { exists = this }
-					OR = {
-						AND = {
-							OR = {
-								highest_held_title_tier >= tier_kingdom
-								AND = {
-									has_government = republic_government
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes has_government = theocracy_government }
-							}
-							NOT = { AND = { is_ruler = yes has_government = mercenary_government  } } # Blocked for mercenaries
-							culture = {
-								has_cultural_pillar = heritage_latin
-							}
-						}
-						AND = {
-							exists = primary_spouse
-							OR = {
-								is_ruler = no
-								highest_held_title_tier = tier_barony
-							}
-							primary_spouse = {
-								OR = {
-									highest_held_title_tier >= tier_kingdom
-									AND = {
-									has_government = republic_government
-										primary_title.tier > 1
-									}
-									AND = { is_ruler = yes has_government = theocracy_government }
-								}
-								culture = {
-									has_cultural_pillar = heritage_latin
-								}
-							}
-						}
-					}
-				}
-				trigger_else = {
-					scope:highest_held_title_tier > tier_county
-					culture = {
-						has_cultural_pillar = heritage_latin
-					}
-				}
-			}
-		}
-	}
-	roman_toga = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = roman_senate_clothes
-				range = { 0 1 }
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}
-		
-		weight = {
-			base = 0
-			modifier = {
-				add = 800
-				OR = {
-					has_trait = low_senator
-					has_trait = senator
-					has_trait = high_senator
-				}
-			}
-		}
-	}
-
-	roman_war_clothing = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = male_clothes_roman_war
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}
-		outfit_tags = { military_outfit }
-		weight = {
-	        base = 0
-	        modifier = {
-				add = 600
-				AND = {
-					portrait_wear_armor_trigger = yes
-					culture = {
-						has_cultural_pillar = heritage_latin
-					}
-				}
-			}
-	    }
-	}
-	gladiator_war_clothes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = gladiator_war_clothes
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}
-		outfit_tags = { military_outfit }
-		weight = {
-	        base = 0
-	        modifier = {
-				add = 600
-				OR = {
-					has_trait = gladiator_trait
-					has_trait = former_gladiator_trait
-				}
-			}
-	    }
-	}
-	roman_high_war_clothing = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = male_clothes_roman_war_high
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}
-		outfit_tags = { military_outfit }
-		weight = {
-	        base = 0
-	        modifier = {
-				add = 700
-				AND = {
-					portrait_wear_armor_trigger = yes
-					culture = {
-						has_cultural_pillar = heritage_latin
-					}
-					highest_held_title_tier = tier_empire
-				}
-			}
-	    }
-	}
-
 ## INDIAN ##
 
 	indian_commoners = {
@@ -2074,7 +1740,7 @@ clothes = {
 				template = bust_clothes
 			}
 
-		}	
+		}
 		outfit_tags = { mena_commoner_clothes }
 		weight = {
 			base = 0
@@ -2142,6 +1808,7 @@ clothes = {
 			}
 
 		}	
+
 		weight = {
 			base = 0
 			modifier = {
@@ -2411,7 +2078,7 @@ clothes = {
 				template = bust_clothes
 			}
 
-		}	
+		}
 		outfit_tags = { mena_stealth }
 		weight = {
 			base = 0
@@ -2891,7 +2558,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 41 # Slightly higher
-				current_date >= 900
 				scope:highest_held_title_tier < tier_county
 				trigger_if = {
 					limit = { exists = this }
@@ -2934,7 +2600,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 41 # Slightly higher
-				current_date >= 900
 				scope:highest_held_title_tier < tier_county
 				trigger_if = {
 					limit = { exists = this }
@@ -2988,7 +2653,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -3053,7 +2717,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 50
-				current_date >= 900
 				exists = court_owner
 				court_owner = {
 					has_royal_court = yes
@@ -3063,7 +2726,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -3127,7 +2789,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 50
-				current_date >= 900
 				exists = court_owner
 				court_owner = {
 					has_royal_court = yes
@@ -3137,7 +2798,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -3201,7 +2861,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 50
-				current_date >= 900
 				exists = court_owner
 				court_owner = {
 					has_royal_court = yes
@@ -3211,7 +2870,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -3276,13 +2934,11 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 110 # slightly stronger than northern war
-				current_date >= 900
 				portrait_wear_armor_trigger = yes
 				portrait_fp2_iberian_muslim_clothing_trigger = yes
 			}
 			modifier = {
 				add = 21		# So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-				current_date >= 900
 				portrait_wear_armor_currently_in_army_trigger = yes
 			}
 		}
@@ -3309,12 +2965,10 @@ clothes = {
 			modifier = {
 				add = 110 # slightly stronger than northern war
 				portrait_wear_armor_trigger = yes
-				current_date >= 900
 				portrait_fp2_iberian_christian_clothing_trigger = yes
 			}
 			modifier = {
 				add = 21		# So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-				current_date >= 900
 				portrait_wear_armor_currently_in_army_trigger = yes
 			}
 		}
@@ -3669,7 +3323,7 @@ clothes = {
 				template = bust_clothes
 			}
 
-		}		
+		}
 		outfit_tags = { sub_saharan_high_nobility_clothes }		
 		weight = {
 			base = 0
@@ -4592,8 +4246,9 @@ clothes = {
 	#             add = 60
 	# 			is_ruler = yes
 	# 			primary_title = {
-	# 				exists = controlled_faith
-	# 				controlled_faith = faith:orthodox
+	#				any_controlled_faith = {
+	#					this = faith:orthodox
+	#				}
 	# 			}
 	#         }
 	#     }
@@ -4756,37 +4411,6 @@ clothes = {
 				this = character:easteregg_hugo_cortell
 			}
 		}
-	}
-	
-	alexanderarmor = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = clothes
-				template = male_clothes_greek_war
-				range = { 0 1 } # For the randomness to work correctly
-			}
-			morph = {
-				mode = modify_multiply
-				gene = gene_bs_bust
-				value = 0.8 
-				template = bust_clothes
-			}
-
-		}
-		outfit_tags = { military_outfit }
-		weight = {
-	        base = 0
-	        modifier = {
-				add = 900
-				AND = {
-					portrait_wear_armor_trigger = yes
-					any_equipped_character_artifact = {
-						has_variable = arms_of_alex
-					}
-				}
-			}
-	    }
 	}
 
 	# northern_commoners = {
