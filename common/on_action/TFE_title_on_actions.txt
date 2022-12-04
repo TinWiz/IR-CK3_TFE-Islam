@@ -21,6 +21,29 @@
 # flag:faction_demand
 # flag:swear_fealty
 
+# A title is destroyed
+# root = the holder before destruction
+# scope:landed_title = the title that is being destroyed
+# Does *not* provide scope:transfer_type
+on_title_destroyed = {
+	on_actions = { TFE_on_title_destroyed }
+}
+
+TFE_on_title_destroyed = {
+	effect = {
+		if = {
+			limit = { scope:landed_title.tier = tier_empire }
+			save_scope_as = current_title
+			every_religion_global = {
+				every_faith = {
+					limit = { religious_head_title = scope:current_title }
+					remove_religious_head_title = yes
+				}
+			}
+		}
+	}
+}
+
 # A title is transferred to a new character
 # root = the new holder
 # scope:title = the title that changes hands

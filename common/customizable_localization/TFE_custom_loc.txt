@@ -1,0 +1,25 @@
+﻿ArRasool = {
+	type = character
+	text = {
+		trigger = {
+			OR = {
+				this = character:33922
+				has_character_flag = islam_prophet	
+				trigger_if = {
+					limit = {
+						exists = global_var:prophet
+					}
+					THIS = global_var:prophet
+				}
+				trigger_else = {
+					always = no
+				}
+			}
+		}
+		localization_key = islam_arrasool
+	}
+	text = {
+		localization_key = islam_caliph
+		fallback = yes
+	}
+}
