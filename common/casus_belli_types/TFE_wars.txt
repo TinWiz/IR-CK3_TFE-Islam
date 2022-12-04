@@ -4,6 +4,7 @@
 	combine_into_one = yes
 
 	allowed_for_character = {
+		has_faith = faith:united_islam
 		has_government = clan_government
 		exists = var:cal_authority
 	}
@@ -11,11 +12,12 @@
 	allowed_for_character_display_regardless = {
 		AND = {
 			exists = var:cal_authority
+			exists = scope:defender.var:cal_authority
 			custom_description = {
 				text = claim_authority_requirement
 				subject = scope:attacker
 				scope:attacker.var:cal_authority.compare_value >= scope:defender.var:cal_authority.compare_value
-    			}
+    		}
     	}
     }
 
