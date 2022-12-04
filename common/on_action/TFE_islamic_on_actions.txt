@@ -18,6 +18,7 @@ on_yearly_caliphate = {
 	effect = {
 		every_ruler = {
 			limit = {
+				has_religion = religion:islam_religion ###I:R→CK3###
 				exists = var:cal_authority
 			}
 		
