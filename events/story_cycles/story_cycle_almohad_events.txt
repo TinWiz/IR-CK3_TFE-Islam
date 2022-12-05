@@ -17,6 +17,9 @@ almohad.0001 = {
 	##########
 	
 	immediate = {
+		faith:masmudi = {
+			remove_doctrine = unavailable_doctrine
+		}
 		find_title_for_almohad_spawn_effect = yes
 	}
 }
