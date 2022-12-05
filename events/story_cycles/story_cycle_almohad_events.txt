@@ -15,11 +15,12 @@ almohad.0001 = {
 		}
 	}
 	##########
-	
 	immediate = {
+		###I:R→CK3
 		faith:masmudi = {
 			remove_doctrine = unavailable_doctrine
 		}
+		##########
 		find_title_for_almohad_spawn_effect = yes
 	}
 }
