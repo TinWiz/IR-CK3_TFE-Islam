@@ -1029,6 +1029,33 @@ pool_repopulate_local_flavor = {
 		}
 		else_if = {
 			limit = {
+				OR = {
+					culture = culture:butr
+					culture = culture:zaghawa
+				}
+				faith:khawariji = {
+					NOT = {
+						has_doctrine = unavailable_doctrine
+					}
+				}
+			}
+			random_list = {
+				10 = {
+					set_character_faith = faith:ibadi
+				}
+				10 = {
+					set_character_faith = faith:sufri
+				}
+			}
+			faith:ibadi = {
+				remove_doctrine = unavailable_doctrine
+			}
+			faith:sufri = {
+				remove_doctrine = unavailable_doctrine
+			}
+		}
+		else_if = {
+			limit = {		  			
 				culture = culture:kurdish
 			}
 			set_character_faith = faith:yazidi
