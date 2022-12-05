@@ -3759,7 +3759,303 @@ fp2_yearly.8002 = {
 ###################################
 # Inspired by an idea by Isabella welch
 ##########################################
+fp2_yearly.8003 = {
+	type = character_event
+	title = fp2_yearly.8003.t
+	desc = fp2_yearly.8003.desc 
+	theme = family 
+	left_portrait = {
+		character = scope:enthusiastic_child 
+		animation = admiration 
+	}
+	right_portrait = {
+		character = scope:flying_polymath
+		animation = beg 
+	}
 
+	cooldown = { years = 125 } # Should be replaced with a playthrough cooldown (but global vars are too heavy atm)
+
+	trigger = {
+		has_fp2_dlc_trigger = yes
+		###I:R→CK3###
+		NOT = {
+			faith:sunni = {
+				has_doctrine = unavailable_doctrine
+			}
+		}
+
+		is_ai = no
+		any_child = {
+			is_available_child = yes 
+  			age >= 6
+  			age <= 13
+			NOT = { has_trait = blind }
+		}
+	}
+
+	weight_multiplier = { #too weight it so that the two historical characters are more likely to trigger! 
+		base = 0.4
+		modifier = {
+			OR = {
+				AND = {
+					current_year > 866
+					current_year < 890
+				}
+				AND = {
+					current_year > 1175
+					current_year < 1200
+				}
+			}
+			add = 1.6
+		}
+	}
+
+	immediate = {
+
+		random_child = {
+			limit = {
+				is_available_child = yes
+  				age >= 6
+  				age <= 13
+				NOT = {	has_trait = blind}		
+			}
+			save_scope_as = enthusiastic_child 
+		}
+
+		root.capital_province = { save_scope_as = flight_capital }
+
+		if = { #This looks to see if one of the two historical flight enthusiasts will be used in the event
+			limit = { #their rough period of activity
+				AND = {
+					current_year > 866
+					current_year < 890
+				}
+				NOT = { exists = global_var:ibnfirnas_created } #makes sure that he wasn't already spawned by the event elsewhere (mostly relevant in multiplayer, since this is a player-only event)
+			}
+			create_character = { 
+				age = { 56 80 } #their rough age during the period of their flourishing 
+				location = root.capital_province
+				name = "Abbas ibn Firnas" #Armen Firman
+				gender = male
+				template = scholar_character
+				trait = intellect_good_1
+				trait = poet
+				trait = education_learning_4
+				random_traits_list = { #his personality
+					count = 3
+					ambitious = {}
+					brave = {}
+					diligent = {}
+					impatient = {}
+				}
+				culture = culture:baranis
+				dynasty = none 
+				faith = faith:sunni ###I:R→CK3
+				save_scope_as = flying_polymath 	
+			}
+			set_global_variable = ibnfirnas_created 	
+		}
+
+		else_if = { #This looks to see if one of the two historical flight enthusiasts will be used in the event
+			limit = { #their rough period of activity
+				AND = {
+					current_year > 1175
+					current_year < 1200
+				}
+				NOT = { exists = global_var:averroes_created } #makes sure that he wasn't already spawned by the event elsewhere
+				exists = culture:andalusian 
+				exists = faith:sunni ###I:R→CK3 
+			}
+			create_character = { 
+				age = { 49 74 } #their rough age during the period of their flourishing 
+				location = root.capital_province
+				name = "Ahmad ibn Rushd" #Averroes
+				gender = male
+				template = scholar_character
+				trait = intellect_good_3 
+				trait = physician_2
+				trait = scholar 
+				trait = education_learning_4
+				random_traits_list = { #his personality
+					count = 3
+					calm = {}
+					cynical = {}
+					diligent = {}
+					just = {}
+				}
+				culture = culture:andalusian
+				dynasty = none 
+				faith = faith:sunni #I:R→CK3
+				save_scope_as = flying_polymath 	
+			}
+			set_global_variable = averroes_created 	
+		}
+
+		else = { #or it defaults to a random one 
+			create_character = {
+				age = { 50 80 }
+				location = root.capital_province
+				template = scholar_character
+				trait = intellect_good_2
+				trait = education_learning_3
+				trait = architect 
+				random_traits_list = {
+					count = 3
+					brave = {}
+					calm = {}
+					diligent = {}
+					cynical = {}
+					humble = {}
+					patient = {}
+				}
+				culture = root.capital_province.culture
+				faith = root.faith
+				save_scope_as = flying_polymath
+			}
+		}
+	}
+
+	option = { #Very well, I shall allow it
+		name = fp2_yearly.8003.a
+		flavor = fp2_yearly.8003_child_reaction
+
+
+   		scope:enthusiastic_child = {
+   			add_opinion = {
+				target = root
+				opinion = 30
+				modifier = pleased_opinion
+			}
+   		}
+
+   		random_list = {
+   			60 = {
+   				send_interface_toast = {
+					title = polymath_flight_attempt_toast.success
+					left_icon = scope:enthusiastic_child 
+					right_icon = scope:flying_polymath
+   					add_prestige = medium_prestige_gain 
+   					add_courtier = scope:flying_polymath
+   					random = {
+   						chance = 20
+   						scope:enthusiastic_child = { add_trait_force_tooltip = brave }
+   					}	
+   				}
+   			}
+   			40 = {
+   				send_interface_toast = {
+					title = polymath_flight_attempt_toast.failure
+					left_icon = scope:enthusiastic_child 
+					right_icon = scope:flying_polymath
+   					scope:flying_polymath = {
+   						death = { death_reason = death_flight_attempt }
+   					}
+   					random_list = {
+						50 = {
+							scope:enthusiastic_child = { add_trait_force_tooltip = depressed_1 }	
+						}
+						50 = {
+							scope:enthusiastic_child = { add_trait_force_tooltip = sadistic}
+						}
+					}
+				}
+			}	
+   		}
+
+   		stress_impact = { #Compassionate people worry about bystanders getting hurt 
+   			compassionate = minor_stress_impact_gain
+   			craven = minor_stress_impact_gain
+   		}
+	}
+
+
+
+	option = { #I too, want to fly!
+		name = fp2_yearly.8003.b
+
+   		duel = { #time to fly! 
+			skill = learning 
+			value = high_skill_rating
+
+			15 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+				}
+				send_interface_toast = {
+					title = flight_attempt_toast.success
+					left_icon = root
+
+					add_character_modifier = {
+						modifier = saw_the_world_from_above_modifier
+						years = 30
+					}
+					scope:enthusiastic_child = {
+   						add_opinion = {
+							target = root
+							opinion = 30
+							modifier = pleased_opinion
+						}
+   					}
+   					random = {
+   						chance = 50
+   						root = { give_nickname = nick_the_flying }  
+   					} 									
+				}	
+			}
+			10 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+				}
+				send_interface_toast = {
+					title = flight_attempt_toast.failure
+					left_icon = root
+			
+					increase_wounds_effect = { REASON = flight_attempt }
+
+					scope:enthusiastic_child = {
+   						add_opinion = {
+							target = root
+							opinion = -20
+							modifier = scared_opinion
+						}
+   					}
+   					random = {
+   						chance = 50
+   						root = { give_nickname = nick_the_flightless }  
+   					}  										
+				}
+			}
+		}
+
+		stress_impact = { #cravens, contents and the bedridden don't wanna take the risk 
+   			craven = medium_stress_impact_gain
+   			content = minor_stress_impact_gain
+   			ill = minor_stress_impact_gain 
+   			infirm = medium_stress_impact_gain
+   			brave = minor_stress_impact_loss 
+   		}		
+	}	
+
+	option = { #No, this is madness! 
+		name = fp2_yearly.8003.c
+
+   		scope:enthusiastic_child = {
+   			add_opinion = {
+				target = root
+				opinion = -20
+				modifier = disappointed_opinion
+			}
+   		}
+
+   		stress_impact = {  
+   			ambitious = minor_stress_impact_gain
+   			brave = minor_stress_impact_gain
+   			curious = minor_stress_impact_gain
+   		}
+	}			
+}
 
 ###################################
 # Translation Schools
