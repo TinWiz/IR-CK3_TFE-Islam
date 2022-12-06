@@ -1,4 +1,6 @@
-﻿rashidun_elective = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ rashidun_elective = {
 	candidates = {
 		add = {
 			type = holder_close_or_extended_family
