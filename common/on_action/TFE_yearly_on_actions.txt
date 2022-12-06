@@ -1,4 +1,6 @@
-﻿# Called every Jan 1st
+# IRToCK3: Last updated for CK3 1.7.2
+
+# Called every Jan 1st
 # Root does not exist
 yearly_global_pulse = {
 	on_actions = { TFE_yearly_global_pulse }
