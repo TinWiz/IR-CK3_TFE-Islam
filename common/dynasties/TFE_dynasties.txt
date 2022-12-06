@@ -1,4 +1,6 @@
-﻿658742 = {
+# IRToCK3: Last updated for CK3 1.7.2
+
+ 658742 = {
 	name = "dynn_hashmid"
 	culture = "bedouin"
 }
