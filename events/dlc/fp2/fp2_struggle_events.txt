@@ -1,4 +1,5 @@
-﻿namespace = fp2_struggle
+namespace = fp2_struggle
+# IRToCK3: Last updated for CK3 1.7.2
 
 ### SYSTEM EVENTS #################################################################
 ## # Parameter Events
