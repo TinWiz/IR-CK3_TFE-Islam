@@ -1,4 +1,6 @@
-﻿ridda_faction = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ ridda_faction = {
 	casus_belli = ridda_faction_war
 	
 	short_effect_desc = ridda_faction_short_effect_desc
