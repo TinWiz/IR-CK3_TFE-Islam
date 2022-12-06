@@ -1,4 +1,6 @@
-﻿title_succession_laws = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ title_succession_laws = {
 	rashidun_elective_succession_law = {
 		can_have = {
 			has_title = title:e_rashidun
