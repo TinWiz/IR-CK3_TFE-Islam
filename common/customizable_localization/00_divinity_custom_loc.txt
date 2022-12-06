@@ -1,3 +1,4 @@
+# IRToCK3: Last updated for CK3 1.7.2
 ﻿
 ToleranceValue = {
 	type = character
