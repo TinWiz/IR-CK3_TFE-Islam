@@ -1,4 +1,6 @@
-﻿on_death = {
+# IRToCK3: Last updated for CK3 1.7.2
+
+on_death = {
 	on_actions = { 
 		TFE_on_death_islamic 
 	}

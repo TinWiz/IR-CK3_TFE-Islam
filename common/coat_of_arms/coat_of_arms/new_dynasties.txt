@@ -1,3 +1,5 @@
+# IRToCK3: Last updated for CK3 1.7.2
+
 597 = { ##Umayyad White Flag
 	pattern = "pattern_solid.dds"
 		color1 = "white"

@@ -1,4 +1,6 @@
-﻿task_religious_relations = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ task_religious_relations = {
 	default_task = yes
 	position = councillor_court_chaplain
 

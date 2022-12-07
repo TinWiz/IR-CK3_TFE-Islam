@@ -1,4 +1,6 @@
-﻿is_character_allowed_to_be_player = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ is_character_allowed_to_be_player = {
 	trigger_if = {
 		limit = {
 			scope:will_override_government = no

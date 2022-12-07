@@ -1,4 +1,6 @@
-﻿ArRasool = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ ArRasool = {
 	type = character
 	text = {
 		trigger = {

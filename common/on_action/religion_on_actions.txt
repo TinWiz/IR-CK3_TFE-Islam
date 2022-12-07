@@ -1,4 +1,6 @@
-﻿### TFE EDIT: Added additional triggers for the heresy outbreak pulse
+# IRToCK3: Last updated for CK3 1.7.2
+
+### TFE EDIT: Added additional triggers for the heresy outbreak pulse
 
 #On actions related to religion
 

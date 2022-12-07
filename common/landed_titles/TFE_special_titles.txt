@@ -1,4 +1,6 @@
-﻿@always_primary_score = 1000
+# IRToCK3: Last updated for CK3 1.7.2
+
+@always_primary_score = 1000
 # TFE special titles
 
 e_rashidun = {

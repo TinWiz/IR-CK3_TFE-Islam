@@ -1,4 +1,6 @@
-﻿#################################### THE DUKE AND THE BODENSEE ######################################
+# IRToCK3: Last updated for CK3 1.7.2
+
+#################################### THE DUKE AND THE BODENSEE ######################################
 #																									#
 # The Duke of Swabia sat by the shores of the Bodensee with his fishing rod for many months without #
 # reward. He had even put a lovely slice of dove pie on the hook, but his bucket remained empty.	#
@@ -1029,6 +1031,33 @@ pool_repopulate_local_flavor = {
 		}
 		else_if = {
 			limit = {
+				OR = {
+					culture = culture:butr
+					culture = culture:zaghawa
+				}
+				faith:khawariji = {
+					NOT = {
+						has_doctrine = unavailable_doctrine
+					}
+				}
+			}
+			random_list = {
+				10 = {
+					set_character_faith = faith:ibadi
+				}
+				10 = {
+					set_character_faith = faith:sufri
+				}
+			}
+			faith:ibadi = {
+				remove_doctrine = unavailable_doctrine
+			}
+			faith:sufri = {
+				remove_doctrine = unavailable_doctrine
+			}
+		}
+		else_if = {
+			limit = {		  			
 				culture = culture:kurdish
 			}
 			set_character_faith = faith:yazidi

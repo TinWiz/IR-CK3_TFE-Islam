@@ -1,4 +1,5 @@
-﻿claim_caliphate_cb = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+ claim_caliphate_cb = {
 	group = conquest
 
 	combine_into_one = yes

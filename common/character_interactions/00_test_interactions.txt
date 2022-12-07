@@ -1,4 +1,6 @@
-﻿debug_make_hate_me_interaction = {
+ # IRToCK3: Last updated for CK3 1.7.2
+
+ debug_make_hate_me_interaction = {
 	category = interaction_debug_main
 	common_interaction = yes
 	icon = debug_bad

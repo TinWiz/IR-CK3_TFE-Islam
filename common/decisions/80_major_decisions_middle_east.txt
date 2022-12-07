@@ -1,4 +1,6 @@
-﻿### TFE EDIT: Changed a few faiths to take our rise of Islam into account
+# IRToCK3: Last updated for CK3 1.7.2
+
+### TFE EDIT: Changed a few faiths to take our rise of Islam into account
 
 #Create the Empire of Outremer
 create_outremer_empire_decision = {

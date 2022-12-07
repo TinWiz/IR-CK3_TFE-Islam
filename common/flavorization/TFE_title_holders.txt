@@ -1,4 +1,6 @@
-﻿arrasool = {
+﻿# IRToCK3: Last updated for CK3 1.7.2
+
+ arrasool = {
 	type = character
 	gender = male
 	special = holder

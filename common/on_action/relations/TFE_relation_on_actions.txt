@@ -1,4 +1,6 @@
-﻿#On actions relating to relationships between characters
+# IRToCK3: Last updated for CK3 1.7.2
+
+#On actions relating to relationships between characters
 
 ######################
 # Friendship on actions
