@@ -159,7 +159,7 @@ on_10_years_rashidun = {
 		if = {
 			limit = {
 				AND = {
-					#dummy_male.current_year < 800
+					dummy_male.current_year < 800
 					title:e_rashidun = {
 						is_title_created = yes
 					}
