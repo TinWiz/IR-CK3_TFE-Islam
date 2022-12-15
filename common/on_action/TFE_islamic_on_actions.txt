@@ -1,6 +1,4 @@
-# IRToCK3: Last updated for CK3 1.7.2
-
-on_game_start = {
+﻿on_game_start = {
 	on_actions = {
 		on_caliphate_start
 	}
