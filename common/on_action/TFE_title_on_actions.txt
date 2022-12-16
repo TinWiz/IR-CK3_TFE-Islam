@@ -1,6 +1,4 @@
-# IRToCK3: Last updated for CK3 1.7.2
-
-#On actions about titles
+﻿#On actions about titles
 
 # All on-actions in this file provide scope:transfer_type unless otherwise noted
 # scope:transfer_type has the following permutations:
@@ -76,12 +74,17 @@ TFE_on_title_gain = {
 					is_independent_ruler = yes
 					OR = {
 						has_faith = faith:arabic_pagan
+						has_culture = culture:bedouin
+						has_culture = culture:adnanite
+						has_culture = culture:nabatean
+						has_culture = culture:qahtanite
 						culture = {
 							any_parent_culture_or_above = {
 								OR = {
 									THIS = culture:bedouin
 									THIS = culture:adnanite
 									THIS = culture:nabatean
+									THIS = culture:qahtanite
 								}
 							}
 						}
@@ -103,6 +106,14 @@ TFE_on_title_gain = {
 					set_de_jure_liege_title = title:e_rashidun
 				}
 			}
+			if = {
+				limit = {
+					exists = title:k_arabia
+				}	
+				title:k_arabia = {
+					set_de_jure_liege_title = title:e_rashidun
+				}
+			}	
 		}
 		if = {
 			limit = {

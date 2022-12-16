@@ -1,6 +1,4 @@
-# IRToCK3: Last updated for CK3 1.7.2
-
-on_game_start = {
+﻿on_game_start = {
 	on_actions = {
 		on_caliphate_start
 	}
@@ -159,6 +157,38 @@ on_10_years_rashidun = {
 			}
 		}
 		if = {
+			limit = {
+				AND = {
+					dummy_male.current_year < 800
+					title:e_rashidun = {
+						is_title_created = yes
+					}
+					title:k_arabia = {
+						is_title_created = yes
+						holder = {
+							NOR = {
+								any_liege_or_above = {
+									has_title = title:e_rashidun
+								}
+								has_religion = religion:islam_religion
+							}
+						}
+					}	
+					title:e_rashidun.holder = {
+						is_ai = yes
+						is_at_war = no
+					}
+				}
+			}
+			title:e_rashidun.holder = {	
+				start_war = {
+					cb = holy_jihad_cb 
+					target = title:k_arabia.holder
+					target_title = title:k_arabia
+				}
+			}	
+		}
+		else_if = {
 			limit = {
 				AND = {
 					dummy_male.current_year < 800
