@@ -1,4 +1,4 @@
-# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.7.2
 
 ### This faith doesn't exist yet/anymore, so it can't be accessed in the list and shouldn't be able to pop up via heresy outbreaks and whatnot
 unavailable = {
