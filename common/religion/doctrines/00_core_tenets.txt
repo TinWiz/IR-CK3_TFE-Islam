@@ -1,4 +1,4 @@
-# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.7.2
 
 ### Due to how Tenets work we need to include the entire file, unfortunately
 doctrine_core_tenets = {
