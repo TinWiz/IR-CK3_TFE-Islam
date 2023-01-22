@@ -4829,6 +4829,9 @@ fp2_yearly.8003 = {
 				faith = faith:muwalladi
 				save_scope_as = flying_polymath 	
 			}
+			faith:muwalladi = {
+				remove_doctrine = unavailable_doctrine
+			}
 			set_global_variable = ibnfirnas_created 	
 		}
 
