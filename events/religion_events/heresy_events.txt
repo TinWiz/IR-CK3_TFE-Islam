@@ -1,5 +1,5 @@
 ﻿namespace = heresy
-# IRToCK3: Last updated for CK3 1.7.2
+# IRToCK3: Last updated for CK3 1.8.1
 
 ##################################
 # Heresy Outbreak (Non-Eastern) #
@@ -381,6 +381,18 @@ heresy.0001 = {
 						factor = 0
 						has_doctrine = unavailable_doctrine
 					}
+					modifier = {
+						factor = 0
+						has_game_rule = strict_regional_heresy
+						this = faith:mozarabic_church
+						scope:heretic_capital = {
+							title_province = {
+								NAND = {
+									geographical_region = world_africa_north_east
+									geographical_region = world_europe_west_iberia
+								}
+							}
+						}
 				}
 
 				save_scope_as = heretic_faith
