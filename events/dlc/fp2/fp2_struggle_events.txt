@@ -2296,6 +2296,9 @@ fp2_struggle.1002 = {
 			 	faith = faith:muwalladi
 			 	save_scope_as = albucasis_physician #this is needed to get the loc right 	
 		 	}
+			faith:muwalladi = {
+				remove_doctrine = unavailable_doctrine
+			}
 		 	set_global_variable = albucasis_created 
 		 	scope:albucasis_physician = {
 			save_scope_as = great_physician #this is to create one easy, generic scope for use in the rest of the event
@@ -2341,6 +2344,9 @@ fp2_struggle.1002 = {
 			 	faith = faith:muwalladi
 			 	save_scope_as = avenzoar_physician 	
 		 	}
+			faith:muwalladi = {
+				remove_doctrine = unavailable_doctrine
+			}
 		 	set_global_variable = avenzoar_created
 		 	scope:avenzoar_physician = {
 			 	save_scope_as = great_physician
@@ -2387,6 +2393,9 @@ fp2_struggle.1002 = {
 			 	faith = faith:muwalladi
 			 	save_scope_as = tufail_physician 	
 		 	}
+			faith:muwalladi = {
+				remove_doctrine = unavailable_doctrine
+			}
 		 	set_global_variable = tufail_created
 		 	scope:tufail_physician = {
 			 	save_scope_as = great_physician
@@ -2423,6 +2432,9 @@ fp2_struggle.1002 = {
 			 	faith = faith:muwalladi
 			 	save_scope_as = great_physician 
 		 	}
+			faith:muwalladi = {
+				remove_doctrine = unavailable_doctrine
+			}
 	 	}
 
 	 
