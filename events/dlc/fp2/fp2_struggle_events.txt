@@ -1,5 +1,5 @@
 namespace = fp2_struggle
-# IRToCK3: Last updated for CK3 1.7.2
+# IRToCK3: Last updated for CK3 1.8.1
 
 ### SYSTEM EVENTS #################################################################
 ## # Parameter Events
@@ -651,15 +651,19 @@ fp2_struggle.0900 = { # Hostility
 	}
 
 	after = {
-		# End Struggle
-		struggle:iberian_struggle = {
-			end_struggle = struggle_iberia_ending_hostility_decision
-		}
-		# Notify
+		# Notify & End Struggle
+		save_scope_as = fp2_loc_struggle_ender # Loc used to use root, this fixes it
+														   
+   
+		  
 		every_player = {
-			limit = {
-				NOT = { this = root }
-			}
+			limit = { fp2_does_this_player_care_about_the_fate_of_iberia = yes } # Needs to be checked before the struggle ends due to race condition issues
+			add_to_list = player_to_notify # Making a list so stuff is tiggered after the struggle ends, to make extra sure I don't break anything.
+		}
+
+		struggle:iberian_struggle = { end_struggle = struggle_iberia_ending_hostility_decision }
+		every_in_list = { # Then we *actually* notify palyers, making sure the struggle has already ended
+			list = player_to_notify
 			trigger_event = fp2_struggle.0910
 		}
 	}
@@ -853,14 +857,19 @@ fp2_struggle.0901 = { # Compromise
 		stress_impact = {
 			arrogant = medium_stress_impact_gain
 		}
-		# End Struggle
-		struggle:iberian_struggle = {
-			end_struggle = struggle_iberia_ending_compromise_decision
-		}
+
+		# Notify & End Struggle
+		save_scope_as = fp2_loc_struggle_ender # Loc used to use root, this fixes it
+															
+   
 		every_player = {
-			limit = {
-				NOT = { this = root }
-			}
+			limit = { fp2_does_this_player_care_about_the_fate_of_iberia = yes } # Needs to be checked before the struggle ends due to race condition issues
+			add_to_list = player_to_notify # Making a list so stuff is tiggered after the struggle ends, to make extra sure I don't break anything.
+		}
+
+		struggle:iberian_struggle = { end_struggle = struggle_iberia_ending_compromise_decision }
+		every_in_list = { # Then we *actually* notify palyers, making sure the struggle has already ended
+			list = player_to_notify
 			trigger_event = fp2_struggle.0911
 		}
 	}
@@ -1002,19 +1011,22 @@ fp2_struggle.0902 = { # Conciliation
 	}
 
 	after = {
-		# End Struggle
-		struggle:iberian_struggle = {
-			end_struggle = struggle_iberia_ending_conciliation_decision
-		}
+
 		stress_impact = {
 			arrogant = medium_stress_impact_gain
 			zealous = medium_stress_impact_gain
 		}
-		# Notify
+
+		# Notify & End Struggle
+		save_scope_as = fp2_loc_struggle_ender # Loc used to use root, this fixes it
 		every_player = {
-			limit = {
-				NOT = { this = root }
-			}
+			limit = { fp2_does_this_player_care_about_the_fate_of_iberia = yes } # Needs to be checked before the struggle ends due to race condition issues
+			add_to_list = player_to_notify # Making a list so stuff is tiggered after the struggle ends, to make extra sure I don't break anything.
+		}
+
+		struggle:iberian_struggle = { end_struggle = struggle_iberia_ending_conciliation_decision }
+		every_in_list = { # Then we *actually* notify palyers, making sure the struggle has already ended
+			list = player_to_notify
 			trigger_event = fp2_struggle.0912
 		}
 	}
@@ -1132,6 +1144,10 @@ fp2_struggle.1000 = {
 				}
 				exists = cp:councillor_marshal 
 			}
+		}
+		OR = {
+			capital_province = { geographical_region = world_europe_west_iberia }
+			culture = { has_cultural_pillar = heritage_iberian }
 		}
 	}
 
@@ -2277,7 +2293,7 @@ fp2_struggle.1002 = {
 			 	}
 			 	culture = culture:andalusian
 			 	dynasty = none 
-			 	faith = faith:sunni ###I:R→CK3
+			 	faith = faith:muwalladi
 			 	save_scope_as = albucasis_physician #this is needed to get the loc right 	
 		 	}
 		 	set_global_variable = albucasis_created 
@@ -2322,7 +2338,7 @@ fp2_struggle.1002 = {
 				}
 			 	culture = culture:andalusian
 			 	dynasty = none
-			 	faith = faith:sunni ###I:R→CK3
+			 	faith = faith:muwalladi
 			 	save_scope_as = avenzoar_physician 	
 		 	}
 		 	set_global_variable = avenzoar_created
@@ -2368,7 +2384,7 @@ fp2_struggle.1002 = {
 			 	}
 			 	culture = culture:andalusian
 			 	dynasty = none 
-			 	faith = faith:sunni ###I:R→CK3
+			 	faith = faith:muwalladi
 			 	save_scope_as = tufail_physician 	
 		 	}
 		 	set_global_variable = tufail_created
@@ -2404,7 +2420,7 @@ fp2_struggle.1002 = {
 				 	witch = {}
 			 	}
 			 	culture = scope:xenophilic_culture 
-			 	faith = faith:sunni
+			 	faith = faith:muwalladi
 			 	save_scope_as = great_physician 
 		 	}
 	 	}
@@ -2501,7 +2517,7 @@ fp2_struggle.1002 = {
 		 	progress_towards_rival_effect = {
 				REASON = rival_harbored_polymath
 			 	CHARACTER = root
-			 	OPINION = no 
+			 	OPINION = 0
 		 	}
 	 	}
 
@@ -2749,7 +2765,7 @@ fp2_struggle.1002 = {
 			 	progress_towards_friend_effect = {
 					REASON = friend_returned_refugee
 					CHARACTER = root
-					OPINION = no 
+					OPINION = 0
 			 	}
 		 	}	
 	 	}
@@ -4614,7 +4630,7 @@ fp2_struggle.1050 = {
 				progress_towards_lover_effect = {
 					CHARACTER = root
 					REASON = lover_comforted_nightmare
-					OPINION = no 
+					OPINION = 0
 				}
 			}	
 		}
@@ -5684,7 +5700,7 @@ fp2_struggle.2001 = {
 					progress_towards_friend_effect = {
 						REASON = friend_informed_ally_of_betrayal
 						CHARACTER = root
-						OPINION = no
+						OPINION = 0
 					}
 
 					add_opinion = {
@@ -5721,7 +5737,7 @@ fp2_struggle.2001 = {
 				progress_towards_friend_effect = {
 					REASON = friend_informed_ally_of_betrayal
 					CHARACTER = root
-					OPINION = no
+					OPINION = 0
 				}
 			}
 		}
@@ -7547,7 +7563,7 @@ fp2_struggle.2006 = {
 						progress_towards_rival_effect = {
 							REASON = rival_fraternising_enemy
 							CHARACTER = root
-							OPINION = no
+							OPINION = 0
 						}
 						add_opinion = {
 							target = root
@@ -7620,7 +7636,7 @@ fp2_struggle.2006 = {
 					progress_towards_friend_effect = {
 						REASON = friend_guided_right_path
 						CHARACTER = scope:fp2_2006_vassal_in_crisis
-						OPINION = no
+						OPINION = 0
 					}
 					add_opinion = {
 						target = root
@@ -7660,7 +7676,7 @@ fp2_struggle.2006 = {
 			progress_towards_friend_effect = {
 				REASON = friend_religious_tolerance
 				CHARACTER = root
-				OPINION = no
+				OPINION = 0
 			}
 			add_opinion = {
 				target = root
@@ -7772,7 +7788,7 @@ fp2_struggle.2006 = {
 									progress_towards_rival_effect = { # "HE MUST BE ON TO ME!"
 										REASON = rival_faith_tested
 										CHARACTER = scope:2006_scoped_chaplain
-										OPINION = no
+										OPINION = 0
 									}
 									add_opinion = {
 										target = scope:2006_scoped_chaplain
@@ -7863,7 +7879,7 @@ fp2_struggle.2006 = {
 									progress_towards_rival_effect = { # "HE MUST BE ON TO ME!"
 										REASON = rival_faith_tested
 										CHARACTER = scope:2006_scoped_chaplain
-										OPINION = no
+										OPINION = 0
 									}
 									add_opinion = {
 										target = scope:2006_scoped_chaplain
@@ -7962,7 +7978,7 @@ fp2_struggle.2006 = {
 								progress_towards_friend_effect = {
 									REASON = friend_guided_right_path
 									CHARACTER = scope:2006_scoped_chaplain
-									OPINION = no
+									OPINION = 0
 								}
 								add_opinion = {
 									target = scope:2006_scoped_chaplain
@@ -8865,7 +8881,7 @@ fp2_struggle.2008 = {
 			progress_towards_rival_effect = {
 				REASON = rival_defrauded_realm
 				CHARACTER = root
-				OPINION = no
+				OPINION = 0
 			}
 		}
 
@@ -8974,6 +8990,7 @@ fp2_struggle.2009 = {
 	right_portrait = {
 		character = scope:fp2_2009_garduna_young_thief
 		animation = fear
+		hide_info = yes
 		outfit_tags = {
 			mena_stealth_hood
 			religious_zoroastrian_high_clothes
@@ -9468,7 +9485,7 @@ fp2_struggle.2009 = {
 				progress_towards_friend_effect = { # very nice
 					REASON = friend_gave_severed_head
 					CHARACTER = root
-					OPINION = no
+					OPINION = 0
 				}
 			}
 			else = {
@@ -9637,7 +9654,15 @@ fp2_struggle.2011 = { # You become the KING OF THIEVES
 				title = fp2_struggle.2011.a
 				right_icon = ROOT
 			  
-				give_nickname = nick_the_Thief_Slayer
+				if = { # Standard practice from EP1 onwards dictates that we ought not to overwrite positive nicknames (?)
+					limit = {
+						OR = {
+							has_any_nickname = no
+							has_bad_nickname = yes
+						}
+					}
+					give_nickname = nick_the_Thief_Slayer
+				}
 				add_prestige = major_prestige_gain
 				add_gold = minor_gold_value
 			}
@@ -9748,12 +9773,13 @@ fp2_struggle.2013 = {
 		has_fp2_dlc_trigger = yes
 		any_prisoner = {
 			save_temporary_scope_as = temp_prisoner_with_secret # Prevents prisoner from revealing their own secret, which would be cool, but would require new loc
-			any_unspent_known_secret = { 
+			any_known_secret = {
 				secret_owner = {
 					NOT = { this = scope:temp_prisoner_with_secret }
 					is_independent_ruler = yes 
 					fp2_character_any_involvement_iberian_struggle_trigger = yes
 				} 
+				NOT = { is_known_by = root }
 			}
 		}
 	}
@@ -9762,21 +9788,23 @@ fp2_struggle.2013 = {
 		random_prisoner = {
 			limit = {
 				save_temporary_scope_as = temp_prisoner_with_secret
-				any_unspent_known_secret = { 
+				any_known_secret = {
 					secret_owner = {
 						NOT = { this = scope:temp_prisoner_with_secret }
 						is_independent_ruler = yes 
 						fp2_character_any_involvement_iberian_struggle_trigger = yes
 					} 
+					NOT = { is_known_by = root }
 				} 
 			}
 			save_scope_as = fp2_2013_prisoner_with_a_secret
-			every_unspent_known_secret = {
+			every_known_secret = {
 				limit = { 
 					secret_owner = { 
 						NOT = { this = scope:fp2_2013_prisoner_with_a_secret }
 						is_independent_ruler = yes
 					} 
+					NOT = { is_known_by = root }
 				}
 				secret_owner = { save_scope_as = fp2_2013_secret_owner }
 				save_scope_as = fp2_2013_secret_to_tell
@@ -10113,7 +10141,7 @@ fp2_struggle.2014 = {
 				progress_towards_friend_effect = {
 					REASON = friend_kept_my_secret
 					CHARACTER = root
-					OPINION = no
+					OPINION = 0
 				}
 				if = {
 					limit = { 
@@ -10209,7 +10237,7 @@ fp2_struggle.2014 = {
 					progress_towards_friend_effect = {
 						REASON = friend_protected_secrets
 						CHARACTER = root
-						OPINION = no
+						OPINION = 0
 					}
 				}
 			}
@@ -10226,7 +10254,7 @@ fp2_struggle.2014 = {
 				first_valid = {
 					triggered_desc = {
 						trigger = { NOT = { scope:fp2_2014_ai_secret_outcome = flag:release } }
-						desc = child_personality.102.confirm_arrogant
+						desc = south_asia.0039.a
 					}
 					desc = fp2_struggle.2014.b
 				}
@@ -10486,9 +10514,14 @@ fp2_struggle.2015 = {
 					trigger_event = { # Usually I would use a notification but...
 						id = fp2_struggle.2016 # The narrative impact of a full letter is greater, it makes sure the betrayal stings. This vassal wrote just to rub salt in your eyes.
 						days = { 3 4 }
-					} 
+					}
 				}
 			}
+		}
+		
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+			gallant = minor_stress_impact_gain
 		}
 	}
 
@@ -10558,8 +10591,8 @@ fp2_struggle.2015 = {
 					stress_impact = {
 						forgiving = minor_stress_impact_gain
 						humble = minor_stress_impact_gain
-						just = medium_stress_impact_gain
-						compassionate = medium_stress_impact_gain
+						just = minor_stress_impact_gain
+						compassionate = minor_stress_impact_gain
 						trusting = minor_stress_impact_gain
 						gallant = minor_stress_impact_gain
 					}
@@ -10588,7 +10621,7 @@ fp2_struggle.2016 = {
 		progress_towards_rival_effect = {
 			CHARACTER = scope:fp2_struggle_2015_murder_requester_vassal
 			REASON = rival_tricked_murder
-			OPINION = yes
+			OPINION = default_rival_opinion
 		}
 		add_opinion = {
 			target = scope:fp2_struggle_2015_murder_requester_vassal
@@ -10924,7 +10957,17 @@ fp2_struggle.2021 = { # Main event
 		trigger = { NOT = { age < 14 } }
 
 		custom_tooltip = fp2_struggle.2021.d.b
-		show_as_tooltip = { give_nickname = nick_the_Thief_Slayer }
+		show_as_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						has_any_nickname = no
+						has_bad_nickname = yes
+					}
+				}
+				give_nickname = nick_the_Thief_Slayer
+			}
+		}	
 		ROOT = { save_scope_as = fp2_2021_root_in_duel }
 		scope:fp2_2009_garduna_guild_master = {
 			set_variable = {
@@ -11005,7 +11048,15 @@ fp2_struggle.2022 = { # You become the KING OF THIEVES again, well, late is bett
 				title = fp2_struggle.2021.d.a
 				right_icon = ROOT
 			  
-				give_nickname = nick_the_Thief_Slayer
+				if = {
+					limit = {
+						OR = {
+							has_any_nickname = no
+							has_bad_nickname = yes
+						}
+					}
+					give_nickname = nick_the_Thief_Slayer
+				}
 				add_prestige = medium_prestige_gain # Penalty for finishing the job late
 				add_gold = minor_gold_value
 			}
