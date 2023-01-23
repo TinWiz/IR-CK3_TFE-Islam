@@ -44,7 +44,7 @@ heresy.0001 = {
 			}
 			#If no Dukes exist, accept a Count.
 			alternative_limit = {
-				is_valid_heresiarch = yes		
+				is_valid_heresiarch = yes
 			}
 
 			weight = {
@@ -228,7 +228,7 @@ heresy.0001 = {
 
 					# Preferred heresies get another bonus.
 					modifier = {
-						factor = 5			
+						factor = 5
 						is_preferred_heresy = {
 							ORIGIN_FAITH = root
 							HERETICAL_FAITH = this
@@ -270,7 +270,7 @@ heresy.0001 = {
 						}
 					}
 					# Disabled Faiths
-					modifier = {				
+					modifier = {
 						factor = 0
 						OR = {
 							this = faith:insular_celtic
@@ -368,7 +368,7 @@ heresy.0001 = {
 						factor = regional_heresy_factor
 						this = faith:priscillianism
 						scope:heretic_capital = {
-							title_province = {						
+							title_province = {
 								OR = {
 									geographical_region = world_africa_north_east
 									geographical_region = world_europe_west_iberia
@@ -481,7 +481,7 @@ heresy.0001 = {
 					}
 				}
 			}
-		}	
+		}
 	}
 }
 
@@ -808,7 +808,7 @@ heresy.0005 = {
 					}
 				}
 			}
-		}	
+		}
 	}
 }
 
@@ -844,7 +844,7 @@ heresy.0010 = {
 	left_portrait = scope:heretic_ruler
 	major = yes
 	theme = faith
-	
+
 	trigger = {
 		scope:origin_faith = {
 			var:heresy_power > 0
@@ -860,7 +860,7 @@ heresy.0010 = {
 
 	immediate = {
 		play_music_cue = "mx_cue_sacredrite"
-		
+
 		if = {
 			limit = {
 				scope:heretic_faith = {
@@ -895,7 +895,7 @@ heresy.0010 = {
 				}
 			}
 		}
-		
+
 		scope:heretic_ruler = {
 			#Convert this character to the new heresy.
 			set_character_faith_with_conversion = scope:heretic_faith
@@ -958,7 +958,7 @@ heresy.0010 = {
 						squared_distance = {
 							target = scope:heretic_capital
 							value < squared_distance_medium
-						}	
+						}
 					}
 				}
 			}
@@ -967,7 +967,7 @@ heresy.0010 = {
 				type = event_heresy_outbreak_neutral
 				title = heresy.0010.notification.title
 				custom_tooltip = heresy.0010.notification
-				
+
 				left_icon = scope:heretic_ruler
 				goto = scope:heretic_ruler
 			}
@@ -1046,7 +1046,7 @@ heresy.0010 = {
 		#Convert to the new heresy.
 		set_character_faith_with_conversion = scope:heretic_faith
 		add_piety = major_piety_loss
-		
+
 		add_internal_flag = dangerous
 	}
 }
@@ -1069,7 +1069,7 @@ scripted_trigger no_heretical_hof_faith_0011_trigger = { #Head of Faith shouldn'
 }
 heresy.0011 = {
 	hidden = yes
-	
+
 	trigger = {
 		scope:origin_faith = {
 			var:heresy_power > 0
@@ -1122,7 +1122,7 @@ heresy.0011 = {
 						squared_distance = {
 							target = scope:heretic_capital
 							value > squared_distance_large
-						}	
+						}
 					}
 				}
 
@@ -1222,7 +1222,7 @@ heresy.0011 = {
 								squared_distance = {
 									target = scope:convert_capital
 									value < squared_distance_medium
-								}	
+								}
 							}
 						}
 					}
@@ -1241,7 +1241,7 @@ heresy.0011 = {
 					limit = {
 						scope:my_faith = scope:heretic_faith
 					}
-					send_interface_message = {				
+					send_interface_message = {
 						type = event_heresy_outbreak_good
 						title = heresy.0011.notification.same_faith
 						left_icon = scope:convert_ruler

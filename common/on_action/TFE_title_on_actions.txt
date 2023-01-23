@@ -109,11 +109,11 @@ TFE_on_title_gain = {
 			if = {
 				limit = {
 					exists = title:k_arabia
-				}	
+				}
 				title:k_arabia = {
 					set_de_jure_liege_title = title:e_rashidun
 				}
-			}	
+			}
 		}
 		if = {
 			limit = {

@@ -2,7 +2,7 @@
 
  ridda_faction = {
 	casus_belli = ridda_faction_war
-	
+
 	short_effect_desc = ridda_faction_short_effect_desc
 
 	sort_order = 1
@@ -96,7 +96,7 @@
 			has_trait = sahabi_trait
 		}
 	}
-	
+
 	demand = {
 		save_scope_as = faction
 
@@ -136,7 +136,7 @@
 		# Block characters from joining if they have a high opinion of the target
 		modifier = {
 			add = -1000
-			save_temporary_opinion_value_as = { name = target_opinion target = scope:target }		
+			save_temporary_opinion_value_as = { name = target_opinion target = scope:target }
 			scope:target_opinion >= 80
 		}
 
@@ -269,7 +269,7 @@
 						exists = joined_faction
 					}
 					NOT = { joined_faction = scope:faction }
-				}	
+				}
 			}
 		}
 
@@ -418,7 +418,7 @@
 			    			}
 						}
 		    			add = 0.25
-		    		}		
+		    		}
 		    	}
 	    	}
 	    }
@@ -578,7 +578,7 @@
 
 first_fitna_faction = {
 	casus_belli = first_fitna_faction_war
-	
+
 	short_effect_desc = first_fitna_faction_short_effect_desc
 
 	sort_order = 1
@@ -671,11 +671,11 @@ first_fitna_faction = {
 				diplomacy >= 12
 				stewardship >= 12
 			}
-			
+
 			has_trait = sahabi_trait
 		}
 	}
-	
+
 	demand = {
 		save_scope_as = faction
 
@@ -721,7 +721,7 @@ first_fitna_faction = {
 					diplomacy >= 12
 					stewardship >= 12
 				}
-				
+
 				has_trait = sahabi_trait
 			}
 		}
@@ -729,7 +729,7 @@ first_fitna_faction = {
 		# Block characters from joining if they have a high opinion of the target
 		modifier = {
 			add = -1000
-			save_temporary_opinion_value_as = { name = target_opinion target = scope:target }		
+			save_temporary_opinion_value_as = { name = target_opinion target = scope:target }
 			scope:target_opinion >= 80
 		}
 
@@ -851,7 +851,7 @@ first_fitna_faction = {
 						exists = joined_faction
 					}
 					NOT = { joined_faction = scope:faction }
-				}	
+				}
 			}
 		}
 
@@ -870,7 +870,7 @@ first_fitna_faction = {
 					diplomacy >= 12
 					stewardship >= 12
 				}
-				
+
 				has_trait = sahabi_trait
 			}
 		}
@@ -1003,7 +1003,7 @@ first_fitna_faction = {
 			    			}
 						}
 		    			add = 0.25
-		    		}		
+		    		}
 		    	}
 	    	}
 	    }
@@ -1077,7 +1077,7 @@ first_fitna_faction = {
 				diplomacy >= 12
 				stewardship >= 12
 			}
-			
+
 			has_trait = sahabi_trait
 		}
 	}
@@ -1155,7 +1155,7 @@ first_fitna_faction = {
 				stewardship >= 12
 				learning >= 12
 			}
-			
+
 			has_trait = sahabi_trait
 		}
 		NOT = { exists = global_var:first_fitna }
@@ -1167,7 +1167,7 @@ first_fitna_faction = {
 
 nation_fracturing_faction = {
 	casus_belli = nation_fracturing_faction_war
-	
+
 	short_effect_desc = nation_fracturing_faction_short_effect_desc
 
 	sort_order = 0
@@ -1201,7 +1201,7 @@ nation_fracturing_faction = {
 			FACTION_TARGET = scope:faction.faction_target
 		}
 	}
-	
+
 	demand = {
 		save_scope_as = faction
 
@@ -1239,7 +1239,7 @@ nation_fracturing_faction = {
 		common_can_character_create_trigger = {
 			FACTION_TARGET = scope:target
 		}
-		
+
 		liege = {
 			is_independent_ruler = yes
 			NOR = {
@@ -1247,7 +1247,7 @@ nation_fracturing_faction = {
 				#I:R→CK3 no imperial_government
 			}
 		}
-		
+
 		# Only powerfull vassals can create such factions and they need to have either another culture or faith
 		OR = {
 			is_powerful_vassal = yes
@@ -1358,8 +1358,8 @@ nation_fracturing_faction = {
 	is_county_valid = {
 		holder = scope:faction.faction_target
 		OR = {
-			NOT = { culture = scope:faction.faction_target.culture } 
-			NOT = { faith = scope:faction.faction_target.faith } 
+			NOT = { culture = scope:faction.faction_target.culture }
+			NOT = { faith = scope:faction.faction_target.faith }
 		}
 	}
 

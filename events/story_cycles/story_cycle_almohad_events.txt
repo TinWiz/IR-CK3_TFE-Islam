@@ -98,7 +98,7 @@ almohad.0004 = {
 	type = empty
 	hidden = yes
 
-	trigger = {	
+	trigger = {
 		exists = global_var:almohads_waiting_for_player_responses
 		exists = global_var:almohads_player_responses_received
 	}
@@ -141,7 +141,7 @@ almohad.1001 = {
 		character = root
 		animation = worry
 	}
-	
+
 	immediate = {
 		faith:masmudi = {
 			save_scope_as = masmudi
@@ -175,11 +175,11 @@ almohad.1001 = {
 							exists = cp:councillor_court_chaplain
 							cp:councillor_court_chaplain = {
 								is_performing_council_task = task_conversion
-							}	
+							}
 						}
 						cp:councillor_court_chaplain = { start_default_task = yes }
 					}
-				}					
+				}
 			}
 		}
 	}

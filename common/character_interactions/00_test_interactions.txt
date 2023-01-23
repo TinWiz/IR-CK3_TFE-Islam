@@ -8,14 +8,14 @@
 	auto_accept = yes
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
-	
+
 	is_shown = {
 		debug_only = yes
 		NOT = {
 			scope:recipient = scope:actor
 		}
 	}
-	
+
 	on_accept = {
 		scope:recipient = {
 			add_opinion = {
@@ -36,14 +36,14 @@ debug_make_love_me_interaction = {
 	auto_accept = yes
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
-	
+
 	is_shown = {
 		debug_only = yes
 		NOT = {
 			scope:recipient = scope:actor
 		}
 	}
-	
+
 	on_accept = {
 		scope:recipient = {
 			add_opinion = {
@@ -58,11 +58,11 @@ debug_make_love_me_interaction = {
 
 debug_make_like_me_interaction = {
 	category = interaction_debug_main
-	
+
 	auto_accept = yes
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
-	
+
 	is_shown = {
 		debug_only = yes
 		always = no
@@ -81,11 +81,11 @@ debug_make_like_me_interaction = {
 
 debug_make_dislike_me_interaction = {
 	category = interaction_debug_main
-	
+
 	auto_accept = yes
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
-	
+
 	is_shown = {
 		debug_only = yes
 		always = no
@@ -105,7 +105,7 @@ debug_make_dislike_me_interaction = {
 
 make_lover_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -119,7 +119,7 @@ make_lover_interaction = {
 		}
 		always = no
 	}
-	
+
 	auto_accept = yes
 
 	on_accept = {
@@ -131,7 +131,7 @@ make_lover_interaction = {
 
 make_soulmate_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -158,7 +158,7 @@ make_soulmate_interaction = {
 
 make_rival_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -190,7 +190,7 @@ make_rival_interaction = {
 
 make_nemesis_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -221,7 +221,7 @@ make_nemesis_interaction = {
 
 remove_rival_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -244,7 +244,7 @@ remove_rival_interaction = {
 
 make_friend_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -274,7 +274,7 @@ make_friend_interaction = {
 
 learn_secrets_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	common_interaction = yes
@@ -283,7 +283,7 @@ learn_secrets_interaction = {
 
 	is_shown = {
 		debug_only = yes
-		
+
 		scope:recipient = {
 			any_secret = {
 				NOT = {
@@ -299,14 +299,14 @@ learn_secrets_interaction = {
 			}
 		}
 	}
-	
+
 	auto_accept = yes
 }
 
 
 expose_known_secrets_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -323,13 +323,13 @@ expose_known_secrets_interaction = {
 			}
 		}
 	}
-	
+
 	auto_accept = yes
 }
 
 take_title_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	target_type = title
@@ -342,9 +342,9 @@ take_title_interaction = {
 			scope:recipient = scope:actor
 		}
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		create_title_and_vassal_change = {
 			type = conquest
@@ -365,7 +365,7 @@ take_title_interaction = {
 take_title_and_vassals_interaction = {
 	category = interaction_debug_main
 	common_interaction = yes
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	target_type = title
@@ -379,9 +379,9 @@ take_title_and_vassals_interaction = {
 			scope:recipient = scope:actor
 		}
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		create_title_and_vassal_change = {
 			type = conquest
@@ -399,7 +399,7 @@ take_title_and_vassals_interaction = {
 
 take_domain_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -411,9 +411,9 @@ take_domain_interaction = {
 		}
 		always = no
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		create_title_and_vassal_change = {
 			type = conquest
@@ -433,11 +433,11 @@ take_domain_interaction = {
 
 take_realm_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	common_interaction = yes
-	
+
 	icon = grant_titles_interaction
 
 	is_shown = {
@@ -447,9 +447,9 @@ take_realm_interaction = {
 			scope:recipient = scope:actor
 		}
 	}
-	
+
 	auto_accept = yes
-	
+
 	send_option = {
 		flag = domain
 		localization = take_domain_interaction
@@ -458,7 +458,7 @@ take_realm_interaction = {
 		flag = realm
 		localization = take_realm_interaction
 	}
-	
+
 	on_accept = {
 		if = {
 			limit = { scope:realm = yes }
@@ -498,7 +498,7 @@ take_realm_interaction = {
 
 start_pregnancy_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = pregnant
@@ -525,13 +525,13 @@ start_pregnancy_interaction = {
 	on_accept = {
 		scope:actor = { trigger_event = debug.0002 }
 	}
-	
+
 	auto_accept = yes
 }
 
 get_claim_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	icon = vassal_claim_liege_title_interaction
@@ -540,9 +540,9 @@ get_claim_interaction = {
 		debug_only = yes
 		scope:recipient = { is_landed = yes }
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		scope:actor = {
 			add_pressed_claim = scope:recipient.primary_title
@@ -552,7 +552,7 @@ get_claim_interaction = {
 
 get_claim_on_all_creatable_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -560,9 +560,9 @@ get_claim_on_all_creatable_interaction = {
 		debug_only = yes
 		scope:recipient = scope:actor
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		scope:actor = {
 			every_alert_creatable_title =
@@ -577,7 +577,7 @@ get_claim_on_all_creatable_interaction = {
 
 test_dynasty_prestige_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -586,9 +586,9 @@ test_dynasty_prestige_interaction = {
 		scope:recipient = scope:actor
 		always = no
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		scope:actor.dynasty = {
 			add_dynasty_prestige_level = 1
@@ -599,7 +599,7 @@ test_dynasty_prestige_interaction = {
 
 debug_start_era_of_crusades_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	interface_priority = -100
@@ -612,9 +612,9 @@ debug_start_era_of_crusades_interaction = {
 			}
 		}
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		faith:catholic = {
 			change_fervor = {
@@ -660,7 +660,7 @@ debug_start_era_of_crusades_interaction = {
 
 debug_launch_natural_crusade_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	interface_priority = -100
@@ -676,9 +676,9 @@ debug_launch_natural_crusade_interaction = {
 			religion = { exists = var:variable_ghw_unlocked } #Activated by event for every religion.
 		}
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		faith:catholic = {
 			change_fervor = {
@@ -692,7 +692,7 @@ debug_launch_natural_crusade_interaction = {
 
 debug_start_era_of_jihads_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	interface_priority = -100
@@ -705,9 +705,9 @@ debug_start_era_of_jihads_interaction = {
 			}
 		}
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		faith:sunni = {
 			change_fervor = {
@@ -753,7 +753,7 @@ debug_start_era_of_jihads_interaction = {
 
 debug_start_great_holy_war_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 	interface_priority = -100
@@ -762,9 +762,9 @@ debug_start_great_holy_war_interaction = {
 		debug_only = yes
 		NOT = { scope:recipient.faith = scope:actor.faith }
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		scope:actor.faith = {
 			start_great_holy_war = {
@@ -778,7 +778,7 @@ debug_start_great_holy_war_interaction = {
 
 debug_change_council_task_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -789,15 +789,15 @@ debug_change_council_task_interaction = {
 			}
 		}
 	}
-	
+
 	is_shown = {
 		debug_only = yes
 		exists = scope:actor.cp:councillor_spymaster.councillor_task_target
 		always = no
 	}
-	
+
 	auto_accept = yes
-	
+
 	on_accept = {
 		scope:actor = {
 			cp:councillor_spymaster = {
@@ -812,7 +812,7 @@ debug_change_council_task_interaction = {
 
 debug_trigger_localization_testing_interaction = {
 	category = interaction_debug_main
-	
+
 	use_diplomatic_range = no
 	ignores_pending_interaction_block = yes
 
@@ -828,10 +828,10 @@ debug_trigger_localization_testing_interaction = {
 		scope:actor.faith.religion = faith:catholic.religion
 		scope:actor.capital_county.kingdom = title:k_england
 		scope:recipient.liege = scope:actor
-		
-		
+
+
 	}
-	
+
 	is_shown = {
 		always = no # This interaction has no purpose beyond debugging trigger localization. As such, it can be disabled unless somebody is actively working on that.
 		debug_only = yes
@@ -847,7 +847,7 @@ debug_trigger_localization_testing_interaction = {
 # DEBUG INTERACTION!
 create_betrothal_interaction = {
 	category = interaction_debug_main
-	
+
 	is_shown = {
 		debug_only = yes
 		scope:actor = {
@@ -865,13 +865,13 @@ create_betrothal_interaction = {
 		}
 	}
 
-	
+
 	on_accept = {
 		scope:actor = {
 			create_betrothal = scope:recipient
 		}
 	}
-	
+
 	ai_accept = {
 		base = 70
 		modifier = {

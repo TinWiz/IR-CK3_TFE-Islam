@@ -13,7 +13,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -29,7 +29,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -45,7 +45,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -61,7 +61,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -80,7 +80,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -96,7 +96,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -112,7 +112,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}
@@ -128,7 +128,7 @@
 						diplomacy >= 15
 						stewardship >= 15
 					}
-					
+
 					has_trait = sahabi_trait
 				}
 			}

@@ -13,13 +13,13 @@
 	#picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
 	#major = yes
 	#desc = convert_to_feudalism_decision_desc
-	#	
+	#
 	#ai_check_interval = 36
-	#	
+	#
 	#is_shown = {
 		#has_government = tribal_government
 	#}
-	#	
+	#
 	#is_valid = {
 		#has_realm_law = tribal_authority_3
 		#custom_description = {
@@ -29,21 +29,21 @@
 		#}
 		#prestige_level = 5
 	#}
-	#	
+	#
 	#cost = {
 		#prestige = 150
 	#}
-	#	
+	#
 	#effect = {
 		#change_government = feudal_government
 		#trigger_event = major_decisions.0001
 		#add_realm_law_skip_effects = crown_authority_0
 	#}
-	#	
+	#
 	#ai_potential = {
 		##always = yes
 	#}
-	#	
+	#
 	#ai_will_do = {
 		#base = 100
 		#modifier = { #Go for the more lenient decision if this is the case
@@ -244,7 +244,7 @@ convert_to_tribalism_decision = {
 	}
 
 	is_valid = {
-		
+
 	}
 
 
@@ -582,7 +582,7 @@ strengthen_bloodline_decision = {
 	ai_will_do = {
 		base = 100
 	}
-}	
+}
 
 ##################################################
 # Dynasty of Many Crowns
@@ -993,7 +993,7 @@ tribal_challenge_ruler_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = { #Strict restrictions on the ai so they don't go challenge people all the time
 		highest_held_title_tier > tier_barony
 		has_trait = ambitious
@@ -1070,7 +1070,7 @@ accept_cannibalism_decision = {
 	is_valid = {
 		custom_description = {
 			text = accept_cannibalism_decision_custom
-			
+
 			AND = { #Your court chaplain should also be a cannibal!
 				exists = root.cp:councillor_court_chaplain
 				root.cp:councillor_court_chaplain = {
@@ -1119,7 +1119,7 @@ accept_cannibalism_decision = {
 			trigger_event = major_decisions.1002
 		}
 	}
-	
+
 	ai_potential = {
 		always = no
 	}
@@ -1356,7 +1356,7 @@ found_university_decision = {
 	cost = {
 		prestige = medium_prestige_value
 	}
-	
+
 	ai_potential = {
 		always = no
 	}
@@ -1427,7 +1427,7 @@ lunatic_building_decision = {
 		gold = massive_gold_value
 		prestige = medium_prestige_gain
 	}
-	
+
 	ai_potential = {
 		always = no
 	}
@@ -1439,7 +1439,7 @@ lunatic_building_decision = {
 
 ##################################################
 # Found Witch Coven
-# by 
+# by
 ##################################################
 
 found_witch_coven_decision = {
@@ -1629,7 +1629,7 @@ repay_loan_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		always = no
 	}
@@ -1685,8 +1685,8 @@ escape_from_prison_decision = {
 		}
 		# If this is an AI, reset the AI escape cooldown.
 		if = {
-			limit = { 
-				is_ai = yes 
+			limit = {
+				is_ai = yes
 				exists = imprisoner
 			}
 			imprisoner = {
@@ -1697,7 +1697,7 @@ escape_from_prison_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		# Pre-filter AI & stop them spamming their gaoler.
 		exists = imprisoner
@@ -1714,7 +1714,7 @@ escape_from_prison_decision = {
 
 	ai_will_do = {
 		base = 0
-		
+
 		# Weight up for those who are brave, haughty, or enjoy their creature comforts.
 		modifier = {
 			add = 50

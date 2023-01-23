@@ -3,7 +3,7 @@
 		on_caliphate_start
 	}
 }
-on_caliphate_start = {			   
+on_caliphate_start = {
 	on_actions = {
 		delay = { years = 1 }
 		on_yearly_caliphate
@@ -21,7 +21,7 @@ on_yearly_caliphate = {
 				has_religion = religion:islam_religion ###I:R→CK3###
 				exists = var:cal_authority
 			}
-		
+
 			save_scope_as = caliph
 
 			every_realm_province = {
@@ -173,20 +173,20 @@ on_10_years_rashidun = {
 								has_religion = religion:islam_religion
 							}
 						}
-					}	
+					}
 					title:e_rashidun.holder = {
 						is_ai = yes
 						is_at_war = no
 					}
 				}
 			}
-			title:e_rashidun.holder = {	
+			title:e_rashidun.holder = {
 				start_war = {
-					cb = holy_jihad_cb 
+					cb = holy_jihad_cb
 					target = title:k_arabia.holder
 					target_title = title:k_arabia
 				}
-			}	
+			}
 		}
 		else_if = {
 			limit = {
@@ -231,7 +231,7 @@ on_10_years_rashidun = {
 					}
 					title:e_rashidun.holder = {
 						start_war = {
-							cb = holy_jihad_cb 
+							cb = holy_jihad_cb
 							target = PREV.holder
 							target_title = PREV
 						}

@@ -66,7 +66,7 @@ create_outremer_empire_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -118,7 +118,7 @@ restore_sunni_caliphate_decision = {
 			id = middle_east_decisions.0003
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -232,7 +232,7 @@ embrace_outremer_culture_decision = {
 		set_culture = scope:outremer_equivalent
 		add_character_flag = converted_culture_this_lifetime
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -261,7 +261,7 @@ create_israel_kingdom_decision = {
 		is_ruler = yes
 		is_landed = yes
 		faith.religion = faith:rabbinism.religion
-		NOT = {  
+		NOT = {
 			exists = title:k_israel.holder
 		}
 		NOT = {  #Can only do it once.
@@ -310,7 +310,7 @@ create_israel_kingdom_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -374,7 +374,7 @@ jewish_restore_high_priesthood_decision = {
 			id = middle_east_decisions.0007
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -440,7 +440,7 @@ zoroastrian_restore_high_priesthood_decision = {
 			id = middle_east_decisions.0009
 		}
 	}
-	
+
 	ai_potential = {
 	#	always = yes #TO_DO_FLAVIO: Reactivate once the trigger has been implemented.
 	}
@@ -499,7 +499,7 @@ become_saoshyant_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -566,7 +566,7 @@ form_rum_sultanate_decision = {
 		completely_controls = title:d_armeniac
 		completely_controls = title:d_chaldia
 	}
-	
+
 	is_valid_showing_failures_only = {
 		is_capable_adult = yes
 		is_imprisoned = no
@@ -592,7 +592,7 @@ form_rum_sultanate_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		always = yes
 	}
@@ -644,7 +644,7 @@ create_armenian_empire_decision = {
 	}
 
 	cost = {
-		prestige = 2000	
+		prestige = 2000
 		piety = 1000
 	}
 
@@ -675,7 +675,7 @@ create_armenian_empire_decision = {
 			}
 		}
 	}
-	
+
 	ai_potential = {
 		always = no
 	}

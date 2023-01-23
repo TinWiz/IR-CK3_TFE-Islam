@@ -6,7 +6,7 @@
 e_rashidun = {
 	capital = c_medina
 	ruler_uses_title_name = yes
-	
+
 	ai_primary_priority = {
 		add = @always_primary_score
 	}

@@ -84,7 +84,7 @@ islam.0001 = {
 					}
 				}
 			}
-			
+
 			create_title_and_vassal_change = {
 				type = conquest
 				save_scope_as = title_change
@@ -118,7 +118,7 @@ islam.0001 = {
 			title:c_medina = {
 				set_county_faith = faith:united_islam
 			}
-			
+
 
 			add_unpressed_claim = title:c_mecca
 
@@ -137,9 +137,9 @@ islam.0001 = {
 				uses_supply = no
 			}
 			change_government = clan_government #I:R→CK3 no caliphate government
-			
+
 			start_war = {
-				cb = county_conquest_cb 
+				cb = county_conquest_cb
 				target = title:c_mecca.holder
 				target_title = title:c_mecca
 			}
@@ -324,7 +324,7 @@ islam.0001 = {
 			}
 			##########################
 		}
-		
+
 	}
 }
 
@@ -633,7 +633,7 @@ islam.0005 = {
 
 	option = {
 		name = islam.0005.option.a
-		
+
 	}
 }
 
@@ -721,7 +721,7 @@ islam.0007 = {
 				}
 			}
 			add_character_flag = husayn
-				
+
 			resolve_title_and_vassal_change = scope:change
 		}
 	}
