@@ -59,7 +59,7 @@ headgear = {
 
 ## So that the Prophet Muhammad does not have a portrait ## 
 
-	no_portrait_head = {
+	no_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add				
@@ -2987,7 +2987,7 @@ headgear = {
 				exists = this
 				portrait_can_use_noble_headgear_trigger = no
 				portrait_fp2_iberian_muslim_clothing_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 			modifier = {
 				add = 41 # Slightly higher
@@ -3006,7 +3006,7 @@ headgear = {
 					}
 				}
 				portrait_fp2_iberian_muslim_clothing_spouse_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 		}
 	}
@@ -3038,7 +3038,7 @@ headgear = {
 				}
 				scope:highest_held_title_tier = tier_county
 				portrait_fp2_iberian_muslim_clothing_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 		}
 	}
@@ -3056,7 +3056,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 				trigger_if = {
 					limit = { exists = this }
 					portrait_can_use_noble_headgear_trigger = yes
@@ -3149,7 +3149,7 @@ headgear = {
 					scope:highest_held_title_tier = tier_kingdom
 					portrait_fp2_iberian_muslim_clothing_trigger = yes
 				}
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 		}
 	}
@@ -3225,7 +3225,7 @@ headgear = {
 				        }
 				    }
 				}
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 		}
 	}
@@ -3247,7 +3247,7 @@ headgear = {
 				exists = this
 				portrait_can_use_noble_headgear_trigger = no
 				portrait_fp2_iberian_christian_clothing_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 			modifier = {
 				add = 41 # Slightly higher
@@ -3266,7 +3266,7 @@ headgear = {
 					}
 				}
 				portrait_fp2_iberian_christian_clothing_spouse_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 		}
 	}
@@ -3298,7 +3298,7 @@ headgear = {
 				}
 				scope:highest_held_title_tier = tier_county
 				portrait_fp2_iberian_christian_clothing_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 			}
 		}
 	}
@@ -3316,7 +3316,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 				trigger_if = {
 					limit = { exists = this }
 					portrait_can_use_noble_headgear_trigger = yes
@@ -3374,7 +3374,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 51 # Slightly higher
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 				trigger_if = {
 					limit = { exists = this }
 					portrait_can_use_noble_headgear_trigger = yes
@@ -3429,7 +3429,7 @@ headgear = {
 				add = 101 # slightly higher 
 				exists = this
 				portrait_can_use_noble_headgear_trigger = yes
-				current_date >= 900.1.1
+				#current_date >= 900.1.1
 				OR = { 
 					AND = {
 						has_council_position = councillor_marshal
