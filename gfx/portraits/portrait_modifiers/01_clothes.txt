@@ -4260,6 +4260,7 @@ clothes = {
 	# 			primary_title = {
 	# 				any_controlled_faith = {
 	# 					this = faith:orthodox
+	#				} 
 	# 			}
 	#         }
 	#     }
