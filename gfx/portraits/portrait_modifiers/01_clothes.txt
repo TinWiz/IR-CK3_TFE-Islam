@@ -1,4 +1,4 @@
-﻿﻿# IRToCK3: Last updated for CK3 1.8.1
+﻿
 clothes = {
 
 	usage = game
@@ -225,7 +225,7 @@ clothes = {
 
 ## So that the Prophet Muhammad does not have a portrait ## 
 
-	no_portrait = {
+	no_portrait_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add				
@@ -1740,7 +1740,7 @@ clothes = {
 				template = bust_clothes
 			}
 
-		}	
+		}
 		outfit_tags = { mena_commoner_clothes }
 		weight = {
 			base = 0
@@ -1808,6 +1808,7 @@ clothes = {
 			}
 
 		}	
+
 		weight = {
 			base = 0
 			modifier = {
@@ -2077,7 +2078,7 @@ clothes = {
 				template = bust_clothes
 			}
 
-		}	
+		}
 		outfit_tags = { mena_stealth }
 		weight = {
 			base = 0
@@ -2557,7 +2558,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 41 # Slightly higher
-				#current_date >= 900
 				scope:highest_held_title_tier < tier_county
 				trigger_if = {
 					limit = { exists = this }
@@ -2600,7 +2600,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 41 # Slightly higher
-				#current_date >= 900
 				scope:highest_held_title_tier < tier_county
 				trigger_if = {
 					limit = { exists = this }
@@ -2654,7 +2653,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				#current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -2719,7 +2717,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 50
-				#current_date >= 900
 				exists = court_owner
 				court_owner = {
 					has_royal_court = yes
@@ -2729,7 +2726,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				#current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -2793,7 +2789,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 50
-				#current_date >= 900
 				exists = court_owner
 				court_owner = {
 					has_royal_court = yes
@@ -2803,7 +2798,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				#current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -2867,7 +2861,6 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 50
-				#current_date >= 900
 				exists = court_owner
 				court_owner = {
 					has_royal_court = yes
@@ -2877,7 +2870,6 @@ clothes = {
 			}
 			modifier = {
 				add = 51 # Slightly higher
-				#current_date >= 900
 				trigger_if = {
 					limit = { exists = this }
 					OR = {
@@ -2942,13 +2934,11 @@ clothes = {
 			base = 0
 			modifier = {
 				add = 110 # slightly stronger than northern war
-				#current_date >= 900
 				portrait_wear_armor_trigger = yes
 				portrait_fp2_iberian_muslim_clothing_trigger = yes
 			}
 			modifier = {
 				add = 21		# So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-				#current_date >= 900
 				portrait_wear_armor_currently_in_army_trigger = yes
 			}
 		}
@@ -2975,12 +2965,10 @@ clothes = {
 			modifier = {
 				add = 110 # slightly stronger than northern war
 				portrait_wear_armor_trigger = yes
-				#current_date >= 900
 				portrait_fp2_iberian_christian_clothing_trigger = yes
 			}
 			modifier = {
 				add = 21		# So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-				#current_date >= 900
 				portrait_wear_armor_currently_in_army_trigger = yes
 			}
 		}
@@ -3335,7 +3323,7 @@ clothes = {
 				template = bust_clothes
 			}
 
-		}		
+		}
 		outfit_tags = { sub_saharan_high_nobility_clothes }		
 		weight = {
 			base = 0
@@ -4258,9 +4246,9 @@ clothes = {
 	#             add = 60
 	# 			is_ruler = yes
 	# 			primary_title = {
-	# 				any_controlled_faith = {
-	# 					this = faith:orthodox
-	#				} 
+	#				any_controlled_faith = {
+	#					this = faith:orthodox
+	#				}
 	# 			}
 	#         }
 	#     }
