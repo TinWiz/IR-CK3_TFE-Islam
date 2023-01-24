@@ -1,4 +1,5 @@
-﻿# Make sure the weights here match up best as possible with the hairstyles set
+﻿# IRToCK3: Last updated for CK3 1.8.1
+ # Make sure the weights here match up best as possible with the hairstyles set
 custom_hair = {
 	usage = customization
 	interface_position = 2
