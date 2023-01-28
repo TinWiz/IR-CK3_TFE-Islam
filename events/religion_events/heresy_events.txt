@@ -376,6 +376,7 @@ heresy.0001 = {
 							}
 						}
 					}
+					
 					### TFE EDIT: We don't want unavailable faiths to pop up via heresy outbreak
 					modifier = {
 						factor = 0
@@ -393,7 +394,7 @@ heresy.0001 = {
 								}
 							}
 						}
-					}	
+					}
 				}
 
 				save_scope_as = heretic_faith
