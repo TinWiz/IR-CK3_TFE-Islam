@@ -1,5 +1,5 @@
 ﻿# IRToCK3: Last updated for CK3 1.8.1
- claim_caliphate_cb = {
+claim_caliphate_cb = {
 	group = conquest
 
 	combine_into_one = yes
@@ -10,17 +10,19 @@
 		exists = var:cal_authority
 	}
 
-	allowed_for_character_display_regardless = {
+	allowed_against_character_display_regardless = { 
 		AND = {
 			exists = var:cal_authority
-			exists = scope:defender.var:cal_authority ###I:R→CK3 edit to quiet error log
+			scope:attacker = {
+				exists = var:cal_authority
+			}
 			custom_description = {
 				text = claim_authority_requirement
 				subject = scope:attacker
 				scope:attacker.var:cal_authority >= scope:defender.var:cal_authority
-    		}
-    	}
-    }
+			}
+		}
+	}
 
 	allowed_against_character = {
 		has_government = clan_government
@@ -28,8 +30,6 @@
 		scope:defender.faith.religious_head = scope:defender
 	}
 
-	target_titles = none
-	ignore_effect = change_title_holder
 
 	should_invalidate = {
 		NOT = {
@@ -88,9 +88,7 @@
 					}
 					set_county_faith = faith:sunni
 				}
-				scope:attacker = {
-					destroy_title = title:e_rashidun
-				}
+				destroy_title = title:e_rashidun
 				scope:defender = {
 					set_character_faith = faith:sunni
 					create_title_and_vassal_change = {
@@ -856,16 +854,10 @@ holy_jihad_cb = {
 		scope:attacker = { fp1_remember_recent_conquest_victory_effect = yes }
 
 		scope:attacker.faith = {
-			change_fervor = {
-				value = 5
-				desc = fervor_gain_religious_war
-			}
+			change_fervor = 5
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = -5
-				desc = fervor_loss_religious_war
-			}
+			change_fervor = -5
 		}
 
 		if = {
@@ -945,10 +937,7 @@ holy_jihad_cb = {
 		}
 
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -2
-				desc = fervor_loss_religious_war
-			}
+			change_fervor = -2
 		}
 	}
 
@@ -1006,16 +995,10 @@ holy_jihad_cb = {
 		on_lost_aggression_war_discontent_loss = yes
 
 		scope:attacker.faith = {
-			change_fervor = {
-				value = -5
-				desc = fervor_loss_religious_war
-			}
+			change_fervor = -5
 		}
 		scope:defender.faith = {
-			change_fervor = {
-				value = 5
-				desc = fervor_gain_religious_war
-			}
+			change_fervor = 5
 		}
 	}
 
