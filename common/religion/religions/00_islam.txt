@@ -1,6 +1,6 @@
 ﻿ # IRToCK3: Last updated for CK3 1.8.1
 
- islam_religion = {
+islam_religion = {
 	family = rf_abrahamic
 	
 	graphical_faith = "islamic_gfx"
