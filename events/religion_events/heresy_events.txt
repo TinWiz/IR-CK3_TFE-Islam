@@ -393,6 +393,7 @@ heresy.0001 = {
 								}
 							}
 						}
+					}	
 				}
 
 				save_scope_as = heretic_faith
