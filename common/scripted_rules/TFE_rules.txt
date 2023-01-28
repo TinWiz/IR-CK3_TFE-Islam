@@ -1,4 +1,4 @@
-﻿# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.8.1
 
 is_character_allowed_to_be_player = {
 	trigger_if = {
