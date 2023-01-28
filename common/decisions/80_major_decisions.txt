@@ -91,12 +91,12 @@ convert_to_feudalism_liege_converted_decision = {
 			text = recent_conversion_to_tribalism
 			NOT = { has_character_flag = just_converted_to_tribalism }
 		}
-		AND = {
-			exists = culture
-			culture = {
-				has_innovation = innovation_feudalism
-			}
-		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = {
