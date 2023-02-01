@@ -36,17 +36,18 @@ on_yearly_caliphate = {
 					}
 				}
 			}
-			every_holy_site = {
-		 
-				limit = {
-					NOT = {
-						county_controller.top_liege = scope:caliph
-					}	
-				}
-				change_variable = {
-					name = cal_authority
-					subtract = 1
-				}
+			faith = {
+				every_holy_site = {
+					limit = {
+						NOT = {
+							county_controller.top_liege = scope:caliph
+						}	
+					}
+					change_variable = {
+						name = cal_authority
+						subtract = 1
+					}
+				}	
 			}
 
 			if = {
