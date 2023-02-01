@@ -37,7 +37,7 @@ TFE_on_title_destroyed = {
 			save_scope_as = current_title
 			every_religion_global = {
 				every_faith = {
-					limit = { religious_head_title = scope:current_title }
+					limit = { religious_head_title = { THIS = scope:current_title } }
 					remove_religious_head_title = yes
 				}
 			}
