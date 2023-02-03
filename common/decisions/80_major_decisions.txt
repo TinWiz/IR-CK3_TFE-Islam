@@ -195,12 +195,12 @@ convert_whole_realm_to_feudalism_decision = {
 				}
 			}
 		}
-		AND = {
-			exists = culture
-			culture = {
-				has_innovation = innovation_feudalism
-			}
-		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = {
@@ -359,12 +359,12 @@ convert_whole_realm_to_feudalism_west_african_pagan_decision = {
 				}
 			}
 		}
-		AND = {
-			exists = culture
-			culture = {
-				has_innovation = innovation_feudalism
-			}
-		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = { prestige = 500 }
