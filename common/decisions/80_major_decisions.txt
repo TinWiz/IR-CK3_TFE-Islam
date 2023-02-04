@@ -1,4 +1,4 @@
-﻿# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.8.1
 
 ##################################################
 # GOVERNMENT DECISIONS
@@ -91,6 +91,12 @@ convert_to_feudalism_liege_converted_decision = {
 			text = recent_conversion_to_tribalism
 			NOT = { has_character_flag = just_converted_to_tribalism }
 		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = {
@@ -147,10 +153,15 @@ convert_whole_realm_to_feudalism_decision = {
 				}
 			}
 		}
+
 	}
 
 	is_valid = {
 		has_realm_law = tribal_authority_3
+		prestige_level >= 2
+		capital_province.county = {
+			development_level >= convert_to_feudalism_development_requirement
+		}
 		custom_description = {
 			text = faith_is_reformed
 			subject = root
@@ -184,10 +195,16 @@ convert_whole_realm_to_feudalism_decision = {
 				}
 			}
 		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = {
-		prestige = 200
+		prestige = 1000
 	}
 
 	effect = {
@@ -209,7 +226,7 @@ convert_whole_realm_to_feudalism_decision = {
 	}
 
 	ai_will_do = {
-		base = 100
+		base = 30
 	}
 }
 
@@ -342,6 +359,12 @@ convert_whole_realm_to_feudalism_west_african_pagan_decision = {
 				}
 			}
 		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = { prestige = 500 }
@@ -767,6 +790,39 @@ found_empire_decision = {
 					}
 				}
 				sub_realm_size >= 80
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				AND = {
+					exists = struggle:iberian_struggle
+					# only display the condition for people from relevant faiths and cultures
+					struggle:iberian_struggle = {
+						OR = {
+							is_culture_involved_in_struggle = root.culture
+							is_faith_involved_in_struggle = root.faith
+						}
+					}
+					# and living nearby
+					any_realm_county = {
+	 					title_province = {
+	 						OR = {
+	 							geographical_region = ghw_region_north_africa
+	 							geographical_region = world_europe_west
+	 							geographical_region = world_europe_south
+						 	}
+	 					}
+	 				}
+				}
+			}
+			custom_description = {
+				text = found_empire_decision_not_part_of_iberian_struggle
+				NOT = {
+					any_character_struggle = {
+						is_struggle_type = iberian_struggle
+					}
+				}
 			}
 		}
 	}
