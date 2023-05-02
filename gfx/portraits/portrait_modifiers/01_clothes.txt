@@ -1,4 +1,4 @@
-﻿
+﻿# IRToCK3: Last updated for CK3 1.8.1﻿
 clothes = {
 
 	usage = game
@@ -225,7 +225,7 @@ clothes = {
 
 ## So that the Prophet Muhammad does not have a portrait ## 
 
-	no_portrait = {
+	no_portrait_clothes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add				
@@ -241,7 +241,7 @@ clothes = {
 				exists = this
 				this = character:33922
 			}
-						modifier = {
+			modifier = {
 				add = 2000
 				has_character_flag = islam_prophet
 			}

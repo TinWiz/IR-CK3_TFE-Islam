@@ -1,4 +1,4 @@
-﻿# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.8.1
 
 fund_inspiration_effect = {
 	scope:recipient = {
@@ -881,6 +881,7 @@ inspiration_adventure_create_artifact_effect = {
 													geographical_region = world_middle_east
 												}
 											}
+											OR = {
 												AND = {
 													NOT = {
 														faith:united_islam = {
@@ -901,6 +902,9 @@ inspiration_adventure_create_artifact_effect = {
 														has_doctrine = unavailable_doctrine
 													}
 												}
+											}
+										}
+										modifier = {
 											NOT = { scope:location.title_province = { faith.religion = religion:islam_religion } }
 											add = -75
 										}
@@ -1517,6 +1521,7 @@ inspiration_adventure_create_artifact_effect = {
 											has_variable = throne_scone
 										}
 									}
+									current_year >= 500
 									scope:location.title_province = {
 										geographical_region = world_europe_west_britannia
 									}
@@ -1894,6 +1899,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = qadib_al_mulk
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -1919,6 +1925,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = al_dawat
 									}
+									current_year >= 650
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -1944,6 +1951,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = al_hafir
 									}
+									current_year >= 650
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -1969,6 +1977,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 2
 										has_variable = banner_thankfulness
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -1989,11 +1998,13 @@ inspiration_adventure_create_artifact_effect = {
 									}
 									add = 5
 								}
+								
 								trigger = {
 									any_artifact = {
 										count < 1
 										has_variable = al_jabal
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -2019,6 +2030,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = al_yatima
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -2112,6 +2124,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 12
 										has_variable = muhammads_epistles
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_asia_minor
@@ -2698,6 +2711,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = mantle_of_prophet
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
@@ -2723,6 +2737,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = spear_of_the_prophet
 									}
+									current_year >= 700
 									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east

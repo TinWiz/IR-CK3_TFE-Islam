@@ -1,4 +1,4 @@
-﻿
+﻿# IRToCK3: Last updated for CK3 1.8.1
 special = {
 
 	usage = game
@@ -105,19 +105,14 @@ special = {
 				this = character:33922
 			}
 			modifier = {
-				add = 200
+				add = 2000
 				has_character_flag = islam_prophet
 			}
 			modifier = {
-				add = 200
-				trigger_if = {
-					limit = {
-						exists = global_var:prophet
-					}
+				add = 2000
+				AND = {
+					exists = global_var:prophet
 					THIS = global_var:prophet
-				}
-				trigger_else = {
-					always = no
 				}
 			}
 		}

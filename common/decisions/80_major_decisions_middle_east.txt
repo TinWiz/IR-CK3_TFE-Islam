@@ -1,4 +1,4 @@
-﻿# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.8.1
 
 ### TFE EDIT: Changed a few faiths to take our rise of Islam into account
 
@@ -469,6 +469,7 @@ become_saoshyant_decision = {
 				target = flag:flag_became_saoshyant
 			}
 		}
+		current_date >= 700.1.1
 	}
 
 	is_valid = {

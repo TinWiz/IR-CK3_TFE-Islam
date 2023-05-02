@@ -1,4 +1,5 @@
-﻿#On actions about titles
+﻿# IRToCK3: Last updated for CK3 1.8.1
+#On actions about titles
 
 # All on-actions in this file provide scope:transfer_type unless otherwise noted
 # scope:transfer_type has the following permutations:
@@ -36,7 +37,7 @@ TFE_on_title_destroyed = {
 			save_scope_as = current_title
 			every_religion_global = {
 				every_faith = {
-					limit = { religious_head_title = scope:current_title }
+					limit = { religious_head_title = { THIS = scope:current_title } }
 					remove_religious_head_title = yes
 				}
 			}
@@ -105,6 +106,14 @@ TFE_on_title_gain = {
 					}
 					set_de_jure_liege_title = title:e_rashidun
 				}
+			}
+			if = {
+				limit = {
+					scope:title = { is_holy_order = yes }
+					NOT = { has_trait = order_member }
+					has_government = holy_order_government
+				}
+				add_trait = order_member
 			}
 			if = {
 				limit = {

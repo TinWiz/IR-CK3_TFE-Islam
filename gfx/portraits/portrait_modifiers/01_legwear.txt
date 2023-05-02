@@ -1,4 +1,5 @@
-﻿legwear = {
+﻿# IRToCK3: Last updated for CK3 1.8.1
+legwear = {
 	# interface_position = 1
 	usage = game
 	selection_behavior = max
@@ -14,6 +15,7 @@
 				value = 0
 			}
 		}
+        outfit_tags = { no_clothes }
 		weight = {
 			base = 0
 			modifier = {

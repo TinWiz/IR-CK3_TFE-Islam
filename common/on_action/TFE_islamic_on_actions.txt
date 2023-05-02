@@ -36,15 +36,20 @@ on_yearly_caliphate = {
 					}
 				}
 			}
-
-			if = {
-				limit = {
-					any_holy_site = { NOT = { any_realm_province = { barony = { is_holy_site_of = scope:caliph.faith } } } }
-				}
-				change_variable = {
-					name = cal_authority
-					subtract = 1
-				}
+			faith = {
+				every_holy_site = {
+					limit = {
+						NOT = {
+							county_controller.top_liege = scope:caliph
+						}	
+					}
+					scope:caliph = {
+						change_variable = {
+							name = cal_authority
+							subtract = 1
+						}	
+					}
+				}	
 			}
 
 			if = {
@@ -206,6 +211,7 @@ on_10_years_rashidun = {
 					title:e_rashidun.holder = {
 						is_ai = yes
 						is_at_war = no
+						gold > 200
 					}
 				}
 			}

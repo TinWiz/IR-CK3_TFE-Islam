@@ -1,0 +1,5 @@
+﻿### IRtoCK3: Last Updated for v1.8.1
+
+can_perform_the_hajj_trigger = {
+	faith.religion = religion:islam_religion
+}
