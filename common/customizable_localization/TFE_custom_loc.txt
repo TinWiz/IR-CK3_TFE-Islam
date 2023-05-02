@@ -6,7 +6,7 @@
 		trigger = {
 			OR = {
 				this = character:33922
-				has_character_flag = islam_prophet	
+				has_character_flag = islam_prophet
 				trigger_if = {
 					limit = {
 						exists = global_var:prophet

@@ -13,7 +13,7 @@ cal_authority_target = {
 
 	if = {
 		limit = {
-			NOT = { any_realm_province = { barony = { is_holy_site_of = faith } } } 
+			NOT = { any_realm_province = { barony = { is_holy_site_of = faith } } }
 		}
 		subtract = 2
 	}
@@ -46,7 +46,7 @@ cal_authority_target = {
 	if = {
 		limit = {
 			has_character_flag = islam_prophet
-			
+
 		}
 		add = 200
 	}
@@ -54,7 +54,7 @@ cal_authority_target = {
 	if = {
 		limit = {
 			has_title = title:e_rashidun
-			
+
 		}
 		add = 100
 	}

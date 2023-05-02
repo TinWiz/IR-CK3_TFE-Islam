@@ -2,14 +2,14 @@
 
 islam_religion = {
 	family = rf_abrahamic
-	
+
 	graphical_faith = "islamic_gfx"
 
 
 	doctrine_background_icon = core_tenet_banner_islam.dds
 	#STANDARD DOCTRINES:
 	#doctrine = doctrine_missionary_encouraged
-	#Abrahamic hostiliy group
+	#Abrahamic hostility group
 	doctrine = abrahamic_hostility_doctrine
 	#Polygamous marriages
 	doctrine = doctrine_polygamy
@@ -97,7 +97,7 @@ islam_religion = {
 		HealthGodSheHe = CHARACTER_SHEHE_HE
 		HealthGodHerHis = CHARACTER_HERHIS_HIS
 		HealthGodHerHim = CHARACTER_HERHIM_HIM
-		
+
 		#FertilityGod
 		FertilityGodName = islam_fertility_god_name
 		FertilityGodNamePossessive = islam_fertility_god_name_possessive
@@ -240,7 +240,7 @@ islam_religion = {
 		GHWName = ghw_jihad
 		GHWNamePlural = ghw_jihads
 	}
-	
+
 	piety_icon_group = "islam"
 
 	faiths = {
@@ -333,7 +333,7 @@ islam_religion = {
 
 			doctrine = doctrine_temporal_head
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -370,7 +370,7 @@ islam_religion = {
 			#Leadership
 			doctrine = doctrine_temporal_head
 		}
-		
+
 		muwalladi = { # Iberian Sunni Islam
 			color = { 0 0.4 0 }
 			icon = muwalladi
@@ -449,7 +449,7 @@ islam_religion = {
 
 			doctrine = unavailable_doctrine ###I:R→CK3###
 
-			localization = {			
+			localization = {
 				ReligiousHeadName = masmudi_religious_head_title
 				ReligiousHeadTitleName = masmudi_religious_head_title_name
 			}
@@ -503,7 +503,7 @@ islam_religion = {
 			#Adultery is a crime
 			#Deviancy is a crime
 			#Fundamentalist
-			
+
 			doctrine = muhammad_succession_zandaqa_doctrine	#Technically Shia
 			doctrine = doctrine_no_head
 			doctrine = doctrine_homosexuality_crime
@@ -531,7 +531,7 @@ islam_religion = {
 			doctrine = tenet_struggle_submission
 			doctrine = tenet_tax_nonbelievers
 			doctrine = tenet_false_conversion_sanction
-			
+
 			#Leadership
 			doctrine = doctrine_temporal_head
 
@@ -543,7 +543,7 @@ islam_religion = {
 			doctrine = unavailable_doctrine ###I:R→CK3###
 
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -583,7 +583,7 @@ islam_religion = {
 			doctrine = doctrine_monogamy
 			doctrine = doctrine_gender_equal # While the differences between men and women were a bit more complex, Equal is a suitable abstraction for lack of male-pref
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -616,7 +616,7 @@ islam_religion = {
 			#Hereditary clerical succession
 			doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -653,7 +653,7 @@ islam_religion = {
 			doctrine = muhammad_succession_shia_doctrine
 			doctrine = doctrine_witchcraft_shunned
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -689,7 +689,7 @@ islam_religion = {
 			doctrine = muhammad_succession_shia_doctrine
 			doctrine = doctrine_witchcraft_shunned
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -730,7 +730,7 @@ islam_religion = {
 			doctrine = muhammad_succession_zandaqa_doctrine	#Technically Shia
 			doctrine = doctrine_witchcraft_shunned
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -772,7 +772,7 @@ islam_religion = {
 			doctrine = doctrine_adultery_women_crime
 			doctrine = doctrine_clerical_gender_either
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -814,7 +814,7 @@ islam_religion = {
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_clerical_gender_either
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -866,7 +866,7 @@ islam_religion = {
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_clerical_gender_either
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -906,7 +906,7 @@ islam_religion = {
 			doctrine = doctrine_no_head
 			doctrine = doctrine_witchcraft_shunned
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -947,7 +947,7 @@ islam_religion = {
 			doctrine = doctrine_gender_equal
 			doctrine = doctrine_pluralism_fundamentalist
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -967,7 +967,7 @@ islam_religion = {
 			holy_site = medina
 			holy_site = jerusalem
 			holy_site = bahrein
-			holy_site = yamama			
+			holy_site = yamama
 
 			#Tenet
 			doctrine = tenet_struggle_submission
@@ -981,7 +981,7 @@ islam_religion = {
 
 			doctrine = unavailable_doctrine ###I:R→CK3###
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -1001,7 +1001,7 @@ islam_religion = {
 			holy_site = mecca
 			holy_site = medina
 			holy_site = jerusalem
-			holy_site = sijilmasa	
+			holy_site = sijilmasa
 			holy_site = siffa
 
 			#Tenet
@@ -1019,7 +1019,7 @@ islam_religion = {
 
 			doctrine = unavailable_doctrine ###I:R→CK3###
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -1047,7 +1047,7 @@ islam_religion = {
 			doctrine = tenet_struggle_submission
 			doctrine = tenet_unrelenting_faith
 			doctrine = tenet_tax_nonbelievers
-			
+
 			# Leadership
 			doctrine = doctrine_temporal_head
 
@@ -1060,7 +1060,7 @@ islam_religion = {
 			# Clergy Doctrines
 			doctrine = doctrine_clerical_function_recruitment
 
-			localization = {		
+			localization = {
 				PriestMale = islam_shia_priest
 				PriestMalePlural = islam_shia_priest_plural
 				PriestFemale = islam_shia_priest
@@ -1071,6 +1071,6 @@ islam_religion = {
 				ReligiousHeadTitleName = islam_shia_religious_head_title_name
 			}
 		}
-		
+
 	}
 }

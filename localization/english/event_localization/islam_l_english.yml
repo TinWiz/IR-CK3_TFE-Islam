@@ -11,7 +11,7 @@
  islam.0003.option.b:0 "I won't betray my ancestors! NEVER!"
  islam.0003.option.b.tooltip:0 "The Rashidun Caliphate might try to claim your realm"
  islam.0004.t:0 "The Sword of Islam"
- islam.0004.desc:0 "As I was sitting in my throne room, A muslim envoy reached me. Announcing it came from [attacker.GetName], they gave me 2 options, either join islam and avoid bloodshed or face the consequences."
+ islam.0004.desc:0 "As I was sitting in my throne room, a Muslim envoy reached me. Announcing it came from [attacker.GetName], they gave me 2 options, either join Islam and avoid bloodshed or face the consequences."
  islam.0004.option.a:0 "It's time to realize the truth in the words of Islam"
  islam.0004.option.b:0 "Never shall I be threatened by these words!"
  islam.0004.b.tooltip:0 "The war rages on"

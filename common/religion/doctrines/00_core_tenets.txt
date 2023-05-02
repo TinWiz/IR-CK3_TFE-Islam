@@ -311,7 +311,7 @@ doctrine_core_tenets = {
 				}
 			}
 		}
-		
+
 		can_pick = {
 			custom_description = {
 				text = incompatible_tenet_sacrificial_ceremonies_trigger
@@ -596,7 +596,7 @@ doctrine_core_tenets = {
 			virtues = { calm }
 			sins = { wrathful }
 		}
-		
+
 		character_modifier = {
 			domain_limit = 1
 			ai_war_chance = -0.25
@@ -690,7 +690,7 @@ doctrine_core_tenets = {
 			prowess = 4
 			tolerance_advantage_mod = 2
 		}
-		
+
 		parameters = {
 			clergy_can_fight = yes
 		}
@@ -1441,7 +1441,7 @@ doctrine_core_tenets = {
 			}
 		}
 
-		
+
 
 		parameters = {
 			meditation_mechanics_active = yes
@@ -1557,7 +1557,7 @@ doctrine_core_tenets = {
 				}
 			}
 		}
-		
+
 		parameters = {
 			reincarnation_resistance_to_conversion = yes
 			holy_wars_forbidden = yes
@@ -1569,7 +1569,7 @@ doctrine_core_tenets = {
 			virtues = { calm }
 			sins = { wrathful }
 		}
-		
+
 		character_modifier = {
 			domain_limit = 1
 			ai_war_chance = -0.25
@@ -2179,7 +2179,7 @@ doctrine_core_tenets = {
 			great_holy_wars_active_if_reformed = yes
 			clergy_can_fight = yes
 		}
-		
+
 		character_modifier = {
 			ai_war_chance = 0.5
 			ai_war_cooldown = -0.25
@@ -2202,7 +2202,7 @@ doctrine_core_tenets = {
 		piety_cost = {
 			# If you've already got human sacrifice, this is a nice and easy jump.
 			if = {
-				limit = { 
+				limit = {
 					has_doctrine = tenet_human_sacrifice
 				}
 				value = faith_tenet_cost_low
@@ -2971,7 +2971,7 @@ doctrine_core_tenets = {
 			no_unfaithfulness_penalty_active = yes
 		}
 	}
-	
+
 	tenet_sacrificial_ceremonies = {
 		icon = core_tenet_human_sacrifice
 
@@ -2997,7 +2997,7 @@ doctrine_core_tenets = {
 			else = {
 				value = faith_tenet_cost_massive
 			}
-			
+
 			#We already practice sacrificial ceremonies
 			if = {
 				limit = { has_doctrine = tenet_sacrificial_ceremonies }
@@ -3047,7 +3047,7 @@ doctrine_core_tenets = {
 			ai_war_cooldown = -0.5
 		}
 	}
-	
+
 	tenet_megaliths = {
 		icon = core_tenet_megaliths
 
@@ -3073,7 +3073,7 @@ doctrine_core_tenets = {
 			else = {
 				value = faith_tenet_cost_high
 			}
-			
+
 			#We already practice megaliths
 			if = {
 				limit = { has_doctrine = tenet_megaliths }
@@ -3082,11 +3082,11 @@ doctrine_core_tenets = {
 		}
 
 		is_shown = {
-			
+
 		}
 
 		can_pick = {
-			
+
 		}
 
 		parameters = {

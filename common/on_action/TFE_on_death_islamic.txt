@@ -1,8 +1,8 @@
 # IRToCK3: Last updated for CK3 1.7.2
 
 on_death = {
-	on_actions = { 
-		TFE_on_death_islamic 
+	on_actions = {
+		TFE_on_death_islamic
 	}
 }
 
@@ -13,7 +13,7 @@ TFE_on_death_islamic = {
 				AND = {
 					has_title = title:e_rashidun
 					has_character_flag = first_fitna_ruler
-					
+
 				}
 			}
 			player_heir = {
