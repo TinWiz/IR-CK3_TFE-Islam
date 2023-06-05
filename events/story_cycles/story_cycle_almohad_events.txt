@@ -1,10 +1,10 @@
 ﻿namespace = almohad
-# IRToCK3: Last updated for CK3 1.8.1
+# IRToCK3: Last updated for CK3 1.9.1
 
 #Events for the Almohad invasion Story Cycle
 
 almohad.0001 = {
-	type = empty
+	scope = none
 	hidden = yes
 
 	###I:R→CK3
@@ -28,7 +28,7 @@ almohad.0001 = {
 
 ### Spawn the Almohads
 almohad.0002 = {
-	type = empty
+	scope = none
 	hidden = yes
 
 	trigger = {
@@ -95,7 +95,7 @@ almohad.0003 = {
 
 # Maintanenance event to handle player responses to Almohads going to war
 almohad.0004 = {
-	type = empty
+	scope = none
 	hidden = yes
 
 	trigger = {	
