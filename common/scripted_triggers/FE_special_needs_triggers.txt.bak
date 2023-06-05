@@ -1,0 +1,6 @@
+﻿### IRtoCK3: Last Updated for v1.9.1
+
+can_perform_the_hajj_trigger = {
+	faith.religion = religion:islam_religion
+	faith = { has_doctrine_parameter = can_go_on_pilgrimage }
+}

@@ -1,4 +1,4 @@
-﻿# IRToCK3: Last updated for CK3 1.9.1
+﻿# IRToCK3: Last updated for CK3 1.8.1
 #On actions about titles
 
 # All on-actions in this file provide scope:transfer_type unless otherwise noted
@@ -37,7 +37,7 @@ TFE_on_title_destroyed = {
 			save_scope_as = current_title
 			every_religion_global = {
 				every_faith = {
-					limit = { religious_head_title = scope:current_title }
+					limit = { religious_head_title = { THIS = scope:current_title } }
 					remove_religious_head_title = yes
 				}
 			}

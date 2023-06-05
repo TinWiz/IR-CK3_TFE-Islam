@@ -191,12 +191,12 @@ convert_whole_realm_to_feudalism_decision = {
 				}
 			}
 		}
-		AND = {
-			exists = culture
-			culture = {
-				has_innovation = innovation_feudalism
-			}
-		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = {
@@ -251,8 +251,8 @@ convert_to_tribalism_decision = {
 			}
 		}
 		OR = {
-			government_has_flag = government_is_feudal
-			government_has_flag = government_is_clan
+			has_government = feudal_government
+			has_government = clan_government
 		}
 	}
 
@@ -300,7 +300,7 @@ convert_whole_realm_to_feudalism_west_african_pagan_decision = {
 
 	is_shown = {
 		# Only tribals need formalise.
-		government_has_flag = government_is_tribal
+		has_government = tribal_government
 		# Unreformed West African Pagans are our targets.
 		faith_qualifies_for_west_african_pagan_feudalisation_trigger = yes
 	}
@@ -355,12 +355,12 @@ convert_whole_realm_to_feudalism_west_african_pagan_decision = {
 				}
 			}
 		}
-		AND = {
-			exists = culture
-			culture = {
-				has_innovation = innovation_feudalism
-			}
-		}
+		#AND = {
+		#	exists = culture
+		#	culture = {
+		#		has_innovation = innovation_feudalism
+		#	}
+		#}
 	}
 
 	cost = { prestige = 500 }
@@ -906,21 +906,6 @@ adopt_special_succession_decision = {
 			}
 		}
 		current_date < 1100.1.1	#Curtail special succession types as the centuries wear on. Ever on.
-		
-		trigger_if = { # Prevent Norway from essentially giving England back to the Anglo-Saxons
-			limit = {
-				is_ai = yes
-				special_succession_thing_trigger = yes
-				any_held_title = {
-					this = title:k_england
-				}
-				NAND = { # If they're on the isle itself, it's fine
-					primary_title = title:k_england
-					capital_county.kingdom = title:k_england
-				}
-			}
-			always = no
-		}
 	}
 
 	is_valid = {
@@ -1000,11 +985,11 @@ tribal_challenge_ruler_decision = {
 	cooldown = { days = 3650 }
 
 	is_shown = {
-		government_has_flag = government_is_tribal
+		has_government = tribal_government
 		exists = liege
 		liege = {
 			NOT = { this = root }
-			government_has_flag = government_is_tribal
+			has_government = tribal_government
 			exists = primary_title
 			primary_title = {
 				save_temporary_scope_as = title_check
@@ -1210,7 +1195,6 @@ found_university_decision = {
 	selection_tooltip = found_university_decision_tooltip
 
 	is_shown = {
-		always = no # Universities are now built like normal special buildings so they can be seen in the Economy Mapmode, keeping this decision around in case we want to retool it into something else
 		highest_held_title_tier >= tier_duchy
 		any_sub_realm_barony = {
 			OR = { #A place where universities historically existed early
@@ -1226,26 +1210,13 @@ found_university_decision = {
 				this = title:b_coimbra
 				this = title:b_napoli
 				this = title:b_tirakka
-				this = title:b_milano			
-				this = title:b_lund			
-				this = title:b_vienna
-				this = title:b_speyer
-				this = title:b_krakow
-				this = title:b_pisa
-				this = title:b_turin
-				this = title:b_ferrara
-				this = title:b_leipzig
-				this = title:b_messina
-				this = title:b_barcelona
-				this = title:b_dumbarton
 			}
 			title_province = {
 				NOR = {
 					exists = var:university
-					has_building_or_higher = al_azhar_university
-					has_building_or_higher = sankore_university
-					has_building_or_higher = siena_university
-					has_building_or_higher = nalanda_university
+					has_building = al_azhar_university
+					has_building = sankore_university
+					has_building = nalanda_university
 				}
 			}
 		}
@@ -1261,7 +1232,7 @@ found_university_decision = {
 					title:b_fes.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_fes.county = { development_level >= 30 }
+					title:b_fes.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_fes.title_province = { has_special_building_slot = no }
@@ -1274,7 +1245,7 @@ found_university_decision = {
 					title:b_cairo.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_cairo.county = { development_level >= 30 }
+					title:b_cairo.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_cairo.title_province = { has_special_building_slot = no }
@@ -1287,7 +1258,7 @@ found_university_decision = {
 					title:b_bologna.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_bologna.county = { development_level >= 30 }
+					title:b_bologna.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_bologna.title_province = { has_special_building_slot = no }
@@ -1300,7 +1271,7 @@ found_university_decision = {
 					title:b_salamanca.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_salamanca.county = { development_level >= 30 }
+					title:b_salamanca.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_salamanca.title_province = { has_special_building_slot = no }
@@ -1313,7 +1284,7 @@ found_university_decision = {
 					title:b_madrid.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_madrid.county = { development_level >= 30 }
+					title:b_madrid.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_madrid.title_province = { has_special_building_slot = no }
@@ -1326,7 +1297,7 @@ found_university_decision = {
 					title:b_oxford.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_oxford.county = { development_level >= 30 }
+					title:b_oxford.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_oxford.title_province = { has_special_building_slot = no }
@@ -1339,7 +1310,7 @@ found_university_decision = {
 					title:b_cambridge.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_cambridge.county = { development_level >= 30 }
+					title:b_cambridge.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_cambridge.title_province = { has_special_building_slot = no }
@@ -1352,7 +1323,7 @@ found_university_decision = {
 					title:b_padua.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_padua.county = { development_level >= 30 }
+					title:b_padua.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_padua.title_province = { has_special_building_slot = no }
@@ -1365,7 +1336,7 @@ found_university_decision = {
 					title:b_siena.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_siena.county = { development_level >= 30 }
+					title:b_siena.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_siena.title_province = { has_special_building_slot = no }
@@ -1378,7 +1349,7 @@ found_university_decision = {
 					title:b_coimbra.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_coimbra.county = { development_level >= 30 }
+					title:b_coimbra.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_coimbra.title_province = { has_special_building_slot = no }
@@ -1391,7 +1362,7 @@ found_university_decision = {
 					title:b_napoli.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_napoli.county = { development_level >= 30 }
+					title:b_napoli.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_napoli.title_province = { has_special_building_slot = no }
@@ -1404,169 +1375,13 @@ found_university_decision = {
 					title:b_tirakka.title_province = { NOT = { exists = var:university } }
 				}
 				AND = {
-					title:b_tirakka.county = { development_level >= 30 }
+					title:b_tirakka.county = { development_level >= medium_development_level }
 					custom_description = {
 						text = no_special_building_slot
 						title:b_tirakka.title_province = { has_special_building_slot = no }
 					}
 				}
 			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_milano }
-					title:b_milano.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_milano.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_milano.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_lund }
-					title:b_lund.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_lund.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_lund.title_province = { has_special_building_slot = no }
-					}
-				}
-			}	
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_vienna }
-					title:b_vienna.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_vienna.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_vienna.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_speyer }
-					title:b_speyer.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_speyer.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_speyer.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_krakow }
-					title:b_krakow.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_krakow.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_krakow.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_pisa }
-					title:b_pisa.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_pisa.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_pisa.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_turin }
-					title:b_turin.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_turin.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_turin.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_ferrara }
-					title:b_ferrara.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_ferrara.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_ferrara.title_province = { has_special_building_slot = no }
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_leipzig }
-					title:b_leipzig.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_leipzig.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_leipzig.title_province = { has_special_building_slot = no }
-					}
-				}
-			}	
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_messina }
-					title:b_messina.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_messina.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_messina.title_province = { has_special_building_slot = no }
-					}
-				}
-			}	
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_barcelona }
-					title:b_barcelona.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_barcelona.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_barcelona.title_province = { has_special_building_slot = no }
-					}
-				}
-			}	
-			trigger_if = {
-				limit = {
-					any_sub_realm_barony = { this = title:b_dumbarton }
-					title:b_dumbarton.title_province = { NOT = { exists = var:university } }
-				}
-				AND = {
-					title:b_dumbarton.county = { development_level >= 30 }
-					custom_description = {
-						text = no_special_building_slot
-						title:b_dumbarton.title_province = { has_special_building_slot = no }
-					}
-				}
-			}				
 		}
 	}
 
@@ -1908,27 +1723,6 @@ escape_from_prison_decision = {
 					show_chance = no
 					desc = escape_from_prison_decision_success.tt
 					release_from_prison = yes
-					scope:imprisoner = {
-						if = {
-							limit = {
-								OR = {
-									has_revoke_title_reason = root
-									has_banish_reason = root
-									has_execute_reason = root
-								}
-							}
-							add_opinion = {
-								target = root
-								modifier = escaped_from_prison_crime
-							}
-						}
-						else = {
-							add_opinion = {
-								target = root
-								modifier = escaped_from_prison_opinion
-							}
-						}
-					}
 				}
 				50 = {
 					show_chance = no

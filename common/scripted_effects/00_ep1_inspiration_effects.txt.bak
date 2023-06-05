@@ -2264,7 +2264,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = aram
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_steppe
 									}
 								}
@@ -2286,7 +2286,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = mmaagha_kamalu
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_africa_west
 									}
 								}
@@ -2298,7 +2298,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 15
 										has_variable = ikenga
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_africa_west
 									}
 								}
@@ -2320,7 +2320,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 5
 										has_variable = bronze_head
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_africa_west
 									}
 								}
@@ -2332,7 +2332,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 15
 										has_variable = ibeji
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_africa_west
 									}
 								}
@@ -2354,7 +2354,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 3
 										has_variable = crystal_carving
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
 											geographical_region = world_middle_east_persia
@@ -2379,7 +2379,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = nagelring
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_west_germania
 									}
 								}
@@ -2402,7 +2402,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = szczerbiec
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_east
 									}
 								}
@@ -2424,7 +2424,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = kladenets
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_east
 									}
 								}
@@ -2447,7 +2447,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = legbiter
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_north
 									}
 								}
@@ -2470,7 +2470,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = quernbiter
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_north
 									}
 								}
@@ -2478,7 +2478,7 @@ inspiration_adventure_create_artifact_effect = {
 							}
 							15 = { #Navaratna
 								trigger = {
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_india
 									}
 									any_artifact = {
@@ -2505,7 +2505,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = dragvandil
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_north
 									}
 								}
@@ -2517,7 +2517,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 15
 										has_variable = chinese_caligraphy
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_india
 											geographical_region = world_burma
@@ -2543,7 +2543,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 15
 										has_variable = ruyi
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_india
 											geographical_region = world_burma
@@ -2569,7 +2569,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = turquoise_throne
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_india
 											geographical_region = world_burma
@@ -2595,7 +2595,7 @@ inspiration_adventure_create_artifact_effect = {
 										count < 1
 										has_variable = peacock_throne
 									}
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_india
 											geographical_region = world_burma
@@ -2622,7 +2622,7 @@ inspiration_adventure_create_artifact_effect = {
 										has_variable = mantle_of_prophet
 									}
 									current_year >= 700
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
 											geographical_region = world_middle_east_persia
@@ -2648,7 +2648,7 @@ inspiration_adventure_create_artifact_effect = {
 										has_variable = spear_of_the_prophet
 									}
 									current_year >= 700
-									scope:location ?= {
+									scope:location.title_province = {
 										OR = {
 											geographical_region = world_middle_east
 											geographical_region = world_middle_east_persia
@@ -2669,7 +2669,7 @@ inspiration_adventure_create_artifact_effect = {
 									add = 5
 								}
 								trigger = { #Narwhal Horn
-									scope:location ?= {
+									scope:location.title_province = {
 										geographical_region = world_europe_north
 									}
 								}
@@ -2770,7 +2770,6 @@ inspiration_adventure_create_artifact_effect = {
 					scope:owner = { 
 						create_artifact_necklace_effect = {
 							OWNER = scope:artifact_origin
-							SMITH = scope:artifact_origin
 						}
 					}
 					scope:newly_created_artifact = { save_scope_as = necklace }
@@ -2838,9 +2837,7 @@ inspiration_adventure_create_artifact_effect = {
 					scope:owner = {
 						create_artifact_wall_skull_effect = {
 							OWNER = scope:owner
-							HUNTER = scope:adventurer
-							LEGENDARY = no
-							ANIMAL = flag:none
+							HUNTER = scope:inspiration_owner
 						}
 					}
 					save_scope_value_as = { #We save the type here for tooltips in fund_inspiration.1051
@@ -2848,7 +2845,7 @@ inspiration_adventure_create_artifact_effect = {
 						value = yes
 					}
 				}
-				30 = {
+				10 = {
 					modifier = {
 						OR = {
 							scope:adventurer.adventure_inspiration_average_skill_value >= high_inspiration_skill
@@ -2869,12 +2866,76 @@ inspiration_adventure_create_artifact_effect = {
 						}
 					}
 					scope:owner = {
-						create_artifact_animal_hide_effect = {
+						create_artifact_animal_hide_big_effect = {
 							OWNER = scope:owner
-							HUNTER = scope:adventurer
-							LEGENDARY = no
-							ANIMAL = flag:none
+							HUNTER = scope:inspiration_owner
 						}
+					}
+					save_scope_value_as = { #We save the type here for tooltips in fund_inspiration.1051
+						name = hide_big
+						value = yes
+					}
+				}
+				10 = {
+					modifier = {
+						OR = {
+							scope:adventurer.adventure_inspiration_average_skill_value >= high_inspiration_skill
+							AND = {
+								exists = scope:inspiration_owner.var:artifact_quality
+								scope:inspiration_owner.var:artifact_quality > high_adventurer_epic_quality_level #Cumulative event choices
+							}
+						}
+						add = -5
+					}
+					trigger = { #Hide - medium (lagom)
+						trigger_if = {
+							limit = { exists = var:adventure_type }
+							OR = {
+								var:adventure_type = flag:skull_or_hide
+								var:adventure_type = flag:free_reign
+							}
+						}
+					}
+					scope:owner = {
+						create_artifact_animal_hide_medium_effect = {
+							OWNER = scope:owner
+							HUNTER = scope:inspiration_owner
+						}
+					}
+					save_scope_value_as = { #We save the type here for tooltips in fund_inspiration.1051
+						name = hide_medium
+						value = yes
+					}
+				}
+				10 = {
+					modifier = {
+						OR = {
+							scope:adventurer.adventure_inspiration_average_skill_value >= high_inspiration_skill
+							AND = {
+								exists = scope:inspiration_owner.var:artifact_quality
+								scope:inspiration_owner.var:artifact_quality > high_adventurer_epic_quality_level #Cumulative event choices
+							}
+						}
+						add = -5
+					}
+					trigger = { #Hide - small
+						trigger_if = {
+							limit = { exists = var:adventure_type }
+							OR = {
+								var:adventure_type = flag:skull_or_hide
+								var:adventure_type = flag:free_reign
+							}
+						}
+					}
+					scope:owner = {
+						create_artifact_animal_hide_small_effect = {
+							OWNER = scope:owner
+							HUNTER = scope:inspiration_owner
+						}
+					}
+					save_scope_value_as = { #We save the type here for tooltips in fund_inspiration.1051
+						name = hide_small
+						value = yes
 					}
 				}
 				10 = {
