@@ -1242,7 +1242,7 @@ nation_fracturing_faction = {
 		
 		liege = {
 			is_independent_ruler = yes
-			NOT = {
+			NOR = {
 				has_government = theocracy_government
 				#I:R→CK3 no imperial_government
 			}

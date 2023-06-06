@@ -61,10 +61,6 @@ pool_repopulate_prowess = {
 		athletic = {}
 		lifestyle_hunter = {}
 	}
-	random_traits_list = {
-		count = { 0 1 }
-		tourney_participant = { }
-	}
 	dynasty = none
 	after_creation = {
 		random = {
@@ -168,7 +164,15 @@ pool_repopulate_prowess = {
 			LEVEL_1 = yes
 			LEVEL_3 = no
 		}
-		add_random_tourney_participant_level_effect = yes
+		# ToTo Hastiluder
+		if = {
+			limit = { has_dlc_feature = tours_and_tournaments }
+			random = {
+				chance = 33
+				add_trait = tourney_participant
+				add_random_tourney_participant_level_effect = yes
+			}
+		}
 	}
 }
 
@@ -728,10 +732,7 @@ pool_repopulate_local_flavor = {
 		culture:sephardi = {
 			trigger = {
 				root.capital_province = {
-					OR = {
-						geographical_region = world_europe_west_iberia
-						geographical_region = world_middle_east
-					}
+					geographical_region = world_europe_west_iberia
 				}
 			}
 		}
@@ -749,6 +750,17 @@ pool_repopulate_local_flavor = {
 			trigger = {
 				root.capital_province = {
 					geographical_region = world_india
+				}
+			}
+		}
+		culture:bavlim = {
+			trigger = {
+				root.capital_province = {
+					OR = {
+						geographical_region = world_middle_east
+						geographical_region = world_middle_east_persia
+						geographical_region = world_africa_north
+					}
 				}
 			}
 		}
@@ -941,27 +953,20 @@ pool_repopulate_local_flavor = {
 	random_traits_list = {
 		scholar = {}
 		theologian = {}
-		physician_1 = {}
-		physician_2 = {}
-		physician_3 = {}
-		mystic_1 = {}
-		mystic_2 = {}
+		lifestyle_physician = {}
+		lifestyle_mystic = {}
 		lifestyle_herbalist = {}
 		administrator = {}
 		architect = {}
 		diplomat = {}
+		lifestyle_hunter = {}
 	}
 	dynasty = none
 	
 	after_creation = {
 		if = {
 			limit = {
-				OR = {
-					culture = culture:ashkenazi
-					culture = culture:sephardi
-					culture = culture:radhanite
-					culture = culture:kochinim
-				}
+				culture = { has_cultural_pillar = heritage_israelite }
 			}
 			random_list = {
 				10 = {
@@ -977,6 +982,12 @@ pool_repopulate_local_flavor = {
 						}
 					}
 					set_character_faith = faith:conversos
+				}
+				40 = {
+					trigger = {
+						has_trait = lifestyle_mystic
+					}
+					set_character_faith = faith:merkabah
 				}
 				20 = {
 					trigger = {
@@ -1088,6 +1099,28 @@ pool_repopulate_local_flavor = {
 		else_if = {
 			limit = {
 				OR = {
+					culture = culture:butr
+					culture = culture:zaghawa
+				}
+			}
+			random_list = {
+				10 = {
+					set_character_faith = faith:ibadi
+				}
+				10 = {
+					set_character_faith = faith:sufri
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				culture = culture:kurdish
+			}
+			set_character_faith = faith:yazidi
+		}
+		else_if = {
+			limit = {
+				OR = {
 					culture = culture:bolghar
 					culture = culture:somali
 				}
@@ -1131,7 +1164,7 @@ pool_repopulate_local_flavor = {
 					set_character_faith = faith:tengri_pagan
 				}
 				5 = {
-					set_character_faith = faith:shangqing
+					set_character_faith = faith:quanzhen
 				}
 			}
 		}
