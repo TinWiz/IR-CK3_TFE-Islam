@@ -1,5 +1,5 @@
 ﻿l_english:
  select_preferred_caliph:0 "Select as Preferred Caliph"
- select_preferred_caliph_desc:0 "Selecting a Preferred Caliph allows you to decide where will your zakah go. It also helps legitimizing this caliph"
+ select_preferred_caliph_desc:0 "Selecting a Preferred Caliph allows you to decide where your zakah will go. It also helps to legitimize the chosen Caliph"
  select_preferred_caliph_notification:0 "Preferred Caliph Selected"
- new_preferred_caliph_interactions:0 "[CHARACTER.GetShortUIName|U] chose [TARGET_CHARACTER.GetShortUIName|U] as his preferred caliph."
+ new_preferred_caliph_interactions:0 "[CHARACTER.GetShortUIName|U] chose [TARGET_CHARACTER.GetShortUIName|U] as their preferred Caliph."
