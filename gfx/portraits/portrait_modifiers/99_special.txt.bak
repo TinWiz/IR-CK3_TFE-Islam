@@ -1,6 +1,5 @@
-﻿# IRToCK3: Last updated for CK3 1.9.1
-
-special = {
+﻿#I:R→CK3 last updated for CK3 v1.9.1
+special_eyelashes = {
 
 	usage = game
 
@@ -49,10 +48,10 @@ weight = {
 				scope:current_weight > overweight_threshold
 			}
 			modifier = {
-                add = -100
+				add = -100
 				exists = this
-                has_character_flag = has_scripted_weight
-            }
+				has_character_flag = has_scripted_weight
+			}
 		}
 	}
 
@@ -75,10 +74,10 @@ weight = {
 				scope:current_weight < underweight_threshold
 			}
 			modifier = {
-                add = -100
+				add = -100
 				exists = this
-                has_character_flag = has_scripted_weight
-            }
+				has_character_flag = has_scripted_weight
+			}
 		}
 	}
 
@@ -216,32 +215,44 @@ special_pregnancy = {
 special_shrink_body = {
 	
 	usage = game
-	
 	shrink_body = {
-        dna_modifiers = {
-            morph = {
-                mode = add
-                gene = gene_shrink_body
-                template = shrink_all
-               	value = 1 # For the randomness to work correctly
-            }
-        }   
-        weight = {
-            base = 10
-            
-        }
-    }
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_shrink_body
+				template = shrink_all
+				value = 1 # For the randomness to work correctly
+			}
+		}   
+		weight = {
+			base = 10
+		}
+	}
 }
 
-## So that the Prophet Muhammad does not have a portrait ## 
+additive_headgears = {
+
+	usage = game
+	additive_headgears = {
+			dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_bs_additive_headgears
+				template = additive_headgears
+				value = 1 # For the randomness to work correctly
+			}
+		}
+	}
+}
+
 special_prophet = {
 
-    usage = game
-    selection_behavior = weighted_random
-    priority = 50
+	usage = game
+	selection_behavior = weighted_random
+	priority = 50
 
-    33922_caliph_muhammad = { # Has no portrait 
-        dna_modifiers = {
+	33922_caliph_muhammad = { # Has no portrait 
+		dna_modifiers = {
 			morph = {
 				mode = replace
 				gene = gene_bs_body_type
@@ -286,7 +297,7 @@ special_prophet = {
 			}
 			accessory = {
 				mode = add
-				gene = props
+				gene = props_left
 				template = prophet_shield
 				value = 0.5
 			}
@@ -296,32 +307,32 @@ special_prophet = {
 				template = no_clothes
 				value = 0.5
 			}
-        	accessory = {
-                 mode = add
-                 gene = hairstyles
-                 template = no_hairstyles
-                 value = 0
-            }
-            accessory = {
-                mode = add
-                gene = beards
-                template = no_beard
-                value = 0
-            }
-            accessory = {
-                mode = add
-                gene = headgear
-                template = no_headgear
-                value = 0
-            }
-            accessory = {
-                mode = add
-                gene = cloaks
-                template = no_cloak
-                value = 0
-            }  
-        }
-        weight = {
+			accessory = {
+				 mode = add
+				 gene = hairstyles
+				 template = no_hairstyles
+				 value = 0
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = no_beard
+				value = 0
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 0
+			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				value = 0
+			}  
+		}
+		weight = {
             base = 0
             modifier = {
                 add = 999
@@ -348,5 +359,90 @@ special_prophet = {
 				}
 			}
         }
-    }
+	}
+}
+special_celtic_warpaint_custom = {
+	usage = customization
+	interface_position = 8
+	celtic_warpaint1 = {
+		ignore_outfit_tags = yes
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_celtic_warpaint
+				template = celtic_warpaint1
+				range = { 0 1.0 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1500
+				AND = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_celtic }
+						culture = { has_cultural_pillar = heritage_brythonic }
+					}
+					OR = {
+						portrait_wear_helmet_trigger = yes
+						is_commanding_army = yes
+					}
+				}
+			}
+		}
+	}
+	celtic_warpaint2 = {
+		ignore_outfit_tags = yes
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_celtic_warpaint
+				template = celtic_warpaint2
+				range = { 0 1.0 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1500
+				AND = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_celtic }
+						culture = { has_cultural_pillar = heritage_brythonic }
+					}
+					OR = {
+						portrait_wear_helmet_trigger = yes
+						is_commanding_army = yes
+					}
+				}
+			}
+		}
+	}
+	celtic_warpaint3 = {
+		ignore_outfit_tags = yes
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = gene_celtic_warpaint
+				template = celtic_warpaint3
+				range = { 0 1.0 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1500
+				AND = {
+					OR = {
+						culture = { has_cultural_pillar = heritage_celtic }
+						culture = { has_cultural_pillar = heritage_brythonic }
+					}
+					OR = {
+						portrait_wear_helmet_trigger = yes
+						is_commanding_army = yes
+					}
+				}
+			}
+		}
+	}
 }
