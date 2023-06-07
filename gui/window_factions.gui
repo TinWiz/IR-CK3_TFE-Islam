@@ -1,3 +1,4 @@
+#I:R?CK3 last updated for CK3 v1.9.1
 ######################################################
 ##################### FACTIONS #######################
 ######################################################
@@ -716,7 +717,7 @@ types  FactionWindow
 
 							blockoverride "portrait_button_template_tooltip"
 							{
-								tooltip = "[FactionCharacterMember.GetTooltip]"
+								tooltip = "FACTION_WINDOW_MEMBER_TOOLTIP"
 							}
 						}
 
