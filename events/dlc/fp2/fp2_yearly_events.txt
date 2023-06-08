@@ -4807,7 +4807,7 @@ fp2_yearly.8003 = {
 			faith:sunni = {
 				has_doctrine = unavailable_doctrine
 			}
-
+		}
 		is_ai = no
 		any_child = {
 			is_available_child = yes 
