@@ -1,4 +1,4 @@
-# IRToCK3: Last updated for CK3 1.8.1
+﻿# IRToCK3: Last updated for CK3 1.8.1
 
 @always_primary_score = 1000
 # TFE special titles

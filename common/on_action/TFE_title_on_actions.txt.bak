@@ -1,0 +1,143 @@
+﻿# IRToCK3: Last updated for CK3 1.8.1
+#On actions about titles
+
+# All on-actions in this file provide scope:transfer_type unless otherwise noted
+# scope:transfer_type has the following permutations:
+# flag:conquest
+# flag:conquest_holy_war
+# flag:conquest_claim
+# flag:conquest_populist
+# flag:inheritance
+# flag:abdication
+# flag:destroyed
+# flag:created
+# flag:usurped
+# flag:granted
+# flag:revoked
+# flag:election
+# flag:independency
+# flag:returned
+# flag:leased_out
+# flag:lease_revoked
+# flag:faction_demand
+# flag:swear_fealty
+
+# A title is destroyed
+# root = the holder before destruction
+# scope:landed_title = the title that is being destroyed
+# Does *not* provide scope:transfer_type
+on_title_destroyed = {
+	on_actions = { TFE_on_title_destroyed }
+}
+
+TFE_on_title_destroyed = {
+	effect = {
+		if = {
+			limit = { scope:landed_title.tier = tier_empire }
+			save_scope_as = current_title
+			every_religion_global = {
+				every_faith = {
+					limit = { religious_head_title = { THIS = scope:current_title } }
+					remove_religious_head_title = yes
+				}
+			}
+		}
+	}
+}
+
+# A title is transferred to a new character
+# root = the new holder
+# scope:title = the title that changes hands
+# scope:previous_holder = previous holder. Might be dead
+on_title_gain = {
+	on_actions = { TFE_on_title_gain }
+}
+
+TFE_on_title_gain = {
+	effect = {
+		if = {
+			limit = {
+				scope:title = title:c_mecca
+				OR = {
+					any_liege_or_above = {
+						has_title = title:e_rashidun
+					}
+					has_title = title:e_rashidun
+				}
+				NOT = { exists = global_var:arab_unite }
+			}
+			set_global_variable = {
+				name = arab_unite
+				value = yes
+			}
+			every_ruler = {
+				limit = {
+					is_independent_ruler = yes
+					OR = {
+						has_faith = faith:arabic_pagan
+						has_culture = culture:bedouin
+						has_culture = culture:adnanite
+						has_culture = culture:nabatean
+						has_culture = culture:qahtanite
+						culture = {
+							any_parent_culture_or_above = {
+								OR = {
+									THIS = culture:bedouin
+									THIS = culture:adnanite
+									THIS = culture:nabatean
+									THIS = culture:qahtanite
+								}
+							}
+						}
+					}
+					NOT = {
+						has_faith = faith:united_islam
+					}
+				}
+				trigger_event = {
+					id = islam.0003
+					days = {10 15}
+				}
+			}
+			title:e_arabia = {
+				every_in_de_jure_hierarchy = {
+					limit = {
+						tier = tier_kingdom
+					}
+					set_de_jure_liege_title = title:e_rashidun
+				}
+			}
+			if = {
+				limit = {
+					scope:title = { is_holy_order = yes }
+					NOT = { has_trait = order_member }
+					has_government = holy_order_government
+				}
+				add_trait = order_member
+			}
+			if = {
+				limit = {
+					exists = title:k_arabia
+				}	
+				title:k_arabia = {
+					set_de_jure_liege_title = title:e_rashidun
+				}
+			}	
+		}
+		if = {
+			limit = {
+				exists = scope:previous_holder
+				scope:previous_holder = {
+					exists = var:cal_authority
+				}
+				NOT = {
+					has_variable = cal_authority
+				}
+			}
+			set_variable = {
+				name = cal_authority
+				value = scope:previous_holder.var:cal_authority
+			}
+		}
+	}
+}

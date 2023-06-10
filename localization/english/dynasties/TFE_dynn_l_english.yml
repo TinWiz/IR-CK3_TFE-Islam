@@ -1,4 +1,5 @@
 ﻿l_english:
+dynn_Leon:0 "Leonid"
 dynn_Karttripura:0 "Karttripura"
 dynn_Gonanda:0 "Gonanda"
 dynn_Malava:0 "Malava"
@@ -173,6 +174,7 @@ dynn_Autoreianos:0 "Autoreianos"
 dynn_Axinites:0 "Axinites"
 dynn_Axiomatikos:0 "Axiomatikos"
 dynn_Axuchos:0 "Axuchos"
+dynn_Azadbehid:0 "Azadbehid"
 dynn_Azegid:0 "Azegid"
 dynn_Babakid:0 "Babakid"
 dynn_Babenberg:0 "Babenberg"
@@ -756,7 +758,7 @@ dynn_Jid_ati:0 "Jid'ati"
 dynn_Jinji:0 "Jinji"
 dynn_Jirifai:0 "Jirifai"
 dynn_Jogailaitis:0 "Jogailaitis"
-dynn_Julio_Claudian:0 "Julio claudian"
+dynn_Julio_Claudian:0 "Julio-Claudian"
 dynn_Justinian:0 "Justinian"
 dynn_Juthungi:0 "Juthungi"
 dynn_Junius:0 "Iunius"
@@ -1874,7 +1876,7 @@ dynn_in_Rothaich:0 "in Rothaich"
 dynn_in_Toisich:0 "in Toisich"
 dynn_in_tSagairt:0 "in tSagairt"
 dynn_Wodensing:0 "Wodensing"
-dynn_Nuvelan:0 "Nuvelan"
+dynn_Nuvelan:0 "Nubelan"
 dynn_Chattauri:0 "Chattauri"
 dynn_Chatti:0 "Chatti"
 dynn_Chattii:0 "Chattii"
@@ -2063,7 +2065,7 @@ dynn_Vishnukundina:0 "Vishnukundina"
 dynn_caesarius:0 "Caesarius"
 dynn_Oretum:0 "Oretius"
 dynn_Nebridian:0 "Nebridius"
-dynn_Nuvelan:0 "Nuvelius"
+dynn_Nuvelan:0 "Nubelius"
 dynn_Valentianic:0 "Valentianius"
 dynn_Constantinian:0 "Constantinius"
 dynn_Anicii:0 "Anicus"
@@ -2165,23 +2167,25 @@ dynn_Gostahamid:0 "Gostahamid"
 dynn_Vishtapid:0 "Vishtapid"
 
 # White Hun/Hephthalite/Kidarite/Xionite/etc
-dynn_Kidarite:0 "Kidarite"
-dynn_Hephthalite:0 "Ebodal" # What the Hephthalites called themselves
-dynn_Wanwan:0 "Wanwan" # Petty Yuezhi descended kings in Angren/northern Fergana/Khujand under the Chionites
-dynn_Yuni:0 "Yuni" # Chionite rulers of Chach; Yuni is early Chinese name for Chach
-dynn_Uar:0 "Uar" # Strong candidates for precursor tribe of the Avars
-dynn_Alchonid:0 "Alchonid" # Alchon Huns
-dynn_Panakat:0 "Panäkät" # Junior/cadet branch of the rulers of Chach
-dynn_Afshiyan:0 "Afshiyan" # Kidarite remnants in Samarkand
-dynn_Rob:0 "Rob" # Kingdom of Rob
-dynn_Kushan:0 "Kushan"
-dynn_Vardana_Khudat:0 "Vardana Khudat" # Rulers of the city of Vardana, major settlement near Bukhara
-dynn_Dayuan:0 "Dayuan" # Last remnants of old Dayuan state
-dynn_Chehanna:0 "Chehanna" # Chaghaniyan in Chinese per Xuanzang
-dynn_Hebatan:0 "Hebatan" # Chinese for Kobadian
-dynn_bukhar_khudat:0 "Bukhar Khudat" # Rulers of Bukhara until the late 800s
-dynn_khabandha:0 "Khabandha" # Kingdom of Tashkurgan/Qiepantuo in Chinese records
-dynn_Khuttalshah:0 "Khuttalshah" # Local rulers of Khuttal
+ dynn_Kidarite:0 "Kidarite"
+ dynn_Hephthalite:0 "Ebodal" # What the Hephthalites called themselves
+ dynn_Wanwan:0 "Wanwan" # Petty Yuezhi descended kings in Angren/northern Fergana/Khujand under the Chionites
+ dynn_Yuni:0 "Yuni" # Chionite rulers of Chach; Yuni is early Chinese name for Chach
+ dynn_Uar:0 "Uar" # Strong candidates for precursor tribe of the Avars
+ dynn_Alchonid:0 "Alchonid" # Alchon Huns
+ dynn_Panakat:0 "Panäkät" # Junior/cadet branch of the rulers of Chach
+ dynn_Afshiyan:0 "Afshiyan" # Kidarite remnants in Samarkand
+ dynn_Rob:0 "Rob" # Kingdom of Rob
+ dynn_Kushan:0 "Kushan"
+ dynn_Vardana_Khudat:0 "Vardana Khudat" # Rulers of the city of Vardana, major settlement near Bukhara
+ dynn_Dayuan:0 "Dayuan" # Last remnants of old Dayuan state
+ dynn_Chehanna:0 "Chehanna" # Chaghaniyan in Chinese per Xuanzang
+ dynn_Hebatan:0 "Hebatan" # Chinese for Kobadian
+ dynn_bukhar_khudat:0 "Bukhar Khudat" # Rulers of Bukhara until the late 800s
+ dynn_khabandha:0 "Khabandha" # Kingdom of Tashkurgan/Qiepantuo in Chinese records
+ dynn_Khuttalshah:0 "Khuttalshah" # Local rulers of Khuttal
+ dynn_shemi:0 "Shemi" # Chitral per Song Yun
+ dynn_kushano_sassanian:0 "Kushano-Sassanid" # Kushano-Sassanids
 
 # Bactrian
  dynn_Roba:0 "Roba"
@@ -2345,6 +2349,7 @@ dynn_Bogden:0 "Bogden"
  dynn_diexi:0 "Diexi"
 
  dynn_Huangzhong:0 "Huangzhong" # Little Yuezhi tribe around Xining
+ dynn_Shuangmi:0 "Shuangmi" # Shughnan, in Weilue
 
 # Frankish
  dynn_Meroving:0 "Meroving"
@@ -2708,6 +2713,7 @@ dynn_Hyrcanus:0 "Hyrcanus"
  dynn_Himyar:0 "Himyar"
  dynn_Austoriani:0 "Austoriani"
  dynn_Bhadramukha:0 "Bhadramukha"
+ dynn_Kshahar_a_bar_ta:0 "Kshaharadāta"
 
  # South Arabian Names (from RICE/cybrxkhan)
  dynn_Ad:0 "Ad"

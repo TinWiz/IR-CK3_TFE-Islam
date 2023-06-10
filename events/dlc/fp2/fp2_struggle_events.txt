@@ -1,5 +1,5 @@
-namespace = fp2_struggle
-# IRToCK3: Last updated for CK3 1.8.1
+﻿namespace = fp2_struggle
+# IRToCK3: Last updated for CK3 1.9.1								 
 
 ### SYSTEM EVENTS #################################################################
 ## # Parameter Events
@@ -36,10 +36,10 @@ namespace = fp2_struggle
 # Setting AI Intent
 fp2_struggle.0003 = {
 	hidden = yes
-	type = empty
+	scope = none
 	scope = struggle
 
-	trigger = { # Should not need this, but, redundancy check! -h
+	trigger = { # Should not need this, but, redundancy check!
 		exists = struggle:iberian_struggle
 		struggle:iberian_struggle = { any_involved_ruler = { count > 0 } } # For when the conflict is ongoing but nobody is left to fight it
 	}
@@ -243,7 +243,7 @@ fp2_struggle.0003 = {
 # Set AI Intent on join
 fp2_struggle.004 = {
 	hidden = yes
-	type = empty
+	scope = none
 
 	immediate = {
 		set_variable = {
@@ -444,7 +444,8 @@ fp2_struggle.004 = {
 # 0501 - 599
 ###################################
 fp2_struggle.0501 = { # Fullscreen Intro Event
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0501.t
 	desc = {
 		desc = fp2_struggle.0501.desc
@@ -475,7 +476,7 @@ fp2_struggle.0501 = { # Fullscreen Intro Event
 		NOT = { has_character_flag = fp2_struggle_intro_event_flag }
 		fp2_character_any_involvement_iberian_struggle_trigger = yes
  	}
-	override_background = { event_background = fp2_fullscreen_intro }
+	override_background = { reference = fp2_fullscreen_intro }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_animate" }
 
 	widgets = {
@@ -506,7 +507,8 @@ fp2_struggle.0501 = { # Fullscreen Intro Event
 # 0900-0912
 ###################################
 fp2_struggle.0900 = { # Hostility
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0900.t
 	desc = {
 		first_valid = {
@@ -545,7 +547,7 @@ fp2_struggle.0900 = { # Hostility
 		desc = fp2_struggle.0900.desc
 	}
 	theme = court
-	override_background = { event_background = fp2_fullscreen_hostility }
+	override_background = { reference = fp2_fullscreen_hostility }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_end_animate" }
 
 	immediate = {
@@ -653,9 +655,6 @@ fp2_struggle.0900 = { # Hostility
 	after = {
 		# Notify & End Struggle
 		save_scope_as = fp2_loc_struggle_ender # Loc used to use root, this fixes it
-														   
-   
-		  
 		every_player = {
 			limit = { fp2_does_this_player_care_about_the_fate_of_iberia = yes } # Needs to be checked before the struggle ends due to race condition issues
 			add_to_list = player_to_notify # Making a list so stuff is tiggered after the struggle ends, to make extra sure I don't break anything.
@@ -670,7 +669,8 @@ fp2_struggle.0900 = { # Hostility
 }
 
 fp2_struggle.0910 = {
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0900.t
 	desc = {
 		first_valid = {
@@ -698,7 +698,7 @@ fp2_struggle.0910 = {
 		}
 	}
 	theme = court
-	override_background = { event_background = fp2_fullscreen_hostility }
+	override_background = { reference = fp2_fullscreen_hostility }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_end_animate" }
 
 	immediate = {
@@ -754,7 +754,8 @@ fp2_struggle.0910 = {
 }
 
 fp2_struggle.0901 = { # Compromise
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0901.t
 	desc = {
 		first_valid = {
@@ -793,7 +794,7 @@ fp2_struggle.0901 = { # Compromise
 		desc = fp2_struggle.0901.desc
 	}
 	theme = court
-	override_background = { event_background = fp2_fullscreen_compromise }
+	override_background = { reference = fp2_fullscreen_compromise }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_end_animate" }
 
 	immediate = {
@@ -860,8 +861,6 @@ fp2_struggle.0901 = { # Compromise
 
 		# Notify & End Struggle
 		save_scope_as = fp2_loc_struggle_ender # Loc used to use root, this fixes it
-															
-   
 		every_player = {
 			limit = { fp2_does_this_player_care_about_the_fate_of_iberia = yes } # Needs to be checked before the struggle ends due to race condition issues
 			add_to_list = player_to_notify # Making a list so stuff is tiggered after the struggle ends, to make extra sure I don't break anything.
@@ -876,7 +875,8 @@ fp2_struggle.0901 = { # Compromise
 }
 
 fp2_struggle.0911 = {
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0901.t
 	desc = {
 		first_valid = {
@@ -889,7 +889,7 @@ fp2_struggle.0911 = {
 		desc = fp2_struggle.0911.desc
 	}
 	theme = court
-	override_background = { event_background = fp2_fullscreen_compromise }
+	override_background = { reference = fp2_fullscreen_compromise }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_end_animate" }
 
 	immediate = {
@@ -942,7 +942,8 @@ fp2_struggle.0911 = {
 }
 
 fp2_struggle.0902 = { # Conciliation
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0902.t
 	desc = {
 		first_valid = {
@@ -981,7 +982,7 @@ fp2_struggle.0902 = { # Conciliation
 		desc = fp2_struggle.0902.desc
 	}
 	theme = court
-	override_background = { event_background = fp2_fullscreen_conciliation }
+	override_background = { reference = fp2_fullscreen_conciliation }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_end_animate" }
 
 	immediate = {
@@ -1011,7 +1012,6 @@ fp2_struggle.0902 = { # Conciliation
 	}
 
 	after = {
-
 		stress_impact = {
 			arrogant = medium_stress_impact_gain
 			zealous = medium_stress_impact_gain
@@ -1033,7 +1033,8 @@ fp2_struggle.0902 = { # Conciliation
 }
 
 fp2_struggle.0912 = {
-	type = fullscreen_event
+	type = character_event
+	window = fullscreen_event
 	title = fp2_struggle.0902.t
 	desc = {
 		first_valid = {
@@ -1046,7 +1047,7 @@ fp2_struggle.0912 = {
 		desc = fp2_struggle.0912.desc
 	}
 	theme = court
-	override_background = { event_background = fp2_fullscreen_conciliation }
+	override_background = { reference = fp2_fullscreen_conciliation }
 	override_sound = { reference = "event:/DLC/FP2/SFX/UI/fp2_struggle_ui_intro_end_animate" }
 
 	immediate = {
@@ -1132,16 +1133,10 @@ fp2_struggle.1000 = {
 		fp2_character_involved_in_struggle_trigger = yes
 		custom_description = {
 			text = empty_spooky_trigger #This is entirely pointless, but code likes it, so ghost away! 
-			any_held_county = {
-				fp2_struggle_1000_tension_county_trigger = yes 
-			}
+			any_held_county = { fp2_struggle_1000_tension_county_trigger = yes }
 			OR = {
-				any_councillor = {
-					fp2_struggle_1000_tension_councillor_trigger = yes
-				}
-				any_vassal = {
-					fp2_struggle_1000_tension_councillor_trigger = yes
-				}
+				any_councillor = { fp2_struggle_1000_tension_councillor_trigger = yes }
+				any_vassal = { fp2_struggle_1000_tension_councillor_trigger = yes }
 				exists = cp:councillor_marshal 
 			}
 		}
@@ -2159,7 +2154,7 @@ fp2_struggle.1002 = {
  	}
 
  	theme = medicine 
- 	override_background = { event_background = throne_room }
+ 	override_background = { reference = throne_room }
 
  	left_portrait = {
 	 	character = root
@@ -2183,7 +2178,6 @@ fp2_struggle.1002 = {
 			faith:sunni = {
 				has_doctrine = unavailable_doctrine
 			}
-		}
 		#any_character_to_title_neighboring_county = { #this searches for a neighboring province that has the xenophilic tradition, which is this event's dynamic way of checking for Andalusian culture or cultures derived from it. 
 	 	any_neighboring_and_across_water_top_liege_realm_owner = {
 		 	culture = {
@@ -2274,7 +2268,7 @@ fp2_struggle.1002 = {
 			 	template = scholar_character
 			 	trait = intellect_good_3 #He was one of the Middle Ages' greatest geniuses
 			 	trait = lifestyle_herbalist 
-			 	trait = physician_3 
+			 	trait = lifestyle_physician
 			 	trait = education_learning_4
 			 	random_traits_list = { #his personality, extrapolated from my research
 				 	count = 3
@@ -2298,10 +2292,10 @@ fp2_struggle.1002 = {
 		 	}
 			faith:muwalladi = {
 				remove_doctrine = unavailable_doctrine
-			}
+			}																											  
 		 	set_global_variable = albucasis_created 
 		 	scope:albucasis_physician = {
-			save_scope_as = great_physician #this is to create one easy, generic scope for use in the rest of the event
+				save_scope_as = great_physician #this is to create one easy, generic scope for use in the rest of the event
 		 	}
 	 	}
 
@@ -2323,7 +2317,7 @@ fp2_struggle.1002 = {
 			 	template = scholar_character
 			 	trait = intellect_good_2
 			 	trait = scholar 
-			 	trait = physician_3 
+			 	trait = lifestyle_physician 
 			 	trait = education_learning_4
 			 	random_traits_list = { #his personality, extrapolated from my research 
 				 	count = 3
@@ -2346,7 +2340,7 @@ fp2_struggle.1002 = {
 		 	}
 			faith:muwalladi = {
 				remove_doctrine = unavailable_doctrine
-			}
+			}		 	
 		 	set_global_variable = avenzoar_created
 		 	scope:avenzoar_physician = {
 			 	save_scope_as = great_physician
@@ -2371,7 +2365,7 @@ fp2_struggle.1002 = {
 			 	template = scholar_character
 			 	trait = intellect_good_2
 			 	trait = theologian 
-			 	trait = physician_3 
+			 	trait = lifestyle_physician 
 			 	trait = education_learning_3
 			 	trait = journaller #He was an avid writer 
 			 	random_traits_list = { #his personality, extrapolated from my research 
@@ -2395,7 +2389,6 @@ fp2_struggle.1002 = {
 		 	}
 			faith:muwalladi = {
 				remove_doctrine = unavailable_doctrine
-			}
 		 	set_global_variable = tufail_created
 		 	scope:tufail_physician = {
 			 	save_scope_as = great_physician
@@ -2410,7 +2403,7 @@ fp2_struggle.1002 = {
 			 	template = scholar_character
 			 	trait = intellect_good_1
 			 	trait = education_learning_3
-			 	trait = physician_3 
+			 	trait = lifestyle_physician
 			 	random_traits_list = {
 				 	count = 3
 				 	ambitious = {}
@@ -2434,10 +2427,16 @@ fp2_struggle.1002 = {
 		 	}
 			faith:muwalladi = {
 				remove_doctrine = unavailable_doctrine
-			}
 	 	}
 
-	 
+	 	hidden_effect = {
+		 	scope:great_physician = {
+		 		add_trait_xp = {
+	                trait = lifestyle_physician
+	                value = 100
+	            }				
+		 	}
+		}
 
 	 	random_neighboring_and_across_water_top_liege_realm_owner = {
 		 	limit = { 
@@ -2501,9 +2500,10 @@ fp2_struggle.1002 = {
 	 	else_if = { #the polymath becomes your physician
 		 	limit = { #this is very hacky, but an attempt to fix a overnight error issue with "employee has hired max amount"
 			 	court_owner = {
-				 	NOT = {
-					 	employs_court_position = court_physician_court_position
-				 	}
+				 	can_appoint_char_to_court_position = {
+						CHAR = scope:great_physician
+						COURT_POS = court_physician_court_position
+					}
 			 	}
 		 	}
 		 	appoint_court_position = {
@@ -3945,7 +3945,7 @@ fp2_struggle.1020 = {
 				
 	theme = dread
 	cooldown = { years = 15 }
-	override_background = { event_background = council_chamber }
+	override_background = { reference = council_chamber }
 
 	left_portrait = {
 		character = root
@@ -4421,7 +4421,7 @@ fp2_struggle.1050 = {
 	}
 
 	theme = death
-	override_background = { event_background = battlefield } ##
+	override_background = { reference = battlefield } ##
 
 	left_portrait = {
 		character = root
@@ -4716,7 +4716,7 @@ fp2_struggle.2000 = {
 	desc = fp2_struggle.2000.desc
 	theme = stewardship
 	cooldown = { years = 5 }
-	override_background = { event_background = market }
+	override_background = { reference = market }
 	left_portrait = root
 	right_portrait = {
 		character = scope:fp2_2000_market_inspector
@@ -4779,6 +4779,23 @@ fp2_struggle.2000 = {
 
 			save_scope_as = fp2_2000_market_inspector
 		}
+		if = { # RoCo
+			limit = {
+				has_dlc_feature = royal_court
+				employs_court_position = chief_qadi_court_position
+				any_court_position_holder = {
+					type = chief_qadi_court_position
+					is_available_ai_adult = yes
+				}
+			}
+			random_court_position_holder = {
+				type = chief_qadi_court_position
+				limit = {
+					is_available_ai_adult = yes
+				}
+				save_scope_as = fp2_2000_chief_qadi
+			}
+		}
 	}
 
 	option = { # Mandatory lunatic option (now rakish)
@@ -4790,7 +4807,7 @@ fp2_struggle.2000 = {
 		}
 
 		flavor = fp2_struggle.2000.f.desc
-		send_interface_message = {
+		send_interface_toast = {
 			type = event_stewardship_good_with_text
 			title = fp2_struggle.2000.f.notif
 			desc = fp2_struggle.2000.f.notif.desc
@@ -4928,15 +4945,8 @@ fp2_struggle.2000 = {
 
 					if = { # RoCo
 						limit = {
-							has_dlc_feature = royal_court
-							employs_court_position = chief_qadi_court_position
-							any_court_position_holder = {
-								type = chief_qadi_court_position
-								is_available_ai_adult = yes
-							}
+							exists = scope:fp2_2000_chief_qadi
 						}
-						save_scope_as = fp2_2000_chief_qadi
-
 						reverse_add_opinion = {
 							target = scope:fp2_2000_chief_qadi
 							modifier = respect_opinion
@@ -5071,7 +5081,7 @@ fp2_struggle.2000 = {
 		stress_impact = { compassionate = medium_stress_impact_gain }
 		add_dread = miniscule_dread_gain
 
-		send_interface_message = {
+		send_interface_toast = {
 			type = event_stewardship_good_with_text
 			title = fp2_struggle.2000.b.notif
 			desc = fp2_struggle.2000.b.notif.desc
@@ -5128,9 +5138,7 @@ fp2_struggle.2000 = {
 		}
 	}
 
-	after = {
-		scope:fp2_2000_market_inspector = { silent_disappearance_effect = yes }
-	}
+	after = { scope:fp2_2000_market_inspector = { silent_disappearance_effect = yes } }
 }
 
 ###################################
@@ -5333,7 +5341,7 @@ fp2_struggle.2001 = {
 			add_unpressed_claim = scope:fp2_2001_desperate_county
 		}
 
-		send_interface_message = {
+		send_interface_toast = {
 			type = event_stewardship_good_with_text
 			title = fp2_struggle.2001.d.notif
 			desc = fp2_struggle.2001.d.notif.desc
@@ -5419,7 +5427,7 @@ fp2_struggle.2001 = {
 			add_unpressed_claim = scope:fp2_2001_desperate_county
 		}
 
-		send_interface_message = {
+		send_interface_toast = {
 			type = event_stewardship_good_with_text
 			title = fp2_struggle.2001.b.notif
 			desc = fp2_struggle.2001.b.notif.desc
@@ -6006,7 +6014,7 @@ fp2_struggle.2003 = {
 	title = fp2_struggle.2003.t
 	desc = fp2_struggle.2003.desc
 	theme = stewardship
-	override_background = { event_background = army_camp }
+	override_background = { reference = army_camp }
 	cooldown = { years = 50 }
 	left_portrait = root
 	right_portrait = {
@@ -6072,7 +6080,7 @@ fp2_struggle.2003 = {
 		}
 		stress_impact = { greedy = major_stress_impact_gain }
 
-		send_interface_message = {
+		send_interface_toast = {
 			type = event_generic_good_with_text
 			title = fp2_struggle.2003.e.notif.c
 			desc = fp2_struggle.2003.e.notif.c.desc
@@ -6508,7 +6516,7 @@ fp2_struggle.2003 = {
 
 		random_list = {
 			50 = { # Looted
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_martial_bad
 					title = fp2_struggle.2003.e.notif.a
 					
@@ -6521,7 +6529,7 @@ fp2_struggle.2003 = {
 				}
 			}
 			25 = { # Massacre
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_martial_bad_with_text
 					title = fp2_struggle.2003.e.notif.b
 					desc = fp2_struggle.2003.e.notif.b.desc
@@ -6535,7 +6543,7 @@ fp2_struggle.2003 = {
 				}
 			}
 			25 = { # Farming outcome
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_generic_good_with_text
 					title = fp2_struggle.2003.e.notif.c
 					desc = fp2_struggle.2003.e.notif.c.desc
@@ -6566,7 +6574,7 @@ fp2_struggle.2004 = {
 	desc = fp2_struggle.2004.desc
 
 	theme = crown
-	override_background = { event_background = council_chamber }
+	override_background = { reference = council_chamber }
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -7154,7 +7162,7 @@ fp2_struggle.2005 = {
 	}
 
 	theme = martial
-	override_background = { event_background = docks }
+	override_background = { reference = docks }
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -7291,7 +7299,7 @@ fp2_struggle.2006 = {
 	cooldown = { years = 20 }
 
 	theme = faith
-	override_background = { event_background = council_chamber }
+	override_background = { reference = council_chamber }
 	left_portrait = {
 		character = root
 		animation = shock
@@ -7366,7 +7374,7 @@ fp2_struggle.2006 = {
 				reveal_to = scope:fp2_2006_vassal_in_crisis
 			}
 		}
-		send_interface_message = {
+		send_interface_toast = {
 			type = event_heresy_outbreak_good
 			title = fp2_struggle.2006.e.notif.t
 			left_icon = scope:fp2_2006_vassal_in_crisis
@@ -7563,7 +7571,7 @@ fp2_struggle.2006 = {
 					has_trait = craven
 				}
 
-				send_interface_message = {
+				send_interface_toast = {
 					type = sinful_theocrat_exposed
 					title = fp2_struggle.2006.generic.notif.a.t
 					left_icon = scope:fp2_2006_vassal_in_crisis
@@ -7639,7 +7647,7 @@ fp2_struggle.2006 = {
 					has_trait = saint
 				}
 
-				send_interface_message = {
+				send_interface_toast = {
 					type = virtuous_theocrat_celebrated
 					title = fp2_struggle.2006.generic.notif.b.t
 					left_icon = scope:fp2_2006_vassal_in_crisis
@@ -7650,9 +7658,14 @@ fp2_struggle.2006 = {
 						CHARACTER = scope:fp2_2006_vassal_in_crisis
 						OPINION = 0
 					}
-					add_opinion = {
-						target = root
-						modifier = fp2_reassured_faith_opinion
+					if = {
+						limit = {
+							NOT = { this = root }
+						}
+						add_opinion = {
+							target = root
+							modifier = fp2_reassured_faith_opinion
+						}
 					}
 				}
 			}
@@ -7809,7 +7822,7 @@ fp2_struggle.2006 = {
 								}
 							}
 						}
-						send_interface_message = {
+						send_interface_toast = {
 							type = sinful_theocrat_exposed
 							title = fp2_struggle.2006.generic.notif.a.t
 							left_icon = scope:fp2_2006_vassal_in_crisis
@@ -7900,7 +7913,7 @@ fp2_struggle.2006 = {
 								}
 							}
 						}
-						send_interface_message = {
+						send_interface_toast = {
 							type = sinful_theocrat_exposed
 							title = fp2_struggle.2006.generic.notif.a.t
 							left_icon = scope:fp2_2006_vassal_in_crisis
@@ -7981,7 +7994,7 @@ fp2_struggle.2006 = {
 						scope:2006_scoped_chaplain = { add_piety = medium_piety_gain }
 					}
 					root = {
-						send_interface_message = {
+						send_interface_toast = {
 							type = virtuous_theocrat_celebrated
 							title = fp2_struggle.2006.generic.notif.b.t
 							left_icon = scope:fp2_2006_vassal_in_crisis
@@ -8047,7 +8060,7 @@ fp2_struggle.2007 = {
 
 	theme = realm
 	cooldown = { years = 20 }
-	override_background = { event_background = garden }
+	override_background = { reference = garden }
 	left_portrait = {
 		character = root
 		animation = personality_rational
@@ -8616,7 +8629,7 @@ fp2_struggle.2008 = {
 
 	theme = secret
 	cooldown = { years = 30 }
-	override_background = { event_background = study }
+	override_background = { reference = study }
 	left_portrait = {
 		character = scope:fps_2008_misdeed_actor
 		animation = fear
@@ -8941,7 +8954,7 @@ fp2_struggle.2008 = {
 				}
 
 				if = {
-					limit = { root = { scope:fps_2008_misdeed_actor = cp:councillor_steward } } # CPs can not have CPs, therefore must be rescoped into root to access
+					limit = { root = { scope:fps_2008_misdeed_actor = cp:councillor_steward } } # CPs cannot have CPs, therefore must be rescoped into root to access
 					pay_short_term_gold = {
 						target = root
 						gold = minor_gold_value
@@ -8990,7 +9003,7 @@ fp2_struggle.2009 = {
 
 	theme = intrigue_skulduggery_focus
 	cooldown = { years = 150 } # Not actually necessary but adding anyway
-	override_background = { event_background = corridor_night }
+	override_background = { reference = corridor_night }
 	left_portrait = {
 		character = scope:fp2_2009_marshal
 		animation = marshal
@@ -9574,7 +9587,7 @@ fp2_struggle.2010 = { # 2009 duel follow-up
 	trigger = { scope:fp2_2009_garduna_guild_master = { is_available_ai_adult = yes } }
 
 	theme = battle
-	override_background = { event_background = corridor_night }
+	override_background = { reference = corridor_night }
 	left_portrait = {
 		character = root
 		animation = throne_room_one_handed_passive_1
@@ -9660,7 +9673,7 @@ fp2_struggle.2011 = { # You become the KING OF THIEVES
 				exists = scope:fp2_2011_reuse_gate
 				root = scope:fp2_2010_root_in_duel 
 			}
-			send_interface_message = {
+			send_interface_toast = {
 				type = event_generic_good_with_text
 				desc = fp2_struggle.2011.desc
 				title = fp2_struggle.2011.a
@@ -9761,11 +9774,11 @@ fp2_struggle.2013 = {
 	cooldown = { years = 2 }
 	override_background = { 
 		trigger = { scope:fp2_2013_prisoner_with_a_secret = { is_in_prison_type = house_arrest } }
-		event_background = sitting_room
+		reference = sitting_room
 	}
 	override_background = { 
 		trigger = { always = yes }
-		event_background = dungeon
+		reference = dungeon
 	}
 	left_portrait = {
 		character = root
@@ -10097,7 +10110,7 @@ fp2_struggle.2014 = {
 					} 
 				} 
 			} 
-			send_interface_message = {
+			send_interface_toast = {
 				type = character_has_died
 				desc = death_management.1007.t
 				left_icon = scope:fp2_2013_secret_owner
@@ -10107,7 +10120,7 @@ fp2_struggle.2014 = {
 			limit = { # Fallback - prisoner has died!
 				NOT = { scope:fp2_2013_prisoner_with_a_secret = { is_alive = yes } } 
 			}
-			send_interface_message = {
+			send_interface_toast = {
 				scope:fp2_2013_prisoner_with_a_secret = { save_temporary_scope_as = dead_character }
 				type = character_has_died
 				desc = death_management.1006.desc
@@ -10294,7 +10307,7 @@ fp2_struggle.2015 = {
 	cooldown = { years = 25 }
 
 	theme = murder_scheme
-	override_background = { event_background = council_chamber }
+	override_background = { reference = council_chamber }
 	left_portrait = {
 		character = root
 		animation = chancellor
@@ -10401,7 +10414,7 @@ fp2_struggle.2015 = {
 					multiplier = -1.25
 				}
 
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_intrigue_bad
 					title = murder_outcome.2302.t
 					left_icon = scope:fp2_struggle_2015_peasant_to_murder
@@ -10461,7 +10474,7 @@ fp2_struggle.2015 = {
 					has_perk = a_job_done_right_perk
 				}
 
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_intrigue_good
 					title = fp2_struggle.2015.a.b
 					left_icon = scope:fp2_struggle_2015_murder_requester_vassal
@@ -10530,7 +10543,7 @@ fp2_struggle.2015 = {
 				}
 			}
 		}
-		
+
 		stress_impact = {
 			compassionate = medium_stress_impact_gain
 			gallant = minor_stress_impact_gain
@@ -10572,7 +10585,7 @@ fp2_struggle.2015 = {
 			75 = { 
 				desc = fp2_struggle.2015.c.b
 				
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_intrigue_good
 					title = fp2_struggle.2015.c.b
 					left_icon = scope:fp2_struggle_2015_peasant_to_murder
@@ -10588,7 +10601,7 @@ fp2_struggle.2015 = {
 			}
 			25 = {
 				desc = fp2_struggle.2015.c.a
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_intrigue_bad
 					title = fp2_struggle.2015.c.a
 					left_icon = scope:fp2_struggle_2015_peasant_to_murder
@@ -10677,19 +10690,19 @@ fp2_struggle.2021 = { # Main event
 	theme = secret
 	override_background = { 
 		trigger = { scope:fp2_2009_event_outcome = flag:cleared_out }
-		event_background = alley_day
+		reference = alley_day
 	}
 	override_background = { 
 		trigger = { scope:fp2_2009_event_outcome = flag:paid_off }
-		event_background = tavern
+		reference = tavern
 	}
 	override_background = { 
 		trigger = { scope:fp2_2009_event_outcome = flag:worked_together }
-		event_background = throne_room
+		reference = throne_room
 	}
 	override_background = { 
 		trigger = { scope:fp2_2009_event_outcome = flag:lobbed_head }
-		event_background = alley_night
+		reference = alley_night
 	}
 	left_portrait = {
 		character = root
@@ -10921,7 +10934,7 @@ fp2_struggle.2021 = { # Main event
 					exists = scope:fp2_2021_secreto_numero_ni
 				}
 	
-				send_interface_message = {
+				send_interface_toast = {
 					type = event_intrigue_good
 					title = fp2_struggle.2021.c.spynet.a
 					
@@ -10932,7 +10945,7 @@ fp2_struggle.2021 = { # Main event
 			else = {
 				if = {
 					limit = { exists = scope:fp2_2021_secreto_numero_ichi }
-					send_interface_message = {
+					send_interface_toast = {
 						type = event_intrigue_good
 						title = fp2_struggle.2021.c.spynet.a
 						
@@ -10941,7 +10954,7 @@ fp2_struggle.2021 = { # Main event
 				}
 				else_if = {
 					limit = { exists = scope:fp2_2021_secreto_numero_ni }
-					send_interface_message = {
+					send_interface_toast = {
 						type = event_intrigue_good
 						title = fp2_struggle.2021.c.spynet.a
 						
@@ -10979,7 +10992,7 @@ fp2_struggle.2021 = { # Main event
 				}
 				give_nickname = nick_the_Thief_Slayer
 			}
-		}	
+		}
 		ROOT = { save_scope_as = fp2_2021_root_in_duel }
 		scope:fp2_2009_garduna_guild_master = {
 			set_variable = {
@@ -10988,7 +11001,7 @@ fp2_struggle.2021 = { # Main event
 			}
 		}
 
-		if = { # Changes the background to match, you can not use conditional values on scripted effects
+		if = { # Changes the background to match, you cannot use conditional values on scripted effects
 			limit = { scope:fp2_2009_event_outcome = flag:cleared_out }
 			configure_start_single_combat_effect = {
 				SC_INITIATOR = root
@@ -11042,9 +11055,7 @@ fp2_struggle.2021 = { # Main event
 		}
 	}
 
-	after = {
-		remove_global_variable = fp2_struggle_2009_thief_king_char
-	}
+	after = { remove_global_variable = fp2_struggle_2009_thief_king_char }
 }
 
 fp2_struggle.2022 = { # You become the KING OF THIEVES again, well, late is better than never...
@@ -11055,7 +11066,7 @@ fp2_struggle.2022 = { # You become the KING OF THIEVES again, well, late is bett
 				exists = scope:fp2_2022_reuse_gate
 				root = scope:fp2_2021_root_in_duel 
 			}
-			send_interface_message = {
+			send_interface_toast = {
 				type = event_generic_good
 				title = fp2_struggle.2021.d.a
 				right_icon = ROOT
@@ -11113,7 +11124,7 @@ fp2_struggle.3001 = {
 
 	theme = crown
 	cooldown = { years = 5 } #in case you don't sell your crown you'll have to wait to get the chance again
-	override_background = { event_background = council_chamber }
+	override_background = { reference = council_chamber }
 	left_portrait = {
 		character = root
 		animation = worry

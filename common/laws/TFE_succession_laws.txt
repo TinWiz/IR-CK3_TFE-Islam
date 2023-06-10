@@ -1,10 +1,10 @@
-﻿# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.9.1
 
  title_succession_laws = {
 	rashidun_elective_succession_law = {
 		can_have = {
 			has_title = title:e_rashidun
-			has_government = clan_government #I:R→CK3 no caliphate_government
+			government_has_flag = government_is_clan #I:R→CK3 no caliphate_government
 		}
 		can_pass = {
 			always = yes

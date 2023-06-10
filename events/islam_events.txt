@@ -1,9 +1,9 @@
 ﻿namespace = islam
-# IRToCK3: Last updated for CK3 1.7.2
+# IRToCK3: Last updated for CK3 1.9.1
 
 islam.0001 = {
 	hidden = yes
-	type = empty
+	scope = none
 
 	immediate = {
 		faith:united_islam = {
@@ -347,7 +347,7 @@ islam.0002 = {
 	}
 
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	right_portrait = {
 		character = root
@@ -503,7 +503,7 @@ islam.0003 = {
 	scope = character
 	theme = diplomacy
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root
@@ -553,7 +553,7 @@ islam.0004 = {
 	scope = character
 	theme = diplomacy
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root
@@ -624,7 +624,7 @@ islam.0005 = {
 		}
 	}
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root
@@ -643,7 +643,7 @@ islam.0006 = {
 	scope = character
 	theme = martial
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root
@@ -726,7 +726,7 @@ islam.0007 = {
 		}
 	}
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root
@@ -767,7 +767,7 @@ islam.0008 = {
 	scope = character
 	theme = martial
 	override_background = {
-		event_background = throne_room
+		reference = throne_room
 	}
 	left_portrait = {
 		character = root

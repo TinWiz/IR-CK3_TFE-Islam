@@ -1,5 +1,20 @@
-﻿### IRtoCK3: Last Updated for v1.8.1
+﻿### IRtoCK3: Last Updated for v1.9.1
+believes_in_pilgrimage_trigger = {
+	NOR = {
+		# These Faiths historically shunned going on pilgrimages, saying they were a waste of time & money.
+		faith = faith:waldensian
+		faith = faith:paulician
+		faith = faith:lollard
+	}
+	# Also we must have an actual holy site we can visit.
+	faith = {	
+		any_holy_site = {
+			exists = this
+		}
+	}
+}
 
 can_perform_the_hajj_trigger = {
 	faith.religion = religion:islam_religion
+	faith = { has_doctrine_parameter = can_go_on_pilgrimage }
 }

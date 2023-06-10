@@ -1,4 +1,4 @@
-# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.7.2
 
 on_death = {
 	on_actions = { 

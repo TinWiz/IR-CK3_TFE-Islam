@@ -1,4 +1,4 @@
-﻿# IRToCK3: Last updated for CK3 1.7.2
+﻿# IRToCK3: Last updated for CK3 1.9.1
 
 ToleranceValue = {
 	type = character
@@ -382,6 +382,12 @@ GetUnbelieverTerm = {
 	}
 }
 
+GetUnbelieverTermPlural = {
+	type = character
+	parent = GetUnbelieverTerm
+	suffix = _plural
+}
+
 GetUnbelieverTermAdjective = {
 	type = character
 
@@ -685,6 +691,14 @@ GetActualBishopTitle = {
 			faith.religion = faith:west_african_pagan.religion
 		}
 		localization_key = councillor_court_chaplain_west_african_religion_duchy
+	}
+
+	# Kemetic
+	text = {
+		trigger = {
+			faith.religion = religion:kushitism_religion
+		}
+		localization_key = councillor_court_chaplain_kemetic_religion_county
 	}
 	
 	# Tengrism
@@ -1291,6 +1305,14 @@ GetActualBishopTitlePossessive = {
 		}
 		localization_key = councillor_court_chaplain_west_african_religion_duchy_possessive
 	}
+
+	# Kemetic
+	text = {
+		trigger = {
+			faith.religion = religion:kushitism_religion
+		}
+		localization_key = councillor_court_chaplain_kemetic_religion_county_possessive
+	}
 	
 	# Tengrism
 	text = {
@@ -1875,5 +1897,53 @@ GetRiteEcumenismFullOrEmpty = {
 			}
 		}
 		localization_key = GetRiteEcumenismFullOrEmpty_empty
+	}
+}
+
+# Does the character's faith have Armed Pilgrimages or Struggle & Submission?
+ghw_from_which_tenet = {
+	type = character
+
+	text = {
+		trigger = {
+			faith = { has_doctrine = tenet_armed_pilgrimages }
+		}
+		localization_key = ghw_from_which_tenet_armed_pilgrimages
+	}
+
+	text = {
+		trigger = {
+			faith = { has_doctrine = tenet_struggle_submission }
+		}
+		localization_key = ghw_from_which_tenet_struggle_submission
+	}
+
+	text = {
+		trigger = {
+			faith = { has_doctrine = tenet_warmonger }
+		}
+		localization_key = ghw_from_which_tenet_warmonger
+	}
+}
+
+# Which institutions would be exempt from tax in this faith?
+GetFaithTaxExemptInstitution = {
+	type = character
+
+	# Theocratic clergy faiths exempt the Church.
+	text = {
+		trigger = {
+			faith = { has_doctrine_parameter = theocracy_temple_lease }
+		}
+		localization_key = faithtaxexemption_the_church
+	}
+
+	# Lay clergy faiths exempt charities.
+	text = {
+		trigger = {
+			faith = { has_doctrine_parameter = lay_clergy }
+		}
+		fallback = yes
+		localization_key = faithtaxexemption_charities
 	}
 }
