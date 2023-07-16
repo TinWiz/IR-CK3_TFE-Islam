@@ -1,4 +1,4 @@
-﻿ # IRToCK3: Last updated for CK3 1.8.1
+﻿ # IRToCK3: Last updated for CK3 1.9.2
 
 islam_religion = {
 	family = rf_abrahamic
@@ -568,7 +568,7 @@ islam_religion = {
 			holy_site = damascus
 
 			doctrine = tenet_unrelenting_faith
-			doctrine = tenet_mendicant_preachers
+			doctrine = tenet_aniconism
 			doctrine = tenet_gnosticism
 
 			doctrine = unavailable_doctrine ###I:R→CK3###
@@ -583,6 +583,7 @@ islam_religion = {
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_monogamy
 			doctrine = doctrine_gender_equal # While the differences between men and women were a bit more complex, Equal is a suitable abstraction for lack of male-pref
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -772,6 +773,7 @@ islam_religion = {
 			doctrine = doctrine_spiritual_head
 			doctrine = doctrine_adultery_women_crime
 			doctrine = doctrine_clerical_gender_either
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -814,6 +816,7 @@ islam_religion = {
 			doctrine = doctrine_adultery_men_crime
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_clerical_gender_either
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -866,6 +869,7 @@ islam_religion = {
 			doctrine = doctrine_adultery_men_crime
 			doctrine = doctrine_witchcraft_shunned
 			doctrine = doctrine_clerical_gender_either
+			doctrine = doctrine_pilgrimage_forbidden
 
 			localization = {		
 				PriestMale = islam_shia_priest
@@ -1072,6 +1076,5 @@ islam_religion = {
 				ReligiousHeadTitleName = islam_shia_religious_head_title_name
 			}
 		}
-		
 	}
 }
