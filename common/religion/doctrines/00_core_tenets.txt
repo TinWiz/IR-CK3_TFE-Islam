@@ -1,5 +1,5 @@
 ﻿### Due to how Tenets work we need to include the entire file, unfortunately
-# IRToCK3: Last updated for CK3 1.9.1
+# IRToCK3: Last updated for CK3 1.9.2
 doctrine_core_tenets = {
 	group = "core_tenets"
 	number_of_picks = 3
@@ -200,6 +200,30 @@ doctrine_core_tenets = {
 			if = {
 				limit = { has_doctrine = tenet_communal_identity }
 				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = judaism_religion
+					}
+					desc = tenet_communal_identity_chosen_people_name
+				}
+				desc = tenet_communal_identity_name
+			}
+		}
+
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = judaism_religion
+					}
+					desc = tenet_communal_identity_chosen_people_desc
+				}
+				desc = tenet_communal_identity_desc
 			}
 		}
 
@@ -896,9 +920,9 @@ doctrine_core_tenets = {
 					}
 					# ... or cannibal-HoF thinks you need to chill the hell out whilst they eat this dude.
 					AND = {
-						doctrine:tenet_ritual_cannibalism = { is_in_list = selected_doctrines }
+						religious_head.faith = { has_doctrine = tenet_ritual_cannibalism }						
 						NOT = {
-							religious_head.faith = { has_doctrine = tenet_ritual_cannibalism }
+							doctrine:tenet_ritual_cannibalism = { is_in_list = selected_doctrines }
 						}
 					}
 				}
@@ -1066,6 +1090,30 @@ doctrine_core_tenets = {
 			}
 		}
 
+		name = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = judaism_religion
+					}
+					desc = tenet_esotericism_kabbalah
+				}
+				desc = tenet_esotericism_name
+			}
+		}
+
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						religion_tag = judaism_religion
+					}
+					desc = tenet_esotericism_kabbalah_desc
+				}
+				desc = tenet_esotericism_desc
+			}
+		}
+
 		parameters = {
 			tenet_esotericism_mystic_education = yes
 		}
@@ -1121,18 +1169,6 @@ doctrine_core_tenets = {
 
 	tenet_literalism = {
 		icon = core_tenet_literalism
-		name = {
-			first_valid = {
-				triggered_desc = {
-					trigger = {
-						religion_tag = buddhism_religion
-					}
-					desc = tenet_literalism_buddhism_name
-				}
-				desc = tenet_literalism_name
-			}
-		}
-
 		piety_cost = {
 			if = {
 				limit = {
@@ -1208,7 +1244,10 @@ doctrine_core_tenets = {
 
 		is_shown = {
 			NOR = {
-				religion_tag = christianity_religion
+				AND = {
+					religion_tag = christianity_religion
+					NOT = { this = faith:cathar }
+				}
 				religion_tag = judaism_religion
 				religion_tag = zoroastrianism_religion
 			}
@@ -1322,6 +1361,12 @@ doctrine_core_tenets = {
 						religion_tag = islam_religion
 					}
 					desc = tenet_temporal_condemnation_taqiya
+				}
+				triggered_desc = {
+					trigger = {
+						religion_tag = judaism_religion
+					}
+					desc = tenet_anusim
 				}
 				desc = tenet_false_conversion_sanction_name
 			}
@@ -1460,6 +1505,8 @@ doctrine_core_tenets = {
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
+
+		
 
 		parameters = {
 			meditation_mechanics_active = yes
@@ -1840,7 +1887,7 @@ doctrine_core_tenets = {
 			}
 			custom_description = {
 				text = incompatible_tenet_mendicant_preachers_trigger
-		NOT = { doctrine:tenet_mendicant_preachers = { is_in_list = selected_doctrines } }
+				NOT = { doctrine:tenet_mendicant_preachers = { is_in_list = selected_doctrines } }
 			}
 		}
 
@@ -2421,7 +2468,7 @@ doctrine_core_tenets = {
 			custom_description = {
 				text = incompatible_tenet_gnosticism_trigger
 				NOT = {
-					flag:tenet_gnosticism = { is_in_list = selected_doctrines }
+					doctrine:tenet_gnosticism = { is_in_list = selected_doctrines }
 				}
 			}
 			custom_description = {
@@ -2431,7 +2478,6 @@ doctrine_core_tenets = {
 					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -2482,7 +2528,6 @@ doctrine_core_tenets = {
 					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -2534,7 +2579,6 @@ doctrine_core_tenets = {
 					doctrine:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -2602,7 +2646,6 @@ doctrine_core_tenets = {
 					doctrine:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_jewish_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -2657,7 +2700,6 @@ doctrine_core_tenets = {
 					doctrine:tenet_unreformed_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_christian_syncretism = { is_in_list = selected_doctrines }
 					doctrine:tenet_islamic_syncretism = { is_in_list = selected_doctrines }
-					doctrine:tenet_hellenic_syncretism = { is_in_list = selected_doctrines }
 				}
 			}
 		}
@@ -3163,8 +3205,5 @@ doctrine_core_tenets = {
 	#		sins = { craven = 2}
 	#	}
 	#}
-
-
-	
 }
 
